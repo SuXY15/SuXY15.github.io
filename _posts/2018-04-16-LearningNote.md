@@ -9,7 +9,7 @@ description: Scripts / HtmlElements
 ### Scripts
 #### Higlights
 
-```html
+```
 <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
 <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -17,7 +17,7 @@ description: Scripts / HtmlElements
 
 #### Tex
 
-```html
+```
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ```
 
@@ -25,20 +25,20 @@ description: Scripts / HtmlElements
 #### ImageSrc
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height="100px" width="100px"}
 
-```html
+```
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height="100px" width="100px"}
 ```
 
 <img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" width="100" height="100" /> 
 
-```html
+```
 <img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" width="100" height="100" /> 
 ```
 
 #### Link
 <a href="http://www.w3school.com.cn">This is a link By Html</a>
 
-```html
+```
 <a href="http://www.w3school.com.cn">This is a link By Html</a>
 ```
 
@@ -58,24 +58,25 @@ description: Scripts / HtmlElements
 
 #### Background
 
-```html
+```
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <meta http-equiv="Content-Language" content="zh-cn" />
 <body bgcolor="gray">
 ```
 
-<body style="background-color:PowderBlue;">
 
-```html
+```
 <body style="background-color:PowderBlue;">
+<!--here is not listed for this page's using style!-->
 ```
 
 #### TextStyle
+
 + TextColor
 <p style="font-family:verdana;color:red">This text is in Verdana and red</p>
 <p style="font-family:times;color:green">This text is in Times and green</p>
 
-```html
+```
 <p style="font-family:verdana;color:red">This text is in Verdana and red</p>
 <p style="font-family:times;color:green">This text is in Times and green</p>
 ```
@@ -84,7 +85,7 @@ description: Scripts / HtmlElements
 
 <p style="font-size:30px">This text is 30 pixels high</p>
 
-```html
+```
 <p style="font-size:30px">This text is 30 pixels high</p>
 ```
 
@@ -93,7 +94,7 @@ description: Scripts / HtmlElements
 <h4 style="background-color:red;text-align:center">This is a heading</h4>
 <p style="background-color:green;color:Yellow">This is a paragraph.</p>
 
-```html
+```
 <h4 style="background-color:red;text-align:center">This is a heading</h4>
 <p style="background-color:green;color:Yellow">This is a paragraph.</p>
 ```
@@ -109,7 +110,7 @@ description: Scripts / HtmlElements
         This text contains <sub>subscript</sub><br />
         This text contains <sup>superscript</sup>
 
-```html
+```
 <b>     This text is bold</b> <br />
 <strong>This text is strong</strong> <br />
 <big>   This text is big</big> <br />
