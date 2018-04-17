@@ -7,7 +7,7 @@ layout: default
     <div class="aside">
       <div class="info-card">
         <h1>Xingyu Su</h1>
-        <a href="http://github.com/SuXY15/" target="_blank"><img src="http://github.com/SuXY15/SuXY15.github.io/sss.ico" alt="" width="18"/></a>
+        <a href="http://github.com/SuXY15/" target="_blank"><img src="http://github.com/SuXY15/MyPic/master/sss.ico" alt="" width="18"/></a>
       </div>
       <div id="particles-js"></div>
     </div>

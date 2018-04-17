@@ -1,3 +1,10 @@
+---
+layout:     post
+title:      A Good Markdown
+category: blog
+description: 摘自Markdown官方文档
+---
+
 Welcome to StackEdit!   {#welcome}  
 =====================  
 
