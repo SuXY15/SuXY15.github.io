@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>回车、换行、和文件末尾空行 | SuXY15.github.io</title>
+    <title>贪吃蛇AI | SuXY15.github.io</title>
     <meta name="author" content="Xingyu Su" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="Xingyu Su's Site" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="http://github.com/SuXY15/SuXY15.github.io/sss.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://github.com/SuXY15/MyPic/master/sss.ico" type="image/x-icon" />
     <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="" />
     <style>html,
 body,
@@ -583,160 +583,106 @@ li.L9 {
 
   <body class="body-post">
   <div class="post-wrapper">
-    <h1 class="post-title"><a href="/blog/2016/05/18/carriage-return-line-feed-new-line-end-file.html" title="回车、换行、和文件末尾空行">回车、换行、和文件末尾空行</a></h1>
-    <p class="post-date">2016-05-18</p>
-    <h2 id="回车和换行">回车和换行</h2>
-
-<p>回车 (Carriage Return) 和换行 (Line Feed) 的区别，<a href="http://stackoverflow.com/questions/1761051/difference-between-n-and-r">这里</a>有一个历史原因可参考：</p>
-
-<blockquote>
-  <p>在计算机还没有出现之前，有一种叫做电传打字机（Teletype Model 33）的玩意，每秒钟可以打10个字符。但是它有一个问题，就是打完一行换行的时候，要用去0.2秒，正好可以打两个字符。要是在这0.2秒里面，又有新的字符传过来，那么这个字符将丢失。</p>
-</blockquote>
-
-<blockquote>
-  <p>于是，研制人员想了个办法解决这个问题，就是在每行后面加两个表示结束的字符。一个叫做”回车”，告诉打字机把打印头定位在左边界；另一个叫做”换行”，告诉打字机把纸向下移一行。</p>
-</blockquote>
-
-<p>发明计算机时，这个概念被沿用下来，但因为条件的限制和设计者的喜好，有了一些分歧：</p>
-
-<ul>
-  <li>Unix 系统里，每行结尾只有”<换行>"，即"\n"</换行></li>
-  <li>Windows 系统里面，每行结尾是”<回车><换行>"，即"\r\n"</换行></回车></li>
-  <li>在老的 Mac 系统里，每行结尾是”<回车>"，即"\r"</回车></li>
-</ul>
-
-<p>我们来验证一下，我在 Windows 下用记事本新建一个文本文件，它的二进制编码如下：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//源文件内容
-hello
-hello2
-
-//二进制内容
-0000000: 6865 6c6c 6f0d 0a68 656c 6c6f 32         hello..hello2
-</code></pre></div></div>
-
-<p>同样在 Mac 下用 Vim 新建一个：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//源文件内容
-hello
-hello2
-
-//二进制内容
-0000000: 6865 6c6c 6f0a 6865 6c6c 6f32 0a         hello.hello2.
-</code></pre></div></div>
-
-<p><code class="highlighter-rouge">0a</code>是 LF 的 ASCII 编码, <code class="highlighter-rouge">0d</code>是 CR 的 ASCII 编码。区别很明显了</p>
-
-<ul>
-  <li>Mac 下的文本文件在 Windows 下打开会成为一行，因为 Windows 只认识<code class="highlighter-rouge">\r\n</code>，也就是<code class="highlighter-rouge">0d0a</code></li>
-  <li>Windows 下的文本文件在 Mac 下打开，Vim 中会在每行末尾显示一个 <code class="highlighter-rouge">^M</code>，(不是两个字符组成的)</li>
-</ul>
-
-<h2 id="文件末尾空行">文件末尾空行</h2>
-
-<p><a href="https://zh.wikipedia.org/zh-sg/POSIX">POSIX</a>对行的<a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206">定义</a>如下：</p>
-
-<blockquote>
-  <p>3.206 Line</p>
-</blockquote>
-
-<blockquote>
-  <p>A sequence of zero or more non- &lt;newline&gt; characters plus a terminating &lt;newline&gt; character.</p>
-</blockquote>
-
-<blockquote>
-  <p>行是由0个或者多个非 “换行” 符的字符组成，并且以 “换行” 符结尾。</p>
-</blockquote>
-
-<p>这样做有什么好处呢，举个例子：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//hello.c
-#include head.h
-print('hello')
-
-//world.c
-#include tail.h
-print('hello')
-</code></pre></div></div>
-
-<p>如果这两个文件都按 POSIX 规范来写， 在<code class="highlighter-rouge">cat *.c</code>之后，是没有问题的：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//cat.c
-
-#include head.h
-print('hello')
-#include tail.h
-print('hello')
-</code></pre></div></div>
-
-<p>如果缺少最后一行的换行符（如 Windows 文件那样的定义），<code class="highlighter-rouge">cat</code>之后，就有问题了：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//error.c
-
-#include head.h
-print('hello')#include tail.h
-print('hello')
-</code></pre></div></div>
-
-<p>所以，从这点去理解 POSIX 对行的定义，非常合理，对于任意文件的拼接，也各自保持了文件的完整性。</p>
-
-<p>不遵守标准带来的则是：在一些编辑器下面，比如 Sublime，他把<code class="highlighter-rouge">\n</code>的当做了行之间的分隔符，于是文件最后一行的<code class="highlighter-rouge">\n</code>就看上去成了一个新的空行，这就是错误解读标准造成的，拼接文件时也会产生不必要的麻烦，比如上例。</p>
-
-<h2 id="-no-new-line-at-end-of-file">\ No new line at end of file</h2>
-
-<p>基于上面的原因，再去看 git diff 的<code class="highlighter-rouge">\ No new line at end of file</code>信息，就很好解释了。</p>
-
-<p>各编辑器对于换行符的理解偏差，导致的文件确实发生了变化，多了或少了最后的<code class="highlighter-rouge">0a</code>，那么对于 diff 程序来说，这当然是不可忽略的，但因为<code class="highlighter-rouge">0a</code>是不可见字符，并且是长久以来的历史原因，所以 diff 程序有个专门的标记来说明这个变化，就是：</p>
-
-<p><code class="highlighter-rouge">\ No new line at end of file</code></p>
-
-<p>各编辑器也有相应的办法去解决这个问题，比如 Sublime，在<code class="highlighter-rouge">Default/Preferences.sublime-settings</code>中设置：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Set to true to ensure the last line of the file ends in a newline
-// character when saving
-"ensure_newline_at_eof_on_save": true,
-</code></pre></div></div>
-
-<p>所以，请遵守规范。</p>
-
-
-    <div id="disqus_container">
-  <div class="share-con">
-    <script type="text/javascript" charset="utf-8">
-      (function(){
-        var param = {
-          url: 'http://beiyuu.com/blog/2016/05/18/carriage-return-line-feed-new-line-end-file.html',
-          type: '6',
-          title: '《回车、换行、和文件末尾空行》' + '- 回车和换行在不同系统下面定义不同，时不时会有一些小问题出来，git 经常出现的 No new line at the end of file 也让很多人费解，需要梳理一下',
-          ralateUid: '1855270953',
-          rnd:new Date().valueOf()
+    <h1 class="post-title"><a href="/blog/2018/04/16/snake.html" title="贪吃蛇AI">贪吃蛇AI</a></h1>
+    <p class="post-date">2018-04-16</p>
+    <html>
+    <body>
+        <canvas id="can" width="400" height="400" style="background:Black"></canvas>
+        <script>
+        var sz=20,sn=[sz*2+2,sz*2+1],dz=sz*2+3,fx=1,actions=[-1,-sz,1,sz];
+        var n,t,sz2=sz*sz,queue,foodd=[0,0,0,0],taild=[0,0,0,0],str="",cnt=0;
+        var pause=0,auto=1,ctx=document.getElementById("can").getContext("2d");
+        function draw(t,c){
+            ctx.fillStyle=c;
+            ctx.fillRect(t%sz*sz+1,~~(t/sz)*sz+1,sz-2,sz-2);
         }
-        var temp = [];
-        for( var p in param ){
-          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        function init(){
+            str+=sn.length.toString()+" "+cnt.toString()+";\r\n";
+            for(t=0;t<sz2;t++) draw(t,"Black");
+            sn=[sz*2+2,sz*2+1],dz=sz*2+1,fx=1,cnt=0,n=0,pause=1;
         }
-        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
-      })()
-    </script>
+        function isLose(s,p,a){
+            return (s.indexOf(p,0)>0||p<0||p>(sz2-1)||a==1&&p%sz==0||a==-1&&p%sz==(sz-1));
+        }
+        function AwayNear(away,near){
+            var mNear=Math.min.apply(null,near),mAway=Math.min.apply(null,away);
+            var temp = new Array(4); temp.fill(mAway-1);
+            for(t=0;t<4;t++) if(near[t]==mNear) temp[t]=away[t];
+            return temp.indexOf(Math.max.apply(null,temp),0);
+        }
+        function bfs(snake,dz){
+            var reach=new Array(sz2);reach.fill(-1);
+            var mdist=new Array(sz2);mdist.fill(sz2);
+            queue=[dz], mdist[dz]=0;
+            while (queue.length!=0){
+                posi = queue.shift()
+                if (reach[posi]<0)
+                    for(reach[posi]=1,t=0;t<4;t++){
+                        var npos=posi+actions[t];
+                        if(!isLose(snake,npos,actions[t])&&reach[npos]<0){
+                            queue.push(npos);
+                            mdist[npos]=mdist[posi]+1;
+                        }
+                    }
+            }
+            return mdist;
+        }
+        function findAction(snake,dz){
+            var foodDist=bfs(snake,dz);
+            var tailDist=bfs(snake,snake[snake.length-1]);
+            for(t=0;t<4;t++){
+                var npos=snake[0]+actions[t];
+                if(!isLose(snake,npos,actions[t])){
+                    foodd[t]=foodDist[npos];
+                    taild[t]=tailDist[npos];
+                }
+                else foodd[t]=sz2+1,taild[t]=sz2+1;
+            }
+            var tester = snake.concat();
+            tester.unshift(snake[0]+actions[AwayNear(taild,foodd)]);
+            var testDist=bfs(tester,tester[tester.length-1]);
+            if(testDist[tester[0]]<sz2) return actions[AwayNear(taild,foodd)]
+            else return actions[AwayNear(foodd,taild)];
+        }
+        document.onkeydown=function(e){
+            pause = (e||event).keyCode==32?(pause==0?1:0):pause;
+            auto = (e||event).keyCode==13?(auto==0?1:0):auto;
+            if(!auto) fx=sn[1]-sn[0]==(n=actions[(e||event).keyCode-37]||fx)?fx:n;
+        };
+        !function(){
+            if(!pause){
+                if(auto) fx=findAction(sn.concat(),dz);
+                sn.unshift(n=sn[0]+fx);
+                draw(n,"Lime");
+                if(isLose(sn,n,fx)||sn.length>sz2) init();
+                if(n==dz){
+                    while(sn.indexOf(dz=~~(Math.random()*sz2))>=0);
+                    draw(dz,"Yellow");
+                }else draw(sn.pop(),"Black");
+                cnt+=1;
+            }
+            setTimeout(arguments.callee,20);
+            document.getElementById("score").innerHTML=str+sn.length.toString();
+        }();
+        </script>
+        <div>
+            <p id="help">“回车”切换AI/手动，“空格”暂停/继续，结束自动暂停</p>
+            <p id="score">None</p>
+        </div>
+    </body>
+</html>
   </div>
-
-  <a href="#" class="comment" onclick="return false;">点击查看评论</a>
-  <div id="disqus_thread"></div>
-</div>
-
-  </div>
-
   <div class="about-wrapper">
   <div class="aboutme">
     <h2><a href="/">所有文章</a></h2>
     <ul>
       
       <li>
-        <a href="/blog/2018/04/16/LearningNote.html" class="title">HTML 学习笔记——与 Markdown 相对应</a>
+        <a href="/blog/2018/04/16/snake.html" class="title">贪吃蛇AI</a>
       </li>
       
       <li>
-        <a href="/blog/2016/05/18/carriage-return-line-feed-new-line-end-file.html" class="title">回车、换行、和文件末尾空行</a>
+        <a href="/blog/2018/04/16/LearningNote.html" class="title">HTML 学习笔记——与 Markdown 相对应</a>
       </li>
       
       <li>
