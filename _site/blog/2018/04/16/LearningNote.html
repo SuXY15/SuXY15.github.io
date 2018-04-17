@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>出错啦！ | SuXY15.github.io</title>
+    <title>HTML 学习笔记——与 Markdown 相对应 | SuXY15.github.io</title>
     <meta name="author" content="Xingyu Su" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="Xingyu Su's Site" />
@@ -581,9 +581,131 @@ li.L9 {
 </style>
   </head>
 
-  <body>
+  <body class="body-post">
   <div class="post-wrapper">
-    <h1 class="post-title" style="margin-bottom: 50px;"><a href="/404.html" title="出错啦！">出错啦！</a></h1>
+    <h1 class="post-title"><a href="/blog/2018/04/16/LearningNote.html" title="HTML 学习笔记——与 Markdown 相对应">HTML 学习笔记——与 Markdown 相对应</a></h1>
+    <p class="post-date">2018-04-16</p>
+    <h2 id="learningnote">LearningNote</h2>
+<h3 id="scripts">Scripts</h3>
+<h4 id="higlights">Higlights</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://yandex.st/highlightjs/8.0/highlight.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="nx">hljs</span><span class="p">.</span><span class="nx">initHighlightingOnLoad</span><span class="p">();</span><span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h4 id="tex">Tex</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="htmlelements">HtmlElements</h3>
+<h4 id="imagesrc">ImageSrc</h4>
+<p><img src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" alt="" height="100px" width="100px" /></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height="100px" width="100px"}
+</code></pre></div></div>
+
+<p><img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" width="100" height="100" /></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">align=</span><span class="s">"center"</span> <span class="na">src=</span><span class="s">"https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span> <span class="nt">/&gt;</span> 
+</code></pre></div></div>
+
+<h4 id="link">Link</h4>
+<p><a href="http://www.w3school.com.cn">This is a link By Html</a></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.w3school.com.cn"</span><span class="nt">&gt;</span>This is a link By Html<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+<p><a href="http://www.w3school.com.cn">This is a link By Markdown</a></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[This is a link By Markdown](http://www.w3school.com.cn)
+</code></pre></div></div>
+
+<h4 id="align">Align</h4>
+<h1 align="center">This is H1 for center </h1>
+<h2 align="center">This is H2 for center </h2>
+<h3 align="center">This is H3 for center </h3>
+<h4 align="center">This is H4 for center </h4>
+<h5 align="center">This is H5 for center </h5>
+<h6 align="center">This is H6 for center </h6>
+
+<h4 id="background">Background</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=gb2312"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Language"</span> <span class="na">content=</span><span class="s">"zh-cn"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">bgcolor=</span><span class="s">"gray"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<body style="background-color:PowderBlue;">
+```html
+<body style="background-color:PowderBlue;">
+```
+
+#### TextStyle
++ TextColor
+<p style="font-family:verdana;color:red">This text is in Verdana and red</p>
+<p style="font-family:times;color:green">This text is in Times and green</p>
+```html
+<p style="font-family:verdana;color:red">This text is in Verdana and red</p>
+<p style="font-family:times;color:green">This text is in Times and green</p>
+```
++ TextSize
+<p style="font-size:30px">This text is 30 pixels high</p>
+```html
+<p style="font-size:30px">This text is 30 pixels high</p>
+```
++ TextBackground
+<h4 style="background-color:red;text-align:center">This is a heading</h4>
+<p style="background-color:green;color:Yellow">This is a paragraph.</p>
+```html
+<h4 style="background-color:red;text-align:center">This is a heading</h4>
+<p style="background-color:green;color:Yellow">This is a paragraph.</p>
+```
++ TextFormat
+
+<b>     This text is bold</b> <br />
+<strong>This text is strong</strong> <br />
+<big>   This text is big</big> <br />
+<em>    This text is emphasized</em> <br />
+<i>     This text is italic</i> <br />
+<small> This text is small</small> <br />
+        This text contains <sub>subscript</sub><br />
+        This text contains <sup>superscript</sup>
+```html
+<b>     This text is bold</b> <br />
+<strong>This text is strong</strong> <br />
+<big>   This text is big</big> <br />
+<em>    This text is emphasized</em> <br />
+<i>     This text is italic</i> <br />
+<small> This text is small</small> <br />
+        This text contains <sub>subscript</sub><br />
+        This text contains <sup>superscript</sup>
+```
+#### 
+</body></body>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'http://beiyuu.com/blog/2018/04/16/LearningNote.html',
+          type: '6',
+          title: '《HTML 学习笔记——与 Markdown 相对应》' + '- Scripts / HtmlElements',
+          ralateUid: '1855270953',
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
+  </div>
+
+  <a href="#" class="comment" onclick="return false;">点击查看评论</a>
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
     <ul>
       
       <li>
@@ -600,6 +722,11 @@ li.L9 {
       
     </ul>
   </div>
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
 </body>
 
 </html>
