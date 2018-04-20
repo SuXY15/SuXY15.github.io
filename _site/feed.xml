@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-04-20T22:41:09+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s blog</title><subtitle>Xingyu Su's Personal Github.io
+</subtitle><author><name>Xingyu Su</name></author><entry><title type="html">贪吃蛇AI</title><link href="http://localhost:4000/blog/2018/04/16/snake.html" rel="alternate" type="text/html" title="贪吃蛇AI" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/snake</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/snake.html">&lt;html&gt;
+    &lt;body&gt;
+        &lt;canvas id=&quot;can&quot; width=&quot;400&quot; height=&quot;400&quot; style=&quot;background:Black&quot;&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+        var sz=20,sn=[sz*2+2,sz*2+1],dz=sz*2+3,fx=1,actions=[-1,-sz,1,sz];
+        var n,t,sz2=sz*sz,queue,foodd=[0,0,0,0],taild=[0,0,0,0],str=&quot;&quot;,cnt=0;
+        var pause=0,auto=1,ctx=document.getElementById(&quot;can&quot;).getContext(&quot;2d&quot;);
+        function draw(t,c){
+            ctx.fillStyle=c;
+            ctx.fillRect(t%sz*sz+1,~~(t/sz)*sz+1,sz-2,sz-2);
+        }
+        function init(){
+            str+=sn.length.toString()+&quot; &quot;+cnt.toString()+&quot;;\r\n&quot;;
+            for(t=0;t&lt;sz2;t++) draw(t,&quot;Black&quot;);
+            sn=[sz*2+2,sz*2+1],dz=sz*2+1,fx=1,cnt=0,n=0,pause=1;
+        }
+        function isLose(s,p,a){
+            return (s.indexOf(p,0)&gt;0||p&lt;0||p&gt;(sz2-1)||a==1&amp;&amp;p%sz==0||a==-1&amp;&amp;p%sz==(sz-1));
+        }
+        function AwayNear(away,near){
+            var mNear=Math.min.apply(null,near),mAway=Math.min.apply(null,away);
+            var temp = new Array(4); temp.fill(mAway-1);
+            for(t=0;t&lt;4;t++) if(near[t]==mNear) temp[t]=away[t];
+            return temp.indexOf(Math.max.apply(null,temp),0);
+        }
+        function bfs(snake,dz){
+            var reach=new Array(sz2);reach.fill(-1);
+            var mdist=new Array(sz2);mdist.fill(sz2);
+            queue=[dz], mdist[dz]=0;
+            while (queue.length!=0){
+                posi = queue.shift()
+                if (reach[posi]&lt;0)
+                    for(reach[posi]=1,t=0;t&lt;4;t++){
+                        var npos=posi+actions[t];
+                        if(!isLose(snake,npos,actions[t])&amp;&amp;reach[npos]&lt;0){
+                            queue.push(npos);
+                            mdist[npos]=mdist[posi]+1;
+                        }
+                    }
+            }
+            return mdist;
+        }
+        function findAction(snake,dz){
+            var foodDist=bfs(snake,dz);
+            var tailDist=bfs(snake,snake[snake.length-1]);
+            for(t=0;t&lt;4;t++){
+                var npos=snake[0]+actions[t];
+                if(!isLose(snake,npos,actions[t])){
+                    foodd[t]=foodDist[npos];
+                    taild[t]=tailDist[npos];
+                }
+                else foodd[t]=sz2+1,taild[t]=sz2+1;
+            }
+            var tester = snake.concat();
+            tester.unshift(snake[0]+actions[AwayNear(taild,foodd)]);
+            var testDist=bfs(tester,tester[tester.length-1]);
+            if(testDist[tester[0]]&lt;sz2) return actions[AwayNear(taild,foodd)]
+            else return actions[AwayNear(foodd,taild)];
+        }
+        document.onkeydown=function(e){
+            pause = (e||event).keyCode==32?(pause==0?1:0):pause;
+            auto = (e||event).keyCode==13?(auto==0?1:0):auto;
+            if(!auto) fx=sn[1]-sn[0]==(n=actions[(e||event).keyCode-37]||fx)?fx:n;
+        };
+        !function(){
+            if(!pause){
+                if(auto) fx=findAction(sn.concat(),dz);
+                sn.unshift(n=sn[0]+fx);
+                draw(n,&quot;Lime&quot;);
+                if(isLose(sn,n,fx)||sn.length&gt;sz2) init();
+                if(n==dz){
+                    while(sn.indexOf(dz=~~(Math.random()*sz2))&gt;=0);
+                    draw(dz,&quot;Yellow&quot;);
+                }else draw(sn.pop(),&quot;Black&quot;);
+                cnt+=1;
+            }
+            setTimeout(arguments.callee,20);
+            document.getElementById(&quot;score&quot;).innerHTML=str+sn.length.toString();
+        }();
+        &lt;/script&gt;
+        &lt;div&gt;
+            &lt;p id=&quot;help&quot;&gt;“回车”切换AI/手动，“空格”暂停/继续，结束自动暂停&lt;/p&gt;
+            &lt;p id=&quot;score&quot;&gt;None&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name></author><category term="blog" /><summary type="html">“回车”切换AI/手动，“空格”暂停/继续，结束自动暂停 None</summary></entry><entry><title type="html">优秀博客链接</title><link href="http://localhost:4000/blog/2018/04/16/Nice-Blog.html" rel="alternate" type="text/html" title="优秀博客链接" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/Nice-Blog</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/Nice-Blog.html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://beiyuu.com/css3-animation&quot;&gt;CSS3动画详解: http://beiyuu.com/css3-animation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Xingyu Su</name></author><category term="blog" /><summary type="html">CSS3动画详解: http://beiyuu.com/css3-animation</summary></entry><entry><title type="html">HTML 学习笔记——与 Markdown 相对应</title><link href="http://localhost:4000/blog/2017/11/25/LearningNote.html" rel="alternate" type="text/html" title="HTML 学习笔记——与 Markdown 相对应" /><published>2017-11-25T00:00:00+08:00</published><updated>2017-11-25T00:00:00+08:00</updated><id>http://localhost:4000/blog/2017/11/25/LearningNote</id><content type="html" xml:base="http://localhost:4000/blog/2017/11/25/LearningNote.html">&lt;h2 id=&quot;learningnote&quot;&gt;LearningNote&lt;/h2&gt;
+&lt;h3 id=&quot;scripts&quot;&gt;Scripts&lt;/h3&gt;
+&lt;h4 id=&quot;higlights&quot;&gt;Higlights&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&amp;gt;
+&amp;lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;tex&quot;&gt;Tex&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;htmlelements&quot;&gt;HtmlElements&lt;/h3&gt;
+&lt;h4 id=&quot;imagesrc&quot;&gt;ImageSrc&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; alt=&quot;&quot; height=&quot;100px&quot; width=&quot;100px&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height=&quot;100px&quot; width=&quot;100px&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; width=&quot;100&quot; height=&quot;100&quot; /&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;link&quot;&gt;Link&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link By Html&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;a href=&quot;http://www.w3school.com.cn&quot;&amp;gt;This is a link By Html&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link By Markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[This is a link By Markdown](http://www.w3school.com.cn)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;align&quot;&gt;Align&lt;/h4&gt;
+&lt;h1 align=&quot;center&quot;&gt;This is H1 for center &lt;/h1&gt;
+&lt;h2 align=&quot;center&quot;&gt;This is H2 for center &lt;/h2&gt;
+&lt;h3 align=&quot;center&quot;&gt;This is H3 for center &lt;/h3&gt;
+&lt;h4 align=&quot;center&quot;&gt;This is H4 for center &lt;/h4&gt;
+&lt;h5 align=&quot;center&quot;&gt;This is H5 for center &lt;/h5&gt;
+&lt;h6 align=&quot;center&quot;&gt;This is H6 for center &lt;/h6&gt;
+
+&lt;h4 id=&quot;background&quot;&gt;Background&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&amp;gt;
+&amp;lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;zh-cn&quot; /&amp;gt;
+&amp;lt;body bgcolor=&quot;gray&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;body style=&quot;background-color:PowderBlue;&quot;&amp;gt;
+&amp;lt;!--here is not listed for this page's using style!--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;textstyle&quot;&gt;TextStyle&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TextColor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;font-family:verdana;color:red&quot;&gt;This text is in Verdana and red&lt;/p&gt;
+&lt;p style=&quot;font-family:times;color:green&quot;&gt;This text is in Times and green&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p style=&quot;font-family:verdana;color:red&quot;&amp;gt;This text is in Verdana and red&amp;lt;/p&amp;gt;
+&amp;lt;p style=&quot;font-family:times;color:green&quot;&amp;gt;This text is in Times and green&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TextSize&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;font-size:30px&quot;&gt;This text is 30 pixels high&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p style=&quot;font-size:30px&quot;&amp;gt;This text is 30 pixels high&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TextBackground&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 style=&quot;background-color:red;text-align:center&quot;&gt;This is a heading&lt;/h4&gt;
+&lt;p style=&quot;background-color:green;color:Yellow&quot;&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;h4 style=&quot;background-color:red;text-align:center&quot;&amp;gt;This is a heading&amp;lt;/h4&amp;gt;
+&amp;lt;p style=&quot;background-color:green;color:Yellow&quot;&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TextFormat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;     This text is bold&lt;/b&gt; &lt;br /&gt;
+&lt;strong&gt;This text is strong&lt;/strong&gt; &lt;br /&gt;
+&lt;big&gt;   This text is big&lt;/big&gt; &lt;br /&gt;
+&lt;em&gt;    This text is emphasized&lt;/em&gt; &lt;br /&gt;
+&lt;i&gt;     This text is italic&lt;/i&gt; &lt;br /&gt;
+&lt;small&gt; This text is small&lt;/small&gt; &lt;br /&gt;
+        This text contains &lt;sub&gt;subscript&lt;/sub&gt;&lt;br /&gt;
+        This text contains &lt;sup&gt;superscript&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;b&amp;gt;     This text is bold&amp;lt;/b&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;strong&amp;gt;This text is strong&amp;lt;/strong&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;big&amp;gt;   This text is big&amp;lt;/big&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;em&amp;gt;    This text is emphasized&amp;lt;/em&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;i&amp;gt;     This text is italic&amp;lt;/i&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;small&amp;gt; This text is small&amp;lt;/small&amp;gt; &amp;lt;br /&amp;gt;
+        This text contains &amp;lt;sub&amp;gt;subscript&amp;lt;/sub&amp;gt;&amp;lt;br /&amp;gt;
+        This text contains &amp;lt;sup&amp;gt;superscript&amp;lt;/sup&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Xingyu Su</name></author><category term="blog" /><summary type="html">LearningNote Scripts Higlights &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&amp;gt; &amp;lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt; Tex &amp;lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&amp;gt;&amp;lt;/script&amp;gt; HtmlElements ImageSrc ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height=&quot;100px&quot; width=&quot;100px&quot;} &amp;lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; width=&quot;100&quot; height=&quot;100&quot; /&amp;gt; Link This is a link By Html &amp;lt;a href=&quot;http://www.w3school.com.cn&quot;&amp;gt;This is a link By Html&amp;lt;/a&amp;gt; This is a link By Markdown [This is a link By Markdown](http://www.w3school.com.cn) Align This is H1 for center This is H2 for center This is H3 for center This is H4 for center This is H5 for center This is H6 for center Background &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&amp;gt; &amp;lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;zh-cn&quot; /&amp;gt; &amp;lt;body bgcolor=&quot;gray&quot;&amp;gt; &amp;lt;body style=&quot;background-color:PowderBlue;&quot;&amp;gt; &amp;lt;!--here is not listed for this page's using style!--&amp;gt; TextStyle TextColor This text is in Verdana and red This text is in Times and green &amp;lt;p style=&quot;font-family:verdana;color:red&quot;&amp;gt;This text is in Verdana and red&amp;lt;/p&amp;gt; &amp;lt;p style=&quot;font-family:times;color:green&quot;&amp;gt;This text is in Times and green&amp;lt;/p&amp;gt; TextSize This text is 30 pixels high &amp;lt;p style=&quot;font-size:30px&quot;&amp;gt;This text is 30 pixels high&amp;lt;/p&amp;gt; TextBackground This is a heading This is a paragraph. &amp;lt;h4 style=&quot;background-color:red;text-align:center&quot;&amp;gt;This is a heading&amp;lt;/h4&amp;gt; &amp;lt;p style=&quot;background-color:green;color:Yellow&quot;&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt; TextFormat This text is bold This text is strong This text is big This text is emphasized This text is italic This text is small This text contains subscript This text contains superscript &amp;lt;b&amp;gt; This text is bold&amp;lt;/b&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;strong&amp;gt;This text is strong&amp;lt;/strong&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;big&amp;gt; This text is big&amp;lt;/big&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;em&amp;gt; This text is emphasized&amp;lt;/em&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;i&amp;gt; This text is italic&amp;lt;/i&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;small&amp;gt; This text is small&amp;lt;/small&amp;gt; &amp;lt;br /&amp;gt; This text contains &amp;lt;sub&amp;gt;subscript&amp;lt;/sub&amp;gt;&amp;lt;br /&amp;gt; This text contains &amp;lt;sup&amp;gt;superscript&amp;lt;/sup&amp;gt;</summary></entry></feed>

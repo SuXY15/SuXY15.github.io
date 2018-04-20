@@ -1,675 +1,250 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>贪吃蛇AI | SuXY15.github.io</title>
-    <meta name="author" content="Xingyu Su" />
-    <meta name="renderer" content="webkit">
-    <meta name="description" content="Xingyu Su's Site" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="http://github.com/SuXY15/MyPic/master/sss.ico" type="image/x-icon" />
-    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="" />
-    <style>html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-family: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-}
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>贪吃蛇AI - Xingyu Su's blog</title>
+<meta name="description" content="                                        “回车”切换AI/手动，“空格”暂停/继续，结束自动暂停            None            ">
+<link rel="canonical" href="http://localhost:4000/blog/2018/04/16/snake.html"><link rel="alternate" type="application/rss+xml" title="Xingyu Su's blog" href="http://localhost:4000/feed.xml">
+<!-- for Safari on iOS https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/icon-180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/assets/images/logo/icon-167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/images/logo/icon-152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/images/logo/icon-120x120.png"><link rel="shortcut icon" href="/assets/images/logo/icon-120x120.png">
+<!-- for Chrome on Android https://developer.chrome.com/multidevice/android/installtohomescreen -->
+<meta name="mobile-web-app-capable" content="yes"><link rel="icon" sizes="192x192" href="/assets/images/logo/icon-192x192.png">
+<!-- for Edge on Windows 10 https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx --><meta name="msapplication-TileImage" content="/assets/images/logo/icon-144x144.png"><meta name="msapplication-square310x310logo" content="/assets/images/logo/icon-310x310.png"><meta name="msapplication-wide310x150logo" content="/assets/images/logo/icon-310x150.png"><meta name="msapplication-square150x150logo" content="/assets/images/logo/icon-150x150.png"><meta name="msapplication-square70x70logo" content="/assets/images/logo/icon-70x70.png">
+<meta name="msapplication-TileColor" content="#eeeeee">
+<link rel="stylesheet" href="/assets/css/blog.css">
+    <script>(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
 
-body {
-    line-height: 1;
-    color: #000;
-    background: #fff;
-}
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
 
-ol,
-ul {
-    list-style: none;
-}
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
 
-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    vertical-align: middle;
-}
-
-caption,
-th,
-td {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: middle;
-}
-
-a img {
-    border: none;
-}
-
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-main {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    display: block;
-}
-
-audio,
-canvas,
-video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-
-audio:not([controls]),
-[hidden] {
-    display: none;
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-*:before,
-*:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-body {
-    font-family: Helvetica, Tahoma, Arial, 'Hiragino Sans GB', '\51AC\9752\9ED1\4F53', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', STXihei, '\534E\6587\7EC6\9ED1', SimSun, '\5B8B\4F53', Heiti, '\9ED1\4F53', sans-serif;
-    font-size: 16px;
-}
-
-@media screen and (max-width: 767px) {
-    body {
-        font-size: 14px;
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
     }
-}
-
-a {
-    color: #4a75b5;
-    text-decoration: none;
-    outline: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a.external {
-    padding-right: 13px;
-    background: url("/images/icons.gif") no-repeat right 1px;
-}
-
-a.external:hover {
-    background-position: right -15px;
-}
-
-.index-wrapper .aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 100%;
-    max-width: 500px;
-    background: #59a0b0;
-}
-
-@media screen and (max-width: 767px) {
-    .index-wrapper .aside {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        max-width: none;
-    }
-}
-
-.index-wrapper .info-card {
-    position: absolute;
-    margin-top: 70%;
-    text-align: center;
-    width: 100%;
-}
-
-@media screen and (max-width: 767px) {
-    .index-wrapper .info-card {
-        margin-top: 70px;
-    }
-}
-
-.index-wrapper .info-card h1 {
-    font-size: 40px;
-    color: #fff;
-    margin-bottom: 20px;
-    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-    letter-spacing: 0.15em;
-    text-shadow: rgba(255, 255, 255, 0.5) 0 0 15px, rgba(255, 255, 255, 0.5) 0 0 10px;
-}
-
-.index-wrapper .info-card a {
-    margin: 0 15px;
-}
-
-.index-wrapper .index-content {
-    margin-left: 30%;
-    padding-top: 80px;
-    padding-right: 15%;
-}
-
-@media screen and (max-width: 767px) {
-    .index-wrapper .index-content {
-        margin-left: 0;
-        padding-right: 0;
-    }
-}
-
-.index-wrapper .artical-list {
-    width: 70%;
-    margin: 0 auto;
-}
-
-@media screen and (max-width: 767px) {
-    .index-wrapper .artical-list {
-        width: 85%;
-    }
-}
-
-.index-wrapper .artical-list li {
-    margin-bottom: 70px;
-}
-
-.index-wrapper .title {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 15px;
-    word-break: break-all;
-    font-weight: bold;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
-    color: #444;
-}
-
-@media screen and (max-width: 767px) {
-    .index-wrapper .title {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-}
-
-.index-wrapper .title:hover {
-    color: #e50053;
-    text-decoration: none;
-}
-
-.index-wrapper .title-desc {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.body-post {
-    background: #f5f5f5;
-}
-
-@media screen and (max-width: 767px) {
-    .body-post {
-        background: #fff;
-    }
-}
-
-.post-wrapper {
-    width: 900px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 80px 60px;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper {
-        width: 85%;
-        margin: 100px auto 50px;
-        padding: 0;
-    }
-}
-
-.post-wrapper .post-title,
-.post-wrapper .post-title a {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #000;
-    text-align: center;
-    word-wrap: break-word;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper .post-title,
-    .post-wrapper .post-title a {
-        font-size: 24px;
-    }
-}
-
-.post-wrapper .post-title:hover,
-.post-wrapper .post-title a:hover {
-    text-decoration: none;
-}
-
-.post-wrapper .post-date {
-    text-align: center;
-    color: #999;
-    margin-bottom: 60px;
-    font-size: 14px;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper .post-date {
-        margin-bottom: 40px;
-    }
-}
-
-.post-wrapper h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-}
-
-@media $mobiel {
-    .post-wrapper h2 {
-        font-size: 20px;
-    }
-}
-
-.post-wrapper h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: #222;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper h3 {
-        font-size: 16px;
-    }
-}
-
-.post-wrapper h4,
-.post-wrapper h5,
-.post-wrapper h6 {
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.post-wrapper p {
-    margin-bottom: 40px;
-    line-height: 1.8em;
-}
-
-.post-wrapper code {
-    background: #eee;
-    border: 1px solid #ccc;
-    padding: 0 5px;
-    font-family: "Courier";
-    line-height: 14px;
-    font-size: 14px;
-    word-wrap: break-word;
-}
-
-.post-wrapper pre {
-    background: #f7f3f7;
-    padding: 20px 30px 15px;
-    overflow: auto;
-    margin-bottom: 40px;
-    font-size: 14px;
-    border: 1px solid #eee;
-    color: #b9bdb6;
-    margin-top: -20px;
-}
-
-.post-wrapper pre code {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    word-wrap: normal;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper pre code {
-        line-height: 1em;
-        font-size: 12px;
-    }
-}
-
-.post-wrapper h4+pre,
-.post-wrapper h3+pre {
-    margin-top: 20px;
-}
-
-.post-wrapper ul {
-    margin-bottom: 25px;
-    margin-left: 25px;
-}
-
-.post-wrapper ul li {
-    margin-bottom: 5px;
-    list-style: disc;
-    line-height: 1.8em;
-}
-
-.post-wrapper p+ul {
-    margin-top: -20px;
-}
-
-.post-wrapper ol {
-    margin-bottom: 25px;
-    margin-left: 25px;
-}
-
-.post-wrapper ol li {
-    margin-bottom: 5px;
-    list-style: decimal;
-    line-height: 1.1em;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper ol li {
-        margin-bottom: 0;
-        line-height: 1em;
-    }
-}
-
-.post-wrapper blockquote {
-    margin-left: 25px;
-    font-size: 14px;
-    font-style: italic;
-}
-
-.post-wrapper img {
-    max-width: 670px;
-    display: block;
-    margin: 10px auto;
-}
-
-@media screen and (max-width: 767px) {
-    .post-wrapper img {
-        max-width: 90%;
-    }
-}
-
-.post-wrapper table {
-    margin: 0 auto;
-}
-
-.about-wrapper {
-    background: #7e96a9;
-    width: 900px;
-    margin: 0 auto;
-    padding: 30px 60px;
-}
-
-@media screen and (max-width: 767px) {
-    .about-wrapper {
-        width: 100%;
-        padding: 0 7.5% 30px;
-    }
-}
-
-.about-wrapper .aboutme {
-    zoom: 1;
-}
-
-.about-wrapper .aboutme:before,
-.about-wrapper .aboutme:after {
-    content: "";
-    display: table;
-}
-
-.about-wrapper .aboutme:after {
-    clear: both;
-}
-
-.about-wrapper .aboutme h2 {
-    margin-bottom: 20px;
-}
-
-.about-wrapper .aboutme h2 a {
-    font-size: 18px;
-}
-
-.about-wrapper .aboutme li {
-    line-height: 1.4;
-    margin-bottom: 10px;
-    float: left;
-    width: 50%;
-}
-
-@media screen and (max-width: 767px) {
-    .about-wrapper .aboutme li {
-        float: none;
-        width: 80%;
-    }
-}
-
-.about-wrapper .aboutme a {
-    color: #fff;
-    font-size: 14px;
-}
-
-#particles-js {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    -webkit-background-size: 20%;
-    -moz-background-size: 20%;
-    background-size: 20%;
-    background-position: 50% 50%;
-    background: #38658c;
-    background: -webkit-radial-gradient(top left, #5d3571, #38658c);
-    background: -moz-radial-gradient(top left, #5d3571, #38658c);
-    background: -o-radial-gradient(top left, #5d3571, #38658c);
-    background: -ms-radial-gradient(top left, #5d3571, #38658c);
-    background: radial-gradient(to bottom right, #5d3571, #38658c);
-}
-
-#disqus_container {
-    font-size: 12px;
-}
-
-#disqus_container .share-con {
-    float: right;
-    margin-bottom: 20px;
-}
-
-#disqus_container a.comment {
-    font-size: 14px;
-}
-
-.prettyprint {
-    background: #f7f3f7;
-    border: 0 !important;
-}
-
-.pln {
-    color: #1b181b;
-}
-
-ol.linenums {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #5a7b8c;
-}
-
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L4,
-li.L5,
-li.L6,
-li.L7,
-li.L8,
-li.L9 {
-    padding-left: 0.4em;
-    background-color: #f7f3f7;
-    list-style-type: decimal;
-}
-
-@media screen {
-    .str {
-        color: #918b3b;
-    }
-    .kwd {
-        color: #7b59c0;
-    }
-    .com {
-        color: #5a7b8c;
-    }
-    .typ {
-        color: #516aec;
-    }
-    .lit {
-        color: #a65926;
-    }
-    .pun {
-        color: #1b181b;
-    }
-    .opn {
-        color: #1b181b;
-    }
-    .clo {
-        color: #1b181b;
-    }
-    .tag {
-        color: #ca402b;
-    }
-    .atn {
-        color: #a65926;
-    }
-    .atv {
-        color: #159393;
-    }
-    .dec {
-        color: #a65926;
-    }
-    .var {
-        color: #ca402b;
-    }
-    .fun {
-        color: #516aec;
-    }
-}
-
-.wiki h2 {
-    cursor: pointer;
-}
-
-.wiki ul {
-    margin-left: 30px;
-    margin-bottom: 20px;
-    list-style: disc;
-}
-
-.wiki ul li {
-    margin-bottom: 5px;
-}
-
-.wiki ul ul {
-    list-style: circle;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}</style>
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i, cb; loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cb = cbs[i]; cb();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();</script>
   </head>
-
-  <body class="body-post">
-  <div class="post-wrapper">
-    <h1 class="post-title"><a href="/blog/2018/04/16/snake.html" title="贪吃蛇AI">贪吃蛇AI</a></h1>
-    <p class="post-date">2018-04-16</p>
-    <html>
+  <body>
+    <div class="m-page-stage js-page-stage">
+      <div class="m-page-content"><header class="m-page-header">
+  <div class="main clearfix">
+    <div class='site-logo'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#666666;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg><a title="Xingyu Su's Personal Github.io
+" href="/">Xingyu Su's blog</a></div>
+    <nav>
+      <ul><li><a href="/">Home</a></li><li><a href="/all.html">Archive</a></li><li><a href="/about.html">About</a></li><li><a type="application/rss+xml" href="/feed.xml">RSS</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="m-page-main"><div class="m-post">
+	<div class="main clearfix js-main">
+		<div class="col-2 js-col-2">
+			<aside class="js-article-aside"><div class="m-toc js-toc"></div></aside>
+		</div>
+		<div class="col-1">
+			<article class="js-article" itemscope itemtype="http://schema.org/BlogPosting">
+				<meta itemprop="mainEntityOfPage" itemscope itemType="https://schema.org/WebPage"/>
+				<header class="main-header"><h1 itemprop="headline" itemprop="name headline">贪吃蛇AI</h1><div class="m-article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Xingyu Su"/></meta><div class="other-wrapper"><div class="date-wrapper"><time class="article-meta" datetime="2018-04-16T00:00:00+08:00"
+          itemprop="datePublished">Apr 16, 2018
+        </time></div>
+  </div>
+</div>
+</header>
+				<div class="m-article-content js-article-content" itemprop="articleBody"><html>
     <body>
         <canvas id="can" width="400" height="400" style="background:Black"></canvas>
         <script>
@@ -754,36 +329,343 @@ li.L9 {
             <p id="score">None</p>
         </div>
     </body>
-</html>
+</html></div>
+				<footer><meta itemprop="dateModified" content="2018-04-16T00:00:00+08:00"></footer>
+			</article>
+			<div class="article-previous-next clearfix"><div class="article-next"><span>NEXT</span><a href="/blog/2018/04/16/Nice-Blog.html">优秀博客链接</a></div></div></div>
+	</div>
+</div></div>
+      </div>
+    </div><div class="m-page-footer js-page-footer">
+  <div class="main">
+    <aside><div class="follow-me"><ul itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Xingyu Su">
+    <link itemprop="url" href="http://localhost:4000/"></ul></div>
+</aside>
+    <footer class="site-info">
+      <p>© Xingyu Su's blog 2018</p>
+      <p>Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a succinct theme for blogging." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.</p>
+    </footer>
   </div>
-  <div class="about-wrapper">
-  <div class="aboutme">
-    <h2><a href="/">所有文章</a></h2>
-    <ul>
-      
-      <li>
-        <a href="/blog/2018/04/16/snake.html" class="title">贪吃蛇AI</a>
-      </li>
-      
-      <li>
-        <a href="/blog/2018/04/16/Nice-Blog.html" class="title">优秀博客链接</a>
-      </li>
-      
-      <li>
-        <a href="/blog/2018/04/16/LearningNote.html" class="title">HTML 学习笔记——与 Markdown 相对应</a>
-      </li>
-      
-      <li>
-        <a href="/blog/2018/04/16/A-Good-Markdown.html" class="title">A Good Markdown</a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
+</div><script>(function () {
+  var $body = document.body;
+  function classnames(classes) {
+    var i, cur, _classes = '';
+    if (window.isString(classes)) {
+      _classes =  classes;
+    } else if (window.isArray(classes)) {
+      for (i = 0; i < classes.length; i++) {
+        cur = classes[i];
+        if (window.isString(cur)) {
+          _classes = _classes.concat(_classes ? ' ' + cur : cur);
+        }
+      }
+    } else {
+      return '';
+    }
+    return _classes;
+  }
+  function addClass(dom, classname) {
+    dom.setAttribute('class', classnames([dom.getAttribute('class'), classname]));
+  }
+  if (window.hasEvent('touchstart')) {
+    addClass($body, 'is-touch');
+    document.addEventListener('touchstart', function(){}, false);
+  } else {
+    addClass($body, 'not-touch');
+  }
+})();</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      sources: {
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  function scrollAnimateTo(destination, duration, callback) {
+    var $body = $('html, body'), bodyScrollTop = $body.scrollTop();
+    if(bodyScrollTop === destination) { return; }
+    $body.animate({ scrollTop: destination }, duration, callback);
+  }
+  window.scrollTopAnchor = function(anchor, callback) {
+    scrollAnimateTo($(anchor).offset().top, 400, function() {
+      window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+      callback && callback();
+    });
+  };
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $articleContent = $('.m-post, .m-page').find('.m-article-content'), $this;
+    $articleContent.children('.highlight').each(function() {
+      $this = $(this);
+      $this.attr('data-lang', $this.find('code').attr('data-lang'));
+    });
 
+    $articleContent.children('h1, h2, h3, h4, h5, h6').each(function() {
+      $this = $(this);
+      $this.append($('<a class="anchor" aria-hidden="true"></a>').html('<svg fill="#000000" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>'));
+    });
+    $articleContent.on('click', '.anchor', function() {
+      window.scrollTopAnchor('#' + $(this).parent().attr('id'));
+    });
+  });
+})();(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $document = $(window.document), $root;
+    var rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop, lastScrollTop;
+    var offsetBottom = 0, disabled = false, hasInit = false;
 
-  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-  <script src="/js/post.js" type="text/javascript"></script>
-</body>
+    function setOptions(options) {
+      var _options = options || {};
+      _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+      _options.disabled !== undefined && (disabled = _options.disabled);
+      calc(true);
+    }
+    function initData() {
+      top();
+      var rootOffset = $root.offset();
+      rootHeight = $root.outerHeight();
+      rootTop = rootOffset.top;
+      rootLeft = rootOffset.left;
+    }
+    function calc(needInitData) {
+      needInitData && initData();
+      scrollBottom = $document.outerHeight() - offsetBottom - rootHeight;
+      rootBottomTop = scrollBottom - rootTop;
+    }
+    function top() {
+      $root.removeClass('fixed').css({
+        left: 0,
+        top: 0
+      });
+    }
+    function fixed() {
+      $root.addClass('fixed').css({
+        left: rootLeft + 'px',
+        top: 0
+      });
+    }
+    function bottom() {
+      $root.removeClass('fixed').css({
+        left: 0,
+        top: rootBottomTop + 'px'
+      });
+    }
+    function setState(force) {
+      force !== true && (force = false);
+      var scrollTop = $window.scrollTop();
+      if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+        (!force && lastScrollTop >= rootTop && lastScrollTop <= scrollBottom) || fixed();
+      } else if (scrollTop < rootTop) {
+        (!force && lastScrollTop < rootTop) || top();
+      } else {
+        (!force && lastScrollTop > scrollBottom) || bottom();
+      }
+      lastScrollTop = scrollTop;
+    }
+    function init() {
+      if(!hasInit) {
+        var interval, timeout;
+        calc(true); setState();
+        // run calc every 1.5 seconds
+        interval = setInterval(function() {
+          calc();
+        }, 1500);
+        timeout = setTimeout(function() {
+          clearInterval(interval);
+        }, 50000);
+        window.pageLoad.then(function() {
+          clearInterval(interval);
+          clearTimeout(timeout);
+        });
+        $window.on('scroll', function() {
+          disabled || setState();
+        });
+        $window.on('resize', window.throttle(function() {
+          disabled || (calc(true), setState(true));
+        }, 100));
+        hasInit = true;
+      }
+    }
 
+    function affix(options) {
+      $root = this;
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $root, $tocUl = $('<ul></ul>'), $tocLi, $headings, $activeLast, $activeCur;
+    var selectors = 'h1,h2,h3', container = 'body', disabled = false;
+    var headingsPos, scrolling = false, rendered = false, hasInit = false;
+    function setOptions(options) {
+      var _options = options || {};
+      _options.selectors && (selectors = _options.selectors);
+      _options.container && (container = _options.container);
+      _options.disabled !== undefined && (disabled = _options.disabled);
+      $headings = $(container).find(selectors);
+      calc();
+    }
+    function calc() {
+      headingsPos = [];
+      $headings.each(function() {
+        headingsPos.push(Math.floor($(this).offset().top));
+      });
+    }
+    function setState(element, disabled) {
+      var scrollTop = $window.scrollTop(), i;
+      if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+      if (element) {
+        $activeCur = element;
+      } else {
+        for (i = 0; i < headingsPos.length; i++) {
+          if (scrollTop >= headingsPos[i]) {
+            $activeCur = $tocLi.eq(i);
+          } else {
+            $activeCur || ($activeCur = $tocLi.eq(i));
+            break;
+          }
+        }
+      }
+      $activeLast && $activeLast.removeClass('toc-active');
+      ($activeLast = $activeCur).addClass('toc-active');
+    }
+    function render() {
+      if(!rendered) {
+        $root.append($tocUl);
+        $headings.each(function() {
+          var $this = $(this);
+          $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+            .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+        });
+        $tocLi = $tocUl.children('li');
+        $tocUl.on('click', 'a', function(e) {
+          e.preventDefault();
+          var $this = $(this);
+          scrolling = true;
+          setState($this.parent());
+          window.scrollTopAnchor($this.attr('href'), function() {
+            scrolling = false;
+          });
+        });
+      }
+      rendered = true;
+    }
+    function init() {
+      var interval, timeout;
+      if(!hasInit) {
+        render(); calc(); setState(null, scrolling);
+        // run calc every 1.5 seconds
+        interval = setInterval(function() {
+          calc();
+        }, 1500);
+        timeout = setTimeout(function() {
+          clearInterval(interval);
+        }, 50000);
+        window.pageLoad.then(function() {
+          clearInterval(interval);
+          clearTimeout(timeout);
+        });
+        $window.on('scroll', function() {
+          disabled || setState(null, scrolling);
+        });
+        $window.on('resize', window.throttle(function() {
+          if (!disabled) {
+            render(); calc(); setState(null, scrolling);
+          }
+        }, 100));
+      }
+      hasInit = true;
+    }
+    function toc(options) {
+      $root = this;
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    toc.setOptions = setOptions;
+    $.fn.toc = toc;
+  });
+})();(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $pageStage = $('.js-page-stage');
+    var $pageFooter = $('.js-page-footer');
+    var $articleContent = $('.js-article-content');
+    var $articleAside = $('.js-article-aside');
+    var $toc = $('.js-toc');
+    var $col2 = $('.js-col-2');
+    var toc, affix;
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+    var tocDisabled = false;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    if (hasToc) {
+      !$pageStage.hasClass('has-toc') && $pageStage.addClass('has-toc');
+    }
+    tocDisabled = disabled();
+
+    setTimeout(function() {
+      toc = $toc.toc({
+        selectors: TOC_SELECTOR,
+        container: $articleContent,
+        disabled: tocDisabled
+      });
+      affix = $articleAside.affix({
+        offsetBottom: $pageFooter.outerHeight(),
+        disabled: tocDisabled
+      });
+    }, 1000);
+  });
+})();</script></body>
 </html>
