@@ -53,6 +53,13 @@
         </a>
       </li>
     {%- endif -%}
+    {%- if site.author.email -%}
+      <li title="{{ __return | replace: '[NAME]', 'Email' }}">
+        <a class="floating-action-round-button email" itemprop="sameAs" href="mailto:{{ site.author.email }}" target="_self">
+          <div class="icon">{%- include svg/icon/social/gmail.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
   </ul>
   {%- if site.author.email -%}
   {%- assign __locale = site.data.locale.EMAIL_ME -%}

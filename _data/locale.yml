@@ -82,10 +82,10 @@ POST_ON_GITHUB:
   zh-Hant: "在 Github 上查閱此文。"
 
 FOLLOW_ME:
-  en:      "Follow me on [NAME]."
-  zh:      "在 [NAME] 上关注我。"
-  zh-Hans: "在 [NAME] 上关注我。"
-  zh-Hant: "在 [NAME] 上關注我。"
+  en:      "Contact me by [NAME]."
+  zh:      "我的 [NAME] 。"
+  zh-Hans: "我的 [NAME] 。"
+  zh-Hant: "我的 [NAME] 。"
 
 EMAIL_ME:
   en:      "Send me Email."
