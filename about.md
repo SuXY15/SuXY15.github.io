@@ -15,7 +15,7 @@ Welcome to my Personal Site! :earth_asia:
 
 I am Xingyu Su, a junior student at Department of Energy and Power Engineering, Tsinghua University, you can know more about me by [click here](/resume.html) to see my resume.
 
-我是苏星宇，清华大学能源与动力工程系大三在读，喜欢捣鼓些有趣的东西，可以[点击此处](/resume.html)看我的中文简历。
+我是苏星宇，清华大学能源与动力工程系大三在读，喜欢捣鼓些有趣的东西，可以[点击此处](/resume_zh.html)看我的中文简历。
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>

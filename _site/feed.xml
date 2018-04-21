@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-04-21T00:45:16+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-04-21T11:23:37+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
 </subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">贪吃蛇AI</title><link href="http://localhost:4000/blog/2018/04/16/snake.html" rel="alternate" type="text/html" title="贪吃蛇AI" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/snake</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/snake.html">&lt;html&gt;
     &lt;body&gt;
         &lt;canvas id=&quot;can&quot; width=&quot;400&quot; height=&quot;400&quot; style=&quot;background:Black&quot;&gt;&lt;/canvas&gt;
@@ -85,8 +85,13 @@
         &lt;/div&gt;
     &lt;/body&gt;
 &lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="blog" /><summary type="html">“回车”切换AI/手动，“空格”暂停/继续，结束自动暂停 None</summary></entry><entry><title type="html">优秀博客链接</title><link href="http://localhost:4000/blog/2018/04/16/Nice-Blog.html" rel="alternate" type="text/html" title="优秀博客链接" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/Nice-Blog</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/Nice-Blog.html">&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://beiyuu.com/css3-animation&quot;&gt;CSS3动画详解: http://beiyuu.com/css3-animation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="blog" /><summary type="html">CSS3动画详解: http://beiyuu.com/css3-animation</summary></entry><entry><title type="html">HTML 学习笔记——与 Markdown 相对应</title><link href="http://localhost:4000/blog/2018/04/16/LearningNote.html" rel="alternate" type="text/html" title="HTML 学习笔记——与 Markdown 相对应" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/LearningNote</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/LearningNote.html">&lt;h2 id=&quot;learningnote&quot;&gt;LearningNote&lt;/h2&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://beiyuu.com/css3-animation&quot;&gt;CSS3动画详解: http://beiyuu.com/css3-animation&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/test/2017/05/05/chart.html&quot;&gt;Markdown 的Chart 功能: TeXt - Chart&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="blog" /><summary type="html">CSS3动画详解: http://beiyuu.com/css3-animation Markdown 的Chart 功能: TeXt - Chart</summary></entry><entry><title type="html">HTML 学习笔记——与 Markdown 相对应</title><link href="http://localhost:4000/blog/2018/04/16/LearningNote.html" rel="alternate" type="text/html" title="HTML 学习笔记——与 Markdown 相对应" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/2018/04/16/LearningNote</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/16/LearningNote.html">&lt;h2 id=&quot;learningnote&quot;&gt;LearningNote&lt;/h2&gt;
 &lt;h3 id=&quot;scripts&quot;&gt;Scripts&lt;/h3&gt;
 &lt;h4 id=&quot;higlights&quot;&gt;Higlights&lt;/h4&gt;
 
