@@ -8,7 +8,7 @@ default:
   lang: zh
   sources: bootcss
   toc:
-    selectors: 'h1,h2,h3'
+    selectors: 'h1,h2,h3,h4'
 
 sources:
   bootcss:

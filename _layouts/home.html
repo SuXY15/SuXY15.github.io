@@ -23,11 +23,11 @@ titles:
               {{ post.excerpt | strip_html | truncate: 200 }}
             {%- endif -%}
           </div>
-          {%- assign __path = post.url -%}
+          <!-- {%- assign __path = post.url -%}
           {%- include snippets/prepend-baseurl.html -%}
           {%- assign __locale = site.data.locale.READMORE -%}
           {%- include snippets/locale-to-string.html -%}
-          <a href="{{ href }}">{{ __return }}</a>
+          <a href="{{ href }}">{{ __return }}</a> -->
           {%- include article-info.html -%}
         </article>
       {%- endfor -%}
