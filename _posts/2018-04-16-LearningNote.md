@@ -1,8 +1,11 @@
 ---
 layout:      post
 title:       HTML 学习笔记——与 Markdown 相对应
-category:    blog
-description: Scripts / HtmlElements
+excerpt:     Scripts / HtmlElements
+tags:
+  - Html
+  - Markdown
+  - Learning
 modify_date: 2018-04-21
 ---
 
