@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'jdcompany';
+    src:url('/static/font/jdcompany.eot?-2xm12w');
+    src:url('/static/font/jdcompany.eot?#iefix-2xm12w') format('embedded-opentype'),
+        url('/static/font/jdcompany.woff?-2xm12w') format('woff'),
+        url('/static/font/jdcompany.ttf?-2xm12w') format('truetype'),
+        url('/static/font/jdcompany.svg?-2xm12w#jdcompany') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="jdc-"], [class*=" jdc-"] {
+    font-family: 'jdcompany';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.jdc-arrow-forward:before {
+    content: "\e60d";
+}
+.jdc-star:before {
+    content: "\e60e";
+}
+.jdc-heart:before {
+    content: "\e60f";
+}
+.jdc-refresh:before {
+    content: "\e616";
+}
+.jdc-arrow-sync:before {
+    content: "\e617";
+}
+.jdc-arrow-forward-outline:before {
+    content: "\e610";
+}
+.jdc-message:before {
+    content: "\e61e";
+}
+.jdc-image-outline:before {
+    content: "\e61f";
+}
+.jdc-star-outline:before {
+    content: "\e611";
+}
+.jdc-mail:before {
+    content: "\e620";
+}
+.jdc-heart-outline:before {
+    content: "\e612";
+}
+.jdc-flash-outline:before {
+    content: "\e622";
+}
+.jdc-eye-outline:before {
+    content: "\e623";
+}
+.jdc-arrow-sync-outline:before {
+    content: "\e618";
+}
+.jdc-flow-merge:before {
+    content: "\e621";
+}
+.jdc-lightbulb:before {
+    content: "\e624";
+}
+.jdc-coffee:before {
+    content: "\e613";
+}
+.jdc-messages:before {
+    content: "\e614";
+}
+.jdc-refresh2:before {
+    content: "\e619";
+}
+.jdc-bubble:before {
+    content: "\e615";
+}
+.jdc-refresh3:before {
+    content: "\e61a";
+}
+.jdc-360:before {
+    content: "\e600";
+}
+.jdc-jobdeer:before {
+    content: "\e601";
+}
+.jdc-sina2:before {
+    content: "\e602";
+}
+.jdc-sina:before {
+    content: "\e603";
+}
+.jdc-baidu:before {
+    content: "\e604";
+}
+.jdc-arrow-up-thick:before {
+    content: "\e605";
+}
+.jdc-arrow-up-outline:before {
+    content: "\e606";
+}
+.jdc-spinner:before {
+    content: "\e61b";
+}
+.jdc-arrow-up:before {
+    content: "\e607";
+}
+.jdc-arrow-down:before {
+    content: "\e608";
+}
+.jdc-feed:before {
+    content: "\e62a";
+}
+.jdc-dribbble:before {
+    content: "\e625";
+}
+.jdc-github:before {
+    content: "\e626";
+}
+.jdc-sound:before {
+    content: "\e627";
+}
+.jdc-sound-alt:before {
+    content: "\e628";
+}
+.jdc-soundoff:before {
+    content: "\e629";
+}
+.jdc-rss:before {
+    content: "\e62b";
+}
+.jdc-cycle:before {
+    content: "\e61c";
+}
+.jdc-retweet:before {
+    content: "\e61d";
+}
+.jdc-arrow-left:before {
+    content: "\e609";
+}
+.jdc-arrow-down2:before {
+    content: "\e60a";
+}
+.jdc-arrow-up2:before {
+    content: "\e60b";
+}
+.jdc-arrow-right:before {
+    content: "\e60c";
+}
