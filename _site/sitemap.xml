@@ -35,7 +35,13 @@
 <loc>http://localhost:4000/all.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/download.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/record.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/resume.html</loc>
