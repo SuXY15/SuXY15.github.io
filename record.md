@@ -17,15 +17,18 @@ key: page-record
 
 ### COST
 
-| Time                     | Description                                                  | Cost      |
-| :----------------------- | :----------------------------------------------------------- | :-------- |
-| 2018-06-29 -> 2018-09-01 | :airplane: :tickets: Airplane Tickets                        | ¥5363     |
-| 2018-06-29               | 🚕 Taxi ¥129/2 + 🍿KFC ¥78.5/2                                 | ¥103.75   |
-| 2018-06-29 -> 2018-08-31 | :house: :potable_water: :sleeping_bed: Apartment $710*2/2    | $710      |
-| 2018-06-29 -> 2018-08-31 | :signal_strength: :electric_plug: Network $43*2/2, Electricity __(to confirm)__ | $43       |
-| 2018-06-30               | :pizza: :green_salad: :tropical_drink:  Lunch @NOSH $22.96/2 | $11.48    |
-| 2018-07-01               | :milk_glass: :bread: :baguette_bread: Trash Bag, Chip, Dr.Peper, Bread, Chicken, Milk, Shampoo @Kroger $32.48 | $16.24    |
-| 2018-07-01               | :watermelon:  :bread: Pillow, Blanket, Cups, Plate & Bowls @Super$\cdot$Target $78.44/2 | $39.22    |
-| 2018-07-01               | Pot, Knife, Spoon, Dumpling, Chili, Leek buns, Rice, Noodle @LiMing's Global Market $70.21/2 | $35.11    |
-| Total Count              | ¥5466.75 + \$812.05 ($\approx$ ¥5335.17) = ¥10801.92         | ¥10801.92 |
+| Time                     | Description                                                  | Cost    |
+| :----------------------- | :----------------------------------------------------------- | :------ |
+| 2018-06-29 -> 2018-09-01 | :airplane: :tickets: Airplane Tickets                        | ¥5363   |
+| 2018-06-29               | 🚕 Taxi ¥129/2 + 🍿KFC ¥78.5/2                                 | ¥103.75 |
+| 2018-06-29 -> 2018-08-31 | :house: :potable_water: :sleeping_bed: Apartment $710*2/2    | $710    |
+| 2018-06-29 -> 2018-08-31 | :signal_strength: :electric_plug: Network $43*2/2, Electricity __(to confirm)__ | $43     |
+| 2018-06-30               | :pizza: :green_salad: :tropical_drink:  Lunch __@NOSH__ $22.96/2 | $11.48  |
+| 2018-07-01               | :milk_glass: :bread: :baguette_bread: Trash Bag, Chip, Dr.Peper, Bread, Chicken, Milk, Shampoo __@Kroger__ $32.48/2 | $16.24  |
+| 2018-07-01               | :watermelon:  :bread: Pillow, Blanket, Cups, Plate & Bowls __@Super$\cdot$Target__ $78.44/2 | $39.22  |
+| 2018-07-01               | Pot, Knife, Spoon, Dumpling, Chili, Leek buns, Rice, Noodle __@LiMing's Global Market__ $70.21/2 | $35.11  |
+| 2018-07-02               | :tomato:, :potato:, :carrot:, :chicken:, Bacon, Vinegar, Oil __@Kroger__ $38.12/2 | $19.06  |
+| 2018-07-04               | 🚕 (15.61+20.82)/3 :cinema: @**South Point** $28.02/3         | $21.48  |
+| 2018-07-05               | :milk_glass:, :egg:, :mushroom:, :banana: , 🍊, Pork, Lunchmeat, Orange Juice __@Kroger__ $33.80/2 | $16.90  |
+| Total Count              | ¥5466.75 + \$869.49    | ¥11270.07 |
 
