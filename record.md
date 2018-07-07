@@ -25,10 +25,14 @@ key: page-record
 | 2018-06-29 -> 2018-08-31 | :signal_strength: :electric_plug: Network $43*2/2, Electricity __(to confirm)__ | $43     |
 | 2018-06-30               | :pizza: :green_salad: :tropical_drink:  Lunch __@NOSH__ $22.96/2 | $11.48  |
 | 2018-07-01               | :milk_glass: :bread: :baguette_bread: Trash Bag, Chip, Dr.Peper, Bread, Chicken, Milk, Shampoo __@Kroger__ $32.48/2 | $16.24  |
-| 2018-07-01               | :watermelon:  :bread: Pillow, Blanket, Cups, Plate & Bowls __@Super$\cdot$Target__ $78.44/2 | $39.22  |
+| 2018-07-01               | 🍉  🍞 Pillow, Blanket, Cups, Plate & Bowls __@Super$\cdot$Target__ $78.44/2 | $39.22  |
 | 2018-07-01               | Pot, Knife, Spoon, Dumpling, Chili, Leek buns, Rice, Noodle __@LiMing's Global Market__ $70.21/2 | $35.11  |
 | 2018-07-02               | :tomato:, :potato:, :carrot:, :chicken:, Bacon, Vinegar, Oil __@Kroger__ $38.12/2 | $19.06  |
 | 2018-07-04               | 🚕 (15.61+20.82)/3 :cinema: @**South Point** $28.02/3         | $21.48  |
 | 2018-07-05               | :milk_glass:, :egg:, :mushroom:, :banana: , 🍊, Pork, Lunchmeat, Orange Juice __@Kroger__ $33.80/2 | $16.90  |
-| Total Count              | ¥5466.75 + \$869.49    | ¥11270.07 |
+| 2018-07-07              | Wax Paper __@Walmart__ \$1.59/2; Sauce, Shrimp, Meatballs, Kung Pao Chicken __@Trader Joe's__ \$16.99/2; :bread: __@Super$\cdot$Target__ \$13.24/2 | $15.91 |
+| 2018-07-07              | :eggplant: , :tomato:, 🍄, :hot_pepper: , :meat_on_bone: , Preserved Eggs, Laver Soup, Sauce, ,Rice Ball, Dumplins, __@LiMing's Global Market__ $44.04/2 | $22.02 |
+| 2018-07-07              | Ketchup, Garlic, Ginger __@Whole Foods__ $8.49/2 | $4.245 |
+|               |  |   |
+| Total Count              | ¥5466.75 + \$911.665 _($158.665 Flow)_ | ¥11551.57 |
 
