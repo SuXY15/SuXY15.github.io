@@ -33,6 +33,7 @@ key: page-record
 | 2018-07-07              | Wax Paper __@Walmart__ \$1.59/2; Sauce, Shrimp, Meatballs, Kung Pao Chicken __@Trader Joe's__ \$16.99/2; :bread: __@Super$\cdot$Target__ \$13.24/2 | $15.91 |
 | 2018-07-07              | :eggplant: , :tomato:, 🍄, :hot_pepper: , :meat_on_bone: , Preserved Eggs, Laver Soup, Sauce, ,Rice Ball, Dumplins, __@LiMing's Global Market__ $44.04/2 | $22.02 |
 | 2018-07-07              | Ketchup, Garlic, Ginger __@Whole Foods__ $8.49/2 | $4.245 |
-|               |  |   |
-| Total Count              | ¥5466.75 + \$911.665 _($158.665 Flow)_ | ¥11551.57 |
+| 2018-07-09 | :eggplant:, :potato:, :peach:, :egg:, :bacon: , :milk_glass:, Onion, Orange Juice __@Kroger__ $27.96/2 | $13.98 |
+| 2018-07-11 | :rice:, :bread:, Starch, Sugar, Flat pie __@Whole Foods__ $21.55/2 | $10.775 |
+| Total Count              | ¥5466.75 + \$934.62 _($183.42 Flow)_ | ¥11704.78<br>（_¥1224.22_） |
 
