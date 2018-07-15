@@ -35,5 +35,7 @@ key: page-record
 | 2018-07-07              | Ketchup, Garlic, Ginger __@Whole Foods__ $8.49/2 | $4.245 |
 | 2018-07-09 | :eggplant:, :potato:, :peach:, :egg:, :bacon: , :milk_glass:, Onion, Orange Juice __@Kroger__ $27.96/2 | $13.98 |
 | 2018-07-11 | :rice:, :bread:, Starch, Sugar, Flat pie __@Whole Foods__ $21.55/2 | $10.775 |
-| Total Count              | ¥5466.75 + \$934.62 _($183.42 Flow)_ | ¥11704.78<br>（_¥1224.22_） |
+| 2018-07-13 | :chicken:, :ice_cream:, :milk_glass:, BBQ, Orange Juice __@Whole Foods__ $14.57/2 | $7.285 |
+| 2018-07-14 | Salt & Pepper, Grocery Tinfoil __@Kroger__ $2.93/2 | $1.465 |
+| Total Count              | ¥5466.75 + \$943.37 _($192.17 Flow)_ | ¥11763.18<br>（_¥1282.62_） |
 
