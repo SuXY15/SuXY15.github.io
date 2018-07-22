@@ -37,7 +37,11 @@ key: page-record
 | 2018-07-11 | :rice:, :bread:, Starch, Sugar, Flat pie __@Whole Foods__ $21.55/2 | $10.775 |
 | 2018-07-13 | :chicken:, :ice_cream:, :milk_glass:, BBQ, Orange Juice __@Whole Foods__ $14.57/2 | $7.285 |
 | 2018-07-14 | Salt & Pepper, Grocery Tinfoil __@Kroger__ $2.93/2 | $1.465 |
-| Total Count              | ¥5466.75 + \$943.37 _($192.17 Flow)_ | ¥11763.18<br>（_¥1282.62_） |
+| 2018-07-15 | :pineapple:, :kiwi_fruit:, Olive oil, Nut, Grill tray, Lipton Tea __@Sam's Club__ \$ 76.65/2<br />:bread:, Towel __@Super $\cdot$ Target__ \$16.99/2<br />:mushroom: ,:potato: , :hot_pepper:, Spareribs, Lotus roots, Black fungus, Sesame Rice, Tofu __@LiMing's Global Mart__ \$30.91/2 | $62.275 |
+| 2018-07-20 | :eggplant:, :tomato:, :hot_pepper:, Soy, Sausage __@Harris Teeter__ \$12.93/2<br />:potato:, :rice:, :shrimp:, Orange Juice, Scallion __@Whole Foods__ \$26.00/2 | $19.465 |
+|  |  |  |
+|               |  |  |
+| Total Count              | ¥5466.75 + \$1025.11 _($273.91 Flow)_ | ¥12308.74<br>（_¥1828.18_） |
 
 ### 菜谱
 
@@ -47,7 +51,9 @@ key: page-record
 
 肉末茄子、烤鸡翅、炒菜花、土豆丝卷饼、麻婆豆腐；
 
-烤菠萝、皮蛋廋肉粥、香菇豆腐紫菜饼皮汤；
+烤菠萝、皮蛋廋肉粥、饼皮汤，土豆炖排骨，木耳炒肉；
+
+
 
 
 
