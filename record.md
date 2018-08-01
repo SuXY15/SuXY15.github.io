@@ -41,19 +41,18 @@ key: page-record
 | 2018-07-20 | :eggplant:, :tomato:, :hot_pepper:, Soy, Sausage __@Harris Teeter__ \$12.93/2<br />:potato:, :rice:, :shrimp:, Orange Juice, Scallion __@Whole Foods__ \$26.00/2 | $19.465 |
 | 2018-07-23 | Oreo, Turner, Lunch Box, Steak Pot, Toothpaste __@Dollar General__ \$ 19.99/2<br/>:milk_glass:, :droplet:, :bacon:, Pork, Sauce, Onions __@Kroger__ \$26.71/2 | $23.35 |
 | 2018-07-24 | :carrot:, :hot_pepper:, :rice:, Cooking Wine, Seasame Oil, Green Onion __@LiMing's Global Mart__ \$22.44/2 | $11.22 |
-| Total Count              | ¥5466.75 + \$1059.68 | $349.68 Flow |
+| 2018-07-31    | :hot_pepper:, :potato:, :peanuts:, :eggplant:, :egg:, Tofu, Garlic, Radish, Vegetable, Pork, Steak, Spareribs, Meat special, Soymilk, Rice ball, Dumplings, Soy bean paste, Lo mein, Pie, Okra __@Li Ming's Global Mart__ \$58.02/2 | $29.01 |
+| 2018-07-31    | :shrimp:, :plate_with_cutlery:, :milk_glass:, :strawberry:, :kiwi_fruit:, Chicken, Sauce, Plums, Orange Juice, Nuts __@Super $\cdot$ Target__  \$52.38/2 | $26.19 |
+| Total Count              | ¥5466.75 + \$1114.88 | $404.88 Flow |
 
 ### 菜谱
 
-西红柿炒蛋、炒土豆丝、香菇炒肉、地三鲜、鸡蛋羹；
+__素菜汇总：__西红柿炒蛋、地三鲜、鸡蛋羹、炒菜花、麻婆豆腐、__辣炒藕片__、__蒜蓉青菜__
 
-红烧排骨、红烧鸡翅、炸香蕉、炒土豆片、辣椒炒肉；
+__肉食汇总：__香菇炒肉、木耳炒肉、洋葱炒肉、__辣椒炒肉__、肉末茄子、红烧排骨、红烧鸡翅、__葱爆虾仁__、烤鸡翅
 
-肉末茄子、烤鸡翅、炒菜花、土豆丝卷饼、麻婆豆腐；
+__土豆专栏：__炒土豆丝、炒土豆片、__土豆丝卷饼__、土豆炖排骨
 
-烤菠萝、皮蛋廋肉粥、饼皮汤，土豆炖排骨，木耳炒肉；
+__水果专栏：__炸香蕉、烤菠萝、
 
-葱爆虾仁、茄丁面、
-
-
-
+__主食专栏：__菠萝饭、皮蛋瘦肉粥、饼皮汤、土豆焖饭、茄丁面、臊子面
