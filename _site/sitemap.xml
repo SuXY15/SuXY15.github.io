@@ -29,6 +29,14 @@
 <lastmod>2018-06-23T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2018/08/01/Google-Map-API.html</loc>
+<lastmod>2018-08-01T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018/08/01/HighCharts.html</loc>
+<lastmod>2018-08-01T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about.html</loc>
 </url>
 <url>
@@ -51,5 +59,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/temp.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/blog/page2/</loc>
 </url>
 </urlset>
