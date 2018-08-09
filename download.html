@@ -49,18 +49,16 @@ key:     page-download
                         flag = "root";
                         dialog.dialog("close")
                     }else{
-                        dialog.dialog("close")
                         history.go(-1);
                     }
                 },
                 Cancel: function() {
-                    dialog.dialog("exit")                }
+                    history.go(-1);
+                    dialog.dialog("close")
+                }
             },
             close: function() {
-                allFields.removeClass( "ui-state-error" );
-            }
-            exit: function() {
-                history.go(-1);
+                // history.go(-1);
                 allFields.removeClass( "ui-state-error" );
             }
         });
