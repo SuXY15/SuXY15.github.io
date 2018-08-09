@@ -44,10 +44,10 @@ key:     page-download
                 Confirm: function() {
                     allFields.removeClass( "ui-state-error" );
                     if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                        dialog.dialog("close")
+                        allFields.removeClass( "ui-state-error" );
                     }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
                         flag = "root";
-                        dialog.dialog("close")
+                        allFields.removeClass( "ui-state-error" );
                     }else{
                         history.go(-1);
                     }
@@ -58,8 +58,8 @@ key:     page-download
                 }
             },
             close: function() {
-                // history.go(-1);
                 allFields.removeClass( "ui-state-error" );
+                history.go(-1);
             }
         });
         dialog.dialog( "open" );
