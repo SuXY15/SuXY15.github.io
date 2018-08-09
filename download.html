@@ -22,6 +22,9 @@ key:     page-download
         div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
         .ui-dialog .ui-state-error { padding: .3em; }
         .validateTips { border: 1px solid transparent; padding: 0.3em; }
+        .my-dialog .ui-dialog-titlebar-close{
+            display: none;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -32,37 +35,32 @@ key:     page-download
         var dialog;
         var username = $( "#username" );
         var password = $( "#password" );
-        var allFields = $( [] ).add( username ).add( password );
         var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
         var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
         dialog = $( "#dialog-form" ).dialog({
-            autoOpen: false,
+            autoOpen: true,
             height: 350,
             width: 350,
+            dialogClass: "my-dialog",
             modal: true,
             buttons: {
                 Confirm: function() {
-                    allFields.removeClass( "ui-state-error" );
                     if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                        allFields.removeClass( "ui-state-error" );
+                        $(this).dialog("close");
                     }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
                         flag = "root";
-                        allFields.removeClass( "ui-state-error" );
+                        $(this).dialog("close");
                     }else{
-                        history.go(-1);
+                        window.location.href='http://suxy15.github.io';
+                        $(this).dialog("close");
                     }
                 },
                 Cancel: function() {
-                    history.go(-1);
-                    dialog.dialog("close")
+                    window.location.href='http://suxy15.github.io';
+                    $(this).dialog("close");
                 }
             },
-            close: function() {
-                allFields.removeClass( "ui-state-error" );
-                history.go(-1);
-            }
         });
-        dialog.dialog( "open" );
     });
     </script>
 </head>
