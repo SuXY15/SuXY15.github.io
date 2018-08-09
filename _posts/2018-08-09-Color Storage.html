@@ -1,5 +1,5 @@
 ---
-layout:      post
+layout:      mypost
 title:       Color Storage
 excerpt:     JavaScript / Colors
 tags:
@@ -9,89 +9,128 @@ modify_date: 2018-08-09
 
 <html>
 <head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    
+    <style>
+    #slider{
+        float: left;
+        clear: left;
+        width: 200px;
+        margin:  0px;
+    }
+    #slider .ui-slider-range { background: 'rgb(177,150,147)'; }
+    #slider .ui-slider-handle { border-color: 'rgb(177,150,147)'; }
+    </style>
+    
     <script language="JavaScript">
-        var width = 20, height = 20;
+        var width = 200, height = 20;
         var data = [['comfortable   ', ''                ],
-
-                    ['comfortable_00', 'rgb( 25,202,173)'],
-                    ['comfortable_01', 'rgb(140,199,181)'],
-                    ['comfortable_02', 'rgb(160,238,225)'],
-                    ['comfortable_03', 'rgb(190,231,233)'],
-                    ['comfortable_04', 'rgb(190,237,199)'],
-                    ['comfortable_05', 'rgb(214,213,183)'],
-                    ['comfortable_06', 'rgb(209,186,116)'],
-                    ['comfortable_07', 'rgb(230,206,172)'],
-                    ['comfortable_08', 'rgb(236,173,158)'],
-                    ['comfortable_09', 'rgb(244, 96,108)'],
+                    ['comfortable   ', 'rgb( 25,202,173)'],
+                    ['comfortable   ', 'rgb(140,199,181)'],
+                    ['comfortable   ', 'rgb(160,238,225)'],
+                    ['comfortable   ', 'rgb(190,231,233)'],
+                    ['comfortable   ', 'rgb(190,237,199)'],
+                    ['comfortable   ', 'rgb(214,213,183)'],
+                    ['comfortable   ', 'rgb(209,186,116)'],
+                    ['comfortable   ', 'rgb(230,206,172)'],
+                    ['comfortable   ', 'rgb(236,173,158)'],
+                    ['comfortable   ', 'rgb(244, 96,108)'],
 
                     ['elegant       ', ''                ],
-
-                    ['elegant_01    ', 'rgb(254, 67,101)'],
-                    ['elegant_02    ', 'rgb(252,157,154)'],
-                    ['elegant_03    ', 'rgb(249,205,173)'],
-                    ['elegant_04    ', 'rgb(200,200,169)'],
-                    ['elegant_05    ', 'rgb(131,175,155)'],
+                    ['elegant       ', 'rgb(254, 67,101)'],
+                    ['elegant       ', 'rgb(252,157,154)'],
+                    ['elegant       ', 'rgb(249,205,173)'],
+                    ['elegant       ', 'rgb(200,200,169)'],
+                    ['elegant       ', 'rgb(131,175,155)'],
 
                     ['Nippon Colors ', ''                ],
-
                     [' 紅緋          ', 'rgb(247, 92, 47)'],
                     [' 桑染          ', 'rgb(100, 54, 60)'],
                     [' 黄蘗          ', 'rgb(251,226, 81)'],
                     [' 柳染          ', 'rgb(145,173,112)'],
                     [' 紺青          ', 'rgb( 17, 50,133)'],
-                    [' 新橋          ', "rgb(  0,137,167)"],
+                    [' 新橋          ', 'rgb(  0,137,167)'],
                     [' 桜鼠          ', 'rgb(177,150,147)'],
                     [' 躑躅          ', 'rgb(224, 60,138)'],
-                    ['Matlab Default', ''                ],
+
+                    ['Matlab Default', ''                            ],
                     ['Matlab Default', 'rgb(  0.000,113.985,188.955)'],
                     ['Matlab Default', 'rgb(216.750, 82.875, 24.990)'],
                     ['Matlab Default', 'rgb(236.895,176.970, 31.875)'],
                     ['Matlab Default', 'rgb(125.970, 46.920,141.780)'],
                     ['Matlab Default', 'rgb(118.830,171.870, 47.940)'],
                     ['Matlab Default', 'rgb( 76.755,189.975,237.915)'],
-                    ['Matlab Default', 'rgb(161.925, 19.890, 46.920)'],]
+                    ['Matlab Default', 'rgb(161.925, 19.890, 46.920)'],];
     </script>
 </head>
 
-<body>
+<body class="ui-widget-content" style="border:0;">
+    <div id="slider"></div>
     <div id='content'><div id='bottom'></div></div>
     <script language="JavaScript">
-    var bottom = document.getElementById('bottom')
-    var content = document.getElementById('content')
-    var title = '';
-    for(var i=0; i<data.length; i++){
-        var div = document.createElement('div');
-        var can = document.createElement('canvas');
-        if(data[i][1].length){
-            var text = ' '+data[i][1]+ (data[i][0].charAt(0)==' '?data[i][0]:'');
-            var txt = document.createElement('span');
-            txt.appendChild(document.createTextNode(text))
-            txt.style.fontFamily='monospace';
-            txt.style.whiteSpace='pre';
-        }else{
-            var txt = document.createElement('h3');
-            txt.appendChild(document.createTextNode(data[i][0]))
-            txt.style.fontFamily='楷体';
+        function refresh(){
+            var width = $( "#slider" ).slider( "value" );
+            for(var i=0; i<data.length; i++){
+                if(data[i][1].length){
+                    var can = document.getElementById(data[i][0]+i);
+                    can.width = width;
+                    can.height = height;
+                    draw(can.getContext("2d"),data[i][1]);
+                }
+            }
         }
+        $(function() {
+            $( "#slider" ).slider({
+                orientation: "horizontal",
+                range: "min",
+                max: 200,
+                value: 20,
+                slider: refresh,
+                change: refresh,
+            });
+            $( "#slider" ).slider( "value", 20 );
+        });
+        
+        var bottom = document.getElementById('bottom')
+        var content = document.getElementById('content')
+        var title = '';
+        for(var i=0; i<data.length; i++){
+            var div = document.createElement('div');
+            var can = document.createElement('canvas');
+            if(data[i][1].length){
+                var text = ' '+data[i][1]+ (data[i][0].charAt(0)==' '?data[i][0]:'');
+                var txt = document.createElement('span');
+                txt.appendChild(document.createTextNode(text))
+                txt.style.fontFamily='monospace';
+                txt.style.whiteSpace='pre';
+                txt.style.fontSize = height-4+'px';
+            }else{
+                var txt = document.createElement('h3');
+                txt.appendChild(document.createTextNode(data[i][0]))
+                txt.style.fontFamily='楷体';
+            }
+            txt.id = data[i][0]+'txt'+i;
+            can.id = data[i][0]+i;
+            can.width = width;
+            can.height = height;
 
-        can.id = data[i][0]+i;
-        can.width = width;
-        can.height = height;
+            div.appendChild(can);
+            div.appendChild(txt);
 
-        div.appendChild(can);
-        div.appendChild(txt);
-
-        content.insertBefore(div,bottom);
-    }
-    
-    function draw(ctx, color){
-        ctx.fillStyle=color;
-        ctx.fillRect(1,1,width-2,height-2);
-    }
-    
-    for(var i=0; i<data.length; i++)
-        if(data[i][1].length)
-            draw(document.getElementById(data[i][0]+i).getContext("2d"),data[i][1])
+            content.insertBefore(div,bottom);
+        }
+        
+        function draw(ctx, color){
+            ctx.fillStyle=color;
+            ctx.fillRect(0,0,width,height);
+        }
+        
+        for(var i=0; i<data.length; i++)
+            if(data[i][1].length)
+                draw(document.getElementById(data[i][0]+i).getContext("2d"),data[i][1])
     </script>
 </body>
 
