@@ -8,24 +8,81 @@ key:     page-download
 <html>
 
 <head>
-    <script language = JavaScript>
-    function password() {
-        var wrongTimeCount = 0;
-        var passwd = prompt('Password is needed:', '');
-        while (testV < 3) {
-            if (!passwd) history.go(-1);
-            if (passwd == "123456") break;
-            wrongTimeCount += 1;
-            var pass1 = prompt('Error! Retype please:');
-        }
-        if (testV == 3) history.go(-1);
-        return " ";
-    }
-    document.write(password());
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Modal form</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        label, input { display:block; }
+        input.text { margin-bottom:12px; width:95%; padding: .4em; }
+        fieldset { padding:0; border:0; margin-top:25px; }
+        h1 { font-size: 1.2em; margin: .6em 0; }
+        div#users-contain { width: 350px; margin: 20px 0; }
+        div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+        div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+        .ui-dialog .ui-state-error { padding: .3em; }
+        .validateTips { border: 1px solid transparent; padding: 0.3em; }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type = "text/ecmascript" src="assets/js/md5.js"></script>
+    <script type = "text/ecmascript" src="/assets/js/md5.js"></script>
+    <script type = "text/javaScript">
+    $( function() {
+        var dialog;
+        var username = $( "#username" );
+        var password = $( "#password" );
+        var allFields = $( [] ).add( username ).add( password );
+        var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
+        var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
+        dialog = $( "#dialog-form" ).dialog({
+            autoOpen: false,
+            height: 350,
+            width: 350,
+            modal: true,
+            buttons: {
+                Confirm: function() {
+                    allFields.removeClass( "ui-state-error" );
+                    if (username.val() == "share" && hex_md5(password.val()) == normwd.replace(/\s+/g,"")){
+                        dialog.dialog("close")
+                    }else if (username.val() == "root" && hex_md5(password.val()) == rootwd.replace(/\s+/g,"")){
+                        flag = "root";
+                        dialog.dialog("close")
+                    }else{
+                        history.go(-1);
+                    }
+                },
+                Cancel: function() {
+                    history.go(-1);
+                    dialog.dialog("close")
+                }
+            },
+            close: function() {
+                history.go(-1);
+                allFields.removeClass( "ui-state-error" );
+            }
+        });
+        dialog.dialog( "open" );
+    });
     </script>
 </head>
 
 <body>
+    <div id="dialog-form" title="Password required">
+        <p class="validateTips">Username and Password are required.</p>
+        <form>
+            <fieldset>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" value="share" class="text ui-widget-content ui-corner-all">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="1357924680" class="text ui-widget-content ui-corner-all">
+                
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+    
     <div class="page-content">
         <a href="/assets/downloads/0809_Xingyu_Research Progress.pptx">0809</a>
     </div> <!-- .page-content -->
