@@ -1,0 +1,34 @@
+--- 
+layout:  base
+title:   Download Page
+key:     page-download
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script language = JavaScript>
+    function password() {
+        var wrongTimeCount = 0;
+        var passwd = prompt('Password is needed:', '');
+        while (testV < 3) {
+            if (!passwd) history.go(-1);
+            if (passwd == "123456") break;
+            wrongTimeCount += 1;
+            var pass1 = prompt('Error! Retype please:');
+        }
+        if (testV == 3) history.go(-1);
+        return " ";
+    }
+    document.write(password());
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <a href="/assets/downloads/0809_Xingyu_Research Progress.pptx">0809</a>
+    </div> <!-- .page-content -->
+</body>
+
+</html>
