@@ -7,9 +7,7 @@ tags:
 modify_date: 2018-08-09
 ---
 
-<!DOCTYPE html>
 <html>
-
 <head>
     <script language="JavaScript">
         var width = 20, height = 20;
@@ -51,19 +49,15 @@ modify_date: 2018-08-09
                     ['Matlab Default', 'rgb(125.970, 46.920,141.780)'],
                     ['Matlab Default', 'rgb(118.830,171.870, 47.940)'],
                     ['Matlab Default', 'rgb( 76.755,189.975,237.915)'],
-                    ['Matlab Default', 'rgb(161.925, 19.890, 46.920)'],
-                    ]
-                    
+                    ['Matlab Default', 'rgb(161.925, 19.890, 46.920)'],]
     </script>
-    <style type="text/css">
-    .txt_class{vertical-align: middle;}
-    </style>
 </head>
 
 <body>
-    <div id='bottom'> </div>
+    <div id='content'><div id='bottom'></div></div>
     <script language="JavaScript">
     var bottom = document.getElementById('bottom')
+    var content = document.getElementById('content')
     var title = '';
     for(var i=0; i<data.length; i++){
         var div = document.createElement('div');
@@ -87,7 +81,7 @@ modify_date: 2018-08-09
         div.appendChild(can);
         div.appendChild(txt);
 
-        document.body.insertBefore(div,bottom);
+        content.insertBefore(div,bottom);
     }
     
     function draw(ctx, color){
