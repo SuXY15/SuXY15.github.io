@@ -43,9 +43,9 @@ key:     page-download
             buttons: {
                 Confirm: function() {
                     allFields.removeClass( "ui-state-error" );
-                    if (username.val() == "share" && hex_md5(password.val()) == normwd.replace(/\s+/g,"")){
+                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
                         dialog.dialog("close")
-                    }else if (username.val() == "root" && hex_md5(password.val()) == rootwd.replace(/\s+/g,"")){
+                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
                         flag = "root";
                         dialog.dialog("close")
                     }else{
