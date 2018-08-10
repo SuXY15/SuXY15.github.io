@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Download Page - Xingyu Su's Github.io</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Download - Xingyu Su's Github.io</title>
 <meta name="description" content="Xingyu Su's Personal Github.io
 ">
 <link rel="canonical" href="http://localhost:4000/download.html"><link rel="alternate" type="application/rss+xml" title="Xingyu Su's Github.io" href="http://localhost:4000/feed.xml">
@@ -223,27 +223,13 @@
     </nav>
   </div>
 </header>
-<div class="m-page-main"><div class="m-post">
-	<div class="main clearfix js-main">
-		<div class="col-2 js-col-2">
-			<aside class="js-article-aside"><div class="m-toc js-toc"></div></aside>
-		</div>
-		<div class="col-1">
-			<article class="js-article" itemscope itemtype="http://schema.org/BlogPosting">
-				<meta itemprop="mainEntityOfPage" itemscope itemType="https://schema.org/WebPage"/>
-				<header class="main-header"><h1 itemprop="headline" itemprop="name headline">Download Page</h1><div class="m-article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Xingyu Su"/></meta><div class="other-wrapper"><div class="date-wrapper"><time class="article-meta" datetime=""
-          itemprop="datePublished">
-        </time></div>
-  </div>
-</div>
-</header>
-				<div class="m-article-content js-article-content" itemprop="articleBody"><!DOCTYPE html>
-<html>
+<div class="m-page-main"><div class="m-page">
+  <article class="main"><div class="main-header"><h1>Download</h1></div>
+    <div class="m-article-content" itemprop="articleBody"><html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Dialog - Modal form</title>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
         label, input { display:block; }
@@ -259,37 +245,42 @@
     <script type = "text/ecmascript" src="/assets/js/md5.js"></script>
     <script type = "text/javaScript">
     $( function() {
-        var dialog;
+        var dialog, form;
         var username = $( "#username" );
         var password = $( "#password" );
         var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
         var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
+        
+        function checkPasswd() {
+            if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
+                dialog.dialog("close");
+            }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
+                flag = "root";
+                dialog.dialog("close");
+            }else{
+                window.location.href='http://suxy15.github.io';
+                dialog.dialog("close");
+            }
+        }
+
         dialog = $( "#dialog-form" ).dialog({
             dialogClass: "my-dialog",
             autoOpen: true,
             height: 350,
             width: 350,
             modal: true,
+            closeOnEscape: false,
             buttons: {
-                Confirm: function() {
-                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                        dialog.dialog("close");
-                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
-                        flag = "root";
-                        dialog.dialog("close");
-                    }else{
-                        window.location.href='http://suxy15.github.io';
-                        dialog.dialog("close");
-                    }
-                },
+                "Confirm": checkPasswd,
                 Cancel: function() {
                     window.location.href='http://suxy15.github.io';
                     dialog.dialog("close");
                 }
             },
-            close: function(){
-
-            }
+        });
+        form = dialog.find( "form" ).on( "submit", function( event ) {
+            event.preventDefault();
+            checkPasswd();
         });
     });
     </script>
@@ -303,9 +294,7 @@
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" value="share" class="text ui-widget-content ui-corner-all">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="1357924680" class="text ui-widget-content ui-corner-all">
-                
-                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </fieldset>
         </form>
@@ -313,15 +302,11 @@
     
     <div class="page-content">
         <a href="/assets/downloads/0809_Xingyu_Research Progress.pptx">0809</a>
-    </div> <!-- .page-content -->
+    </div>
 </body>
-
-</html></div>
-				<footer><meta itemprop="dateModified" content=""></footer>
-			</article>
-			<div class="article-previous-next clearfix"></div></div>
-	</div>
-</div></div>
+</html></div></article>
+</div>
+</div>
       </div>
     </div><div class="m-page-footer js-page-footer">
   <div class="main">
@@ -430,248 +415,6 @@
     $articleContent.on('click', '.anchor', function() {
       window.scrollTopAnchor('#' + $(this).parent().attr('id'));
     });
-  });
-})();(function() {
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    var $window = $(window), $document = $(window.document), $root;
-    var rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop, lastScrollTop;
-    var offsetBottom = 0, disabled = false, hasInit = false;
-
-    function setOptions(options) {
-      var _options = options || {};
-      _options.offsetBottom && (offsetBottom = _options.offsetBottom);
-      _options.disabled !== undefined && (disabled = _options.disabled);
-      calc(true);
-    }
-    function initData() {
-      top();
-      var rootOffset = $root.offset();
-      rootHeight = $root.outerHeight();
-      rootTop = rootOffset.top;
-      rootLeft = rootOffset.left;
-    }
-    function calc(needInitData) {
-      needInitData && initData();
-      scrollBottom = $document.outerHeight() - offsetBottom - rootHeight;
-      rootBottomTop = scrollBottom - rootTop;
-    }
-    function top() {
-      $root.removeClass('fixed').css({
-        left: 0,
-        top: 0
-      });
-    }
-    function fixed() {
-      $root.addClass('fixed').css({
-        left: rootLeft + 'px',
-        top: 0
-      });
-    }
-    function bottom() {
-      $root.removeClass('fixed').css({
-        left: 0,
-        top: rootBottomTop + 'px'
-      });
-    }
-    function setState(force) {
-      force !== true && (force = false);
-      var scrollTop = $window.scrollTop();
-      if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
-        (!force && lastScrollTop >= rootTop && lastScrollTop <= scrollBottom) || fixed();
-      } else if (scrollTop < rootTop) {
-        (!force && lastScrollTop < rootTop) || top();
-      } else {
-        (!force && lastScrollTop > scrollBottom) || bottom();
-      }
-      lastScrollTop = scrollTop;
-    }
-    function init() {
-      if(!hasInit) {
-        var interval, timeout;
-        calc(true); setState();
-        // run calc every 1.5 seconds
-        interval = setInterval(function() {
-          calc();
-        }, 1500);
-        timeout = setTimeout(function() {
-          clearInterval(interval);
-        }, 50000);
-        window.pageLoad.then(function() {
-          clearInterval(interval);
-          clearTimeout(timeout);
-        });
-        $window.on('scroll', function() {
-          disabled || setState();
-        });
-        $window.on('resize', window.throttle(function() {
-          disabled || (calc(true), setState(true));
-        }, 100));
-        hasInit = true;
-      }
-    }
-
-    function affix(options) {
-      $root = this;
-      setOptions(options);
-      if (!disabled) {
-        init();
-      }
-      $window.on('resize', window.throttle(function() {
-        init();
-      }, 200));
-      return {
-        setOptions: setOptions
-      };
-    }
-    $.fn.affix = affix;
-  });
-})();(function() {
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    var $window = $(window), $root, $tocUl = $('<ul></ul>'), $tocLi, $headings, $activeLast, $activeCur;
-    var selectors = 'h1,h2,h3', container = 'body', disabled = false;
-    var headingsPos, scrolling = false, rendered = false, hasInit = false;
-    function setOptions(options) {
-      var _options = options || {};
-      _options.selectors && (selectors = _options.selectors);
-      _options.container && (container = _options.container);
-      _options.disabled !== undefined && (disabled = _options.disabled);
-      $headings = $(container).find(selectors);
-      calc();
-    }
-    function calc() {
-      headingsPos = [];
-      $headings.each(function() {
-        headingsPos.push(Math.floor($(this).offset().top));
-      });
-    }
-    function setState(element, disabled) {
-      var scrollTop = $window.scrollTop(), i;
-      if (disabled || !headingsPos || headingsPos.length < 1) { return; }
-      if (element) {
-        $activeCur = element;
-      } else {
-        for (i = 0; i < headingsPos.length; i++) {
-          if (scrollTop >= headingsPos[i]) {
-            $activeCur = $tocLi.eq(i);
-          } else {
-            $activeCur || ($activeCur = $tocLi.eq(i));
-            break;
-          }
-        }
-      }
-      $activeLast && $activeLast.removeClass('toc-active');
-      ($activeLast = $activeCur).addClass('toc-active');
-    }
-    function render() {
-      if(!rendered) {
-        $root.append($tocUl);
-        $headings.each(function() {
-          var $this = $(this);
-          $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
-            .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
-        });
-        $tocLi = $tocUl.children('li');
-        $tocUl.on('click', 'a', function(e) {
-          e.preventDefault();
-          var $this = $(this);
-          scrolling = true;
-          setState($this.parent());
-          window.scrollTopAnchor($this.attr('href'), function() {
-            scrolling = false;
-          });
-        });
-      }
-      rendered = true;
-    }
-    function init() {
-      var interval, timeout;
-      if(!hasInit) {
-        render(); calc(); setState(null, scrolling);
-        // run calc every 1.5 seconds
-        interval = setInterval(function() {
-          calc();
-        }, 1500);
-        timeout = setTimeout(function() {
-          clearInterval(interval);
-        }, 50000);
-        window.pageLoad.then(function() {
-          clearInterval(interval);
-          clearTimeout(timeout);
-        });
-        $window.on('scroll', function() {
-          disabled || setState(null, scrolling);
-        });
-        $window.on('resize', window.throttle(function() {
-          if (!disabled) {
-            render(); calc(); setState(null, scrolling);
-          }
-        }, 100));
-      }
-      hasInit = true;
-    }
-    function toc(options) {
-      $root = this;
-      setOptions(options);
-      if (!disabled) {
-        init();
-      }
-      $window.on('resize', window.throttle(function() {
-        init();
-      }, 200));
-      return {
-        setOptions: setOptions
-      };
-    }
-    toc.setOptions = setOptions;
-    $.fn.toc = toc;
-  });
-})();(function() {
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    var $window = $(window);
-    var $pageStage = $('.js-page-stage');
-    var $pageFooter = $('.js-page-footer');
-    var $articleContent = $('.js-article-content');
-    var $articleAside = $('.js-article-aside');
-    var $toc = $('.js-toc');
-    var $col2 = $('.js-col-2');
-    var toc, affix;
-    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
-    var tocDisabled = false;
-
-    function disabled() {
-      return $col2.css('display') === 'none' || !hasToc;
-    }
-
-    $window.on('resize', window.throttle(function() {
-      tocDisabled = disabled();
-      toc && toc.setOptions({
-        disabled: tocDisabled
-      });
-      affix && affix.setOptions({
-        disabled: tocDisabled
-      });
-    }, 100));
-
-    if (hasToc) {
-      !$pageStage.hasClass('has-toc') && $pageStage.addClass('has-toc');
-    }
-    tocDisabled = disabled();
-
-    setTimeout(function() {
-      toc = $toc.toc({
-        selectors: TOC_SELECTOR,
-        container: $articleContent,
-        disabled: tocDisabled
-      });
-      affix = $articleAside.affix({
-        offsetBottom: $pageFooter.outerHeight(),
-        disabled: tocDisabled
-      });
-    }, 1000);
   });
 })();</script><script>
   window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js'], function() {
