@@ -6,7 +6,7 @@ titles:
   zh-Hans: 关于
   zh-Hant: 關於
 key: page-about
-modify_date: 2018-06-27
+modify_date: 2018-08-10
 ---
 
 Welcome to my Personal Site! :earth_asia:
@@ -20,14 +20,16 @@ I am Xingyu Su, a junior student at Department of Energy and Power Engineering, 
 
 Some other entries of this SITE:
 
- + [download](/download): a transfer station of files
++ [download](/download): a transfer station of files(password required)
 + [record](/record): some records of slices of life
++ [share](/share): a share station for some interesting things
 + [temp](/temp): temp is temp
 
 本站的一些其他入口：
 
-- [download](/download): 文件中转站
+- [download](/download): 个人文件中转站(需要密码)
 - [record](/record): 用于个人记录
+- [share](/share): 分享有趣的东西
 - [temp](/temp): 临时的选择
 
 <p align="center"><font color="gray">Last Updated on 27/Jun/2018.</font></p>
