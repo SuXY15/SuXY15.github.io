@@ -6,6 +6,7 @@ titles:
   zh-Hans: 下载
   zh-Hant: 下載
 key:     page-download
+modify_date: 2018-08-10
 ---
 
 <!DOCTYPE html>
@@ -15,12 +16,6 @@ key:     page-download
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script>
-    function stop(){
-        return false;
-    }
-    document.oncontextmenu=stop;
-    </script>
     <style>
         label, input { display:block; }
         input.text { margin-bottom:12px; width:95%; padding: .4em; }
@@ -84,7 +79,6 @@ key:     page-download
                 <input type="text" name="username" id="username" value="share" class="text ui-widget-content ui-corner-all">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
-
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </fieldset>
         </form>
