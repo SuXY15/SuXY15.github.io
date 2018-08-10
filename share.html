@@ -1,7 +1,7 @@
- --- 
+--- 
 layout:  post
-title:   Download Page
-key:     page-download
+title:   Share Page
+key:     page-share
 ---
 
 <!DOCTYPE html>
@@ -11,12 +11,6 @@ key:     page-download
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script>
-    function stop(){
-        return false;
-    }
-    document.oncontextmenu=stop;
-    </script>
     <style>
         label, input { display:block; }
         input.text { margin-bottom:12px; width:95%; padding: .4em; }
@@ -31,41 +25,37 @@ key:     page-download
     <script type = "text/ecmascript" src="/assets/js/md5.js"></script>
     <script type = "text/javaScript">
     $( function() {
-        var dialog, form;
+        var dialog;
         var username = $( "#username" );
         var password = $( "#password" );
         var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
         var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
-        
-        function checkPasswd() {
-            if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                dialog.dialog("close");
-            }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
-                flag = "root";
-                dialog.dialog("close");
-            }else{
-                window.location.href='http://suxy15.github.io';
-                dialog.dialog("close");
-            }
-        }
-
         dialog = $( "#dialog-form" ).dialog({
             dialogClass: "my-dialog",
-            autoOpen: true,
+            autoOpen: false,
             height: 350,
             width: 350,
             modal: true,
             buttons: {
-                "Confirm": checkPasswd,
+                Confirm: function() {
+                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
+                        dialog.dialog("close");
+                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
+                        flag = "root";
+                        dialog.dialog("close");
+                    }else{
+                        window.location.href='http://suxy15.github.io';
+                        dialog.dialog("close");
+                    }
+                },
                 Cancel: function() {
                     window.location.href='http://suxy15.github.io';
                     dialog.dialog("close");
                 }
             },
-        });
-        form = dialog.find( "form" ).on( "submit", function( event ) {
-            event.preventDefault();
-            checkPasswd();
+            close: function(){
+
+            }
         });
     });
     </script>
@@ -80,13 +70,15 @@ key:     page-download
                 <input type="text" name="username" id="username" value="share" class="text ui-widget-content ui-corner-all">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
-
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </fieldset>
         </form>
     </div>
     
     <div class="page-content">
-        <a href="/assets/downloads/0809_Xingyu_Research Progress.pptx">0809</a>
-    </div>
+        <p>A script for windows user to get computer's Log on&off information.</p>
+        <a href="/assets/share/LogInfo.ps1">LogInfo.ps1</a>
+    </div> <!-- .page-content -->
 </body>
+
+</html>
