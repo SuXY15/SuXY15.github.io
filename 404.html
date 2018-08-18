@@ -5,12 +5,22 @@ title: 404
 <html>
 
 <head>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="/assets/js/terminal/jquery.terminal-1.19.1.js"></script>
-    <link href="/assets/css/terminal/jquery.terminal-1.19.1.css" rel="stylesheet"/>
-    <script src="https://cdn.rawgit.com/inexorabletash/polyfill/master/keyboard.js"></script>
-    <script src="https://cdn.rawgit.com/jcubic/leash/master/lib/wcwidth.js"></script>
-
+    <script src="/assets/js/terminal/jquery-latest.js"></script>
+    <script src="/assets/js/terminal/jquery.terminal.js"></script>
+    <script src="/assets/js/terminal/keyboard.js"></script>
+    <script src="/assets/js/terminal/wcwidth.js"></script>
+    <link href="/assets/css/terminal/jquery.terminal.css" rel="stylesheet"/>
+    <style type="text/css">
+    .terminal, .cmd {
+        --size: 1.2;
+        background: white;
+        color: #111;
+    }
+    .terminal .inverted, .cmd .inverted, .cmd .cursor.blink {
+        background-color: #0f0;
+        color: white;
+    }
+</style>
 </head>
 
 <body>
