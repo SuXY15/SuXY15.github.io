@@ -2,3 +2,92 @@
 layout: error-404
 title: 404
 ---
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/assets/js/terminal/jquery.terminal-1.19.1.js"></script>
+    <link href="/assets/css/terminal/jquery.terminal-1.19.1.css" rel="stylesheet"/>
+    <script src="https://cdn.rawgit.com/inexorabletash/polyfill/master/keyboard.js"></script>
+    <script src="https://cdn.rawgit.com/jcubic/leash/master/lib/wcwidth.js"></script>
+
+</head>
+
+<body>
+    <div id="terminal"></div>
+    <script>
+    var WELCOME =  "This is the 404 Page of Xingyu Su's Github.io.          \n" +
+                   "Type `help` to know more about it's function.           \n"
+
+    var HELP_MSG = "This is the 404 Page of Xingyu Su's Github.io.          \n" +
+                   "    It's based on                                       \n" +
+                   "        jQuery Terminal Emulator Plugin                 \n" +
+                   "            at https://terminal.jcubic.pl/\n            \n" +
+                   "Basic shell keyboard shortcut is implemented:           \n" +
+                   "    Ctrl L -- Clear the terminal.                       \n" +
+                   "    Ctrl D -- Delete one character.                     \n" +
+                   "    Ctrl A -- Move to the head of this line.            \n" +
+                   "    Ctrl W -- Delete one word before the cursor.\n      \n" +
+                   "You can write any js code, for example:                 \n" +
+                   "    Type below will lead you to my homepage:            \n" +
+                   "        window.location.href='http://suxy15.github.io'; \n" +
+                   "    Type '1+1' will get '2'                             \n" +
+                   "    Type '10**2' will get '100'                         \n" +
+                   "    Type 'Math.PI' will get '3.141592653589793'\n       \n" +
+                   "Here are some shortcut:                                 \n" +
+                   "     all   --  http://suxy15.github.io/all              \n" +
+                   "     home  --  http://suxy15.github.io/index            \n" +
+                   "     about --  http://suxy15.github.io/about            \n" +
+                   "     help  --  echo this help message.                  \n"
+
+    var WIND_STR = [
+        ["all",   "window.location.href='http://suxy15.github.io/all';"  ],
+        ["home",  "window.location.href='http://suxy15.github.io/index';"],
+        ["about", "window.location.href='http://suxy15.github.io/about';"],]
+    
+    var FUNC_STR = [
+        ["ls",    "I'm sorry but there is no `ls` command ( :"],
+        ["help",  HELP_MSG                                    ],
+        ["hello", WELCOME                                     ]]
+
+    jQuery(function($, undefined) {
+        $('#terminal').terminal(function(command) {
+            var js_flag = 1;
+            if (command !== '') {
+                // window event
+                for(var i=0; js_flag && i<WIND_STR.length; i++){
+                    if(command==WIND_STR[i][0])
+                        command = window.eval(WIND_STR[i][1]), js_flag=0;
+                }
+                // echo string
+                for(var i=0; js_flag && i<FUNC_STR.length; i++){
+                    if(command==FUNC_STR[i][0])
+                        this.echo(FUNC_STR[i][1]), js_flag=0;
+                }
+                // js gramma
+                if(js_flag==1){
+                    try {
+                        var result = window.eval(command);
+                        if (result !== undefined) {
+                            this.echo(new String(result));
+                        }
+                    } catch(e) {
+                        this.error(new String(e));
+                    }
+                }
+            } else {
+               this.echo('');
+            }
+        }, {
+            greetings: WELCOME,
+            name: 'js_term',
+            width: 800,
+            height: 600,
+            prompt: 'suxy@js ~> '
+        });
+    });
+    </script>
+
+</body>
+
+</html>
