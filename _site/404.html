@@ -306,6 +306,8 @@
                         }
                     } catch(e) {
                         this.error(new String(e));
+                        this.echo(document.currentScript.src);
+
                     }
                 }
             } else {
