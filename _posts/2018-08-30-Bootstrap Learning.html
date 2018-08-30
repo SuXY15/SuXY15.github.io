@@ -1,0 +1,315 @@
+---
+layout:      post
+title:       Bootstrap Learning
+excerpt:     Bootstrap
+tags:
+  - Bootstrap
+modify_date: 2018-08-30
+---
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <!-- color meaning -->
+    <div class="container">
+      <h3>Color</h3> 
+      <a class="text-default">    Default   </a>
+      <a class="text-primary">    Primary   </a>
+      <a class="text-secondary">  Secondary </a>
+      <a class="text-success">    Success   </a>
+      <a class="text-info">       Info      </a>
+      <a class="text-warning">    Warning   </a>
+      <a class="text-danger">     Danger    </a>
+      <a class="text-muted">      Muted     </a>
+      <a class="text-dark">       Dark      </a>
+      <a class="text-light">      Light     </a>
+    </div>
+
+    <!-- alert -->
+    <div class="container">
+      <h3>Alert</h3>
+      <div class="alert alert-success">
+        <strong>Succeed!</strong> You should read <a href="suxy15.github.io/404">this message</a> carefully.
+      </div>
+      <div class="alert alert-danger alert-dismissable fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Danger!</strong> You should close <a href="suxy15.github.io/404">this message</a> now.
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="container">
+      <h3>Table</h3>
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@example.com</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+              <td>july@example.com</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    
+    <!-- Button -->
+    <div class="container">
+      <h3>Button</h3>
+      <button type="button" class="btn btn-outline-default">        Default  </button>
+      <button type="button" class="btn btn-outline-primary">        Primary  </button>
+      <button type="button" class="btn btn-outline-secondary">      Secondary</button>
+      <button type="button" class="btn btn-outline-success">        Success  </button>
+      <button type="button" class="btn btn-outline-info">           Info     </button>
+      <button type="button" class="btn btn-outline-warning">        Warning  </button>
+      <button type="button" class="btn btn-outline-danger">         Danger   </button>
+      <button type="button" class="btn btn-outline-muted">          Muted    </button>
+      <button type="button" class="btn btn-outline-dark">           Dark     </button>
+      <button type="button" class="btn btn-outline-light text-dark">Light    </button>
+    </div>
+
+    <!-- Badget -->
+    <div class="container">
+      <h4>Badge</h3>
+      <span class="badge badge-default">    Default  </span>
+      <span class="badge badge-primary">    Primary  </span>
+      <span class="badge badge-secondary">  Secondary</span>
+      <span class="badge badge-success">    Success  </span>
+      <span class="badge badge-info">       Info     </span>
+      <span class="badge badge-warning">    Warning  </span>
+      <span class="badge badge-Danger">     Danger   </span>
+      <span class="badge badge-muted">      Muted    </span>
+      <span class="badge badge-dark">       Dark     </span>
+      <span class="badge badge-light">      Light    </span>
+      <br>
+      <span class="badge badge-pill badge-default">    Default  </span>
+      <span class="badge badge-pill badge-primary">    Primary  </span>
+      <span class="badge badge-pill badge-secondary">  Secondary</span>
+      <span class="badge badge-pill badge-success">    Success  </span>
+      <span class="badge badge-pill badge-info">       Info     </span>
+      <span class="badge badge-pill badge-warning">    Warning  </span>
+      <span class="badge badge-pill badge-Danger">     Danger   </span>
+      <span class="badge badge-pill badge-muted">      Muted    </span>
+      <span class="badge badge-pill badge-dark">       Dark     </span>
+      <span class="badge badge-pill badge-light">      Light    </span>
+    </div>
+
+    <!-- Progress -->
+    <div class="container">
+      <h3>Progress bar</h3>
+      <div class="progress">
+        <div class="progress-bar bg-default "  style="width: 0%"> Default </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-primary"   style="width:10%"> Primary </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-secondary" style="width:20%"> Secondary </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-success progress-bar-striped"style="width:30%"> Success </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped"style="width:40%"> Info </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-warning progress-bar-striped"style="width:50%"> Warning </div>
+      </div><br>
+      <div class="progress">
+        <div class="progress-bar bg-danger"          style="width:10%"> Danger </div>
+        <div class="progress-bar bg-muted"           style="width:20%"> Muted  </div>
+        <div class="progress-bar bg-dark"            style="width:30%"> Dark   </div>
+        <div class="progress-bar bg-light text-dark" style="width:40%"> Light  </div>
+      </div>
+    </div>
+
+    <!-- List group -->
+    <div class="container">
+      <h3>List group</h3>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-default">  Default  </li>
+        <li class="list-group-item list-group-item-primary">  Primary  </li>
+        <li class="list-group-item list-group-item-secondary">Secondary</li>
+        <li class="list-group-item list-group-item-success">  Success  </li>
+        <li class="list-group-item list-group-item-info">     Info     </li>
+        <li class="list-group-item list-group-item-warning">  Warning  </li>
+        <li class="list-group-item list-group-item-danger">   Danger   </li>
+        <li class="list-group-item list-group-item-muted">    Muted    </li>
+        <li class="list-group-item list-group-item-dark">     Dark     </li>
+        <li class="list-group-item list-group-item-light">    Light    </li>
+      </ul>
+    </div>
+
+    <!-- Card -->
+    <div class="container">
+      <h3>Card </h3>
+      <div class="card" style="width:600px">
+        <img class="card-img-top" src="/assets/images/post/Shiki.jpeg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Shiki Ryougi</h4>
+          <p class="card-text">Shiki Ryougi (两仪 式, Ryōgi Shiki?) is the main protagonist of <a href="https://en.wikipedia.org/wiki/The_Garden_of_Sinners">Kara no Kyoukai (空の境界)</a>. She is a girl who possesses the Mystic Eyes of Death Perception, a supernatural ability that allows the user to see the inherent mortality of everything (both living and non-living) in the form of lines.</p>
+          <a href="https://en.wikipedia.org/wiki/List_of_The_Garden_of_Sinners_characters#Major_characters" class="btn btn-light text-dark">See Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="container">
+      <h3>Accordion</h3>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link text-muted" data-toggle="collapse" href="#collapseOne"> Option one </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body"> #1 This is option one </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link text-muted" data-toggle="collapse" href="#collapseTwo"> Option two </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body"> #2 This is option two </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link text-muted" data-toggle="collapse" href="#collapseThree"> Option three </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              #3 This is option three
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Navigator</h3>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active text-muted" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted" data-toggle="tab" href="#menu1">Menu 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted" data-toggle="tab" href="#menu2">Menu 2</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="menu1" class="container tab-pane fade">
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="menu2" class="container tab-pane fade">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="container">
+      <h3>Carousel slide</h3>
+      <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#slides" data-slide-to="0" class="active"></li>
+          <li data-target="#slides" data-slide-to="1"></li>
+          <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <!-- Images -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/assets/images/post/wallpaper01.jpg">
+            <div class="carousel-caption">
+              <h4 class="text-muted"> Title of slide 1 </h4>
+              <p class="text-muted">  Description of slide 1!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/images/post/wallpaper02.jpg">
+            <div class="carousel-caption">
+              <h4 class="text-muted"> Title of slide 2 </h4>
+              <p class="text-muted">  Description of slide 2!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/images/post/wallpaper03.jpg">
+            <div class="carousel-caption">
+              <h4 class="text-muted"> Title of slide 3 </h4>
+              <p class="text-muted">  Description of slide 3!</p>
+            </div>
+          </div>
+        </div>
+        <!-- Buttons -->
+        <a class="carousel-control-prev" href="#slides" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#slides" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="container">
+      <h4>Tips</h4>
+      <a class="text-muted" href="http://suxy15.github.io/404" data-toggle="tooltip" data-placement="top" title="404">404 Page</a>
+      <a class="text-muted" href="http://suxy15.github.io/about" data-toggle="tooltip" data-placement="right" title="About">About Page</a>
+      <br>
+      <a id="self01" class="text-primary" href="#self01" title="404" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="http://suxy15.github.io/404">404 Page</a>
+      <a id="self02" class="text-primary" href="#self02" title="about" data-toggle="popover" data-placement="right" data-trigger="focus" data-content="http://suxy15.github.io/about">About Page</a>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover(); 
+    });
+    </script>
+
+    <div class="container mt-3">
+      <h3>Inline flex</h3>
+      <div class="d-inline-flex p-3 bg-white text-white">  
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+      </div>
+    </div>
+
+  </body>
+</html>
+

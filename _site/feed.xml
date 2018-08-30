@@ -1,5 +1,309 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-08-20T04:42:20+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
-</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Color Storage</title><link href="http://localhost:4000/2018/08/09/Color-Storage.html" rel="alternate" type="text/html" title="Color Storage" /><published>2018-08-09T00:00:00+08:00</published><updated>2018-08-09T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/09/Color%20Storage</id><content type="html" xml:base="http://localhost:4000/2018/08/09/Color-Storage.html">&lt;html&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-08-31T05:41:04+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Bootstrap Learning</title><link href="http://localhost:4000/2018/08/30/Bootstrap-Learning.html" rel="alternate" type="text/html" title="Bootstrap Learning" /><published>2018-08-30T00:00:00+08:00</published><updated>2018-08-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/30/Bootstrap%20Learning</id><content type="html" xml:base="http://localhost:4000/2018/08/30/Bootstrap-Learning.html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/bootstrap.min.css&quot;&gt;
+    &lt;script src=&quot;/assets/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/assets/js/popper.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/assets/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- color meaning --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Color&lt;/h3&gt; 
+      &lt;a class=&quot;text-default&quot;&gt;    Default   &lt;/a&gt;
+      &lt;a class=&quot;text-primary&quot;&gt;    Primary   &lt;/a&gt;
+      &lt;a class=&quot;text-secondary&quot;&gt;  Secondary &lt;/a&gt;
+      &lt;a class=&quot;text-success&quot;&gt;    Success   &lt;/a&gt;
+      &lt;a class=&quot;text-info&quot;&gt;       Info      &lt;/a&gt;
+      &lt;a class=&quot;text-warning&quot;&gt;    Warning   &lt;/a&gt;
+      &lt;a class=&quot;text-danger&quot;&gt;     Danger    &lt;/a&gt;
+      &lt;a class=&quot;text-muted&quot;&gt;      Muted     &lt;/a&gt;
+      &lt;a class=&quot;text-dark&quot;&gt;       Dark      &lt;/a&gt;
+      &lt;a class=&quot;text-light&quot;&gt;      Light     &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- alert --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Alert&lt;/h3&gt;
+      &lt;div class=&quot;alert alert-success&quot;&gt;
+        &lt;strong&gt;Succeed!&lt;/strong&gt; You should read &lt;a href=&quot;suxy15.github.io/404&quot;&gt;this message&lt;/a&gt; carefully.
+      &lt;/div&gt;
+      &lt;div class=&quot;alert alert-danger alert-dismissable fade show&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/button&gt;
+        &lt;strong&gt;Danger!&lt;/strong&gt; You should close &lt;a href=&quot;suxy15.github.io/404&quot;&gt;this message&lt;/a&gt; now.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Table --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Table&lt;/h3&gt;
+      &lt;table class=&quot;table table-hover&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Firstname&lt;/th&gt;
+              &lt;th&gt;Lastname&lt;/th&gt;
+              &lt;th&gt;Email&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;John&lt;/td&gt;
+              &lt;td&gt;Doe&lt;/td&gt;
+              &lt;td&gt;john@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Mary&lt;/td&gt;
+              &lt;td&gt;Moe&lt;/td&gt;
+              &lt;td&gt;mary@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;July&lt;/td&gt;
+              &lt;td&gt;Dooley&lt;/td&gt;
+              &lt;td&gt;july@example.com&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Button --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Button&lt;/h3&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-default&quot;&gt;        Default  &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary&quot;&gt;        Primary  &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary&quot;&gt;      Secondary&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot;&gt;        Success  &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-info&quot;&gt;           Info     &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-warning&quot;&gt;        Warning  &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-danger&quot;&gt;         Danger   &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-muted&quot;&gt;          Muted    &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-dark&quot;&gt;           Dark     &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-light text-dark&quot;&gt;Light    &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Badget --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h4&gt;Badge&lt;/h3&gt;
+      &lt;span class=&quot;badge badge-default&quot;&gt;    Default  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-primary&quot;&gt;    Primary  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-secondary&quot;&gt;  Secondary&lt;/span&gt;
+      &lt;span class=&quot;badge badge-success&quot;&gt;    Success  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-info&quot;&gt;       Info     &lt;/span&gt;
+      &lt;span class=&quot;badge badge-warning&quot;&gt;    Warning  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-Danger&quot;&gt;     Danger   &lt;/span&gt;
+      &lt;span class=&quot;badge badge-muted&quot;&gt;      Muted    &lt;/span&gt;
+      &lt;span class=&quot;badge badge-dark&quot;&gt;       Dark     &lt;/span&gt;
+      &lt;span class=&quot;badge badge-light&quot;&gt;      Light    &lt;/span&gt;
+      &lt;br&gt;
+      &lt;span class=&quot;badge badge-pill badge-default&quot;&gt;    Default  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-primary&quot;&gt;    Primary  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-secondary&quot;&gt;  Secondary&lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-success&quot;&gt;    Success  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-info&quot;&gt;       Info     &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-warning&quot;&gt;    Warning  &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-Danger&quot;&gt;     Danger   &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-muted&quot;&gt;      Muted    &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-dark&quot;&gt;       Dark     &lt;/span&gt;
+      &lt;span class=&quot;badge badge-pill badge-light&quot;&gt;      Light    &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Progress --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Progress bar&lt;/h3&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-default &quot;  style=&quot;width: 0%&quot;&gt; Default &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-primary&quot;   style=&quot;width:10%&quot;&gt; Primary &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-secondary&quot; style=&quot;width:20%&quot;&gt; Secondary &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-success progress-bar-striped&quot;style=&quot;width:30%&quot;&gt; Success &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-info progress-bar-striped&quot;style=&quot;width:40%&quot;&gt; Info &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-warning progress-bar-striped&quot;style=&quot;width:50%&quot;&gt; Warning &lt;/div&gt;
+      &lt;/div&gt;&lt;br&gt;
+      &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar bg-danger&quot;          style=&quot;width:10%&quot;&gt; Danger &lt;/div&gt;
+        &lt;div class=&quot;progress-bar bg-muted&quot;           style=&quot;width:20%&quot;&gt; Muted  &lt;/div&gt;
+        &lt;div class=&quot;progress-bar bg-dark&quot;            style=&quot;width:30%&quot;&gt; Dark   &lt;/div&gt;
+        &lt;div class=&quot;progress-bar bg-light text-dark&quot; style=&quot;width:40%&quot;&gt; Light  &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- List group --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;List group&lt;/h3&gt;
+      &lt;ul class=&quot;list-group&quot;&gt;
+        &lt;li class=&quot;list-group-item list-group-item-default&quot;&gt;  Default  &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-primary&quot;&gt;  Primary  &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-secondary&quot;&gt;Secondary&lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-success&quot;&gt;  Success  &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-info&quot;&gt;     Info     &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-warning&quot;&gt;  Warning  &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-danger&quot;&gt;   Danger   &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-muted&quot;&gt;    Muted    &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-dark&quot;&gt;     Dark     &lt;/li&gt;
+        &lt;li class=&quot;list-group-item list-group-item-light&quot;&gt;    Light    &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Card --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Card &lt;/h3&gt;
+      &lt;div class=&quot;card&quot; style=&quot;width:600px&quot;&gt;
+        &lt;img class=&quot;card-img-top&quot; src=&quot;/assets/images/post/Shiki.jpeg&quot; alt=&quot;Card image&quot; style=&quot;width:100%&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          &lt;h4 class=&quot;card-title&quot;&gt;Shiki Ryougi&lt;/h4&gt;
+          &lt;p class=&quot;card-text&quot;&gt;Shiki Ryougi (两仪 式, Ryōgi Shiki?) is the main protagonist of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Garden_of_Sinners&quot;&gt;Kara no Kyoukai (空の境界)&lt;/a&gt;. She is a girl who possesses the Mystic Eyes of Death Perception, a supernatural ability that allows the user to see the inherent mortality of everything (both living and non-living) in the form of lines.&lt;/p&gt;
+          &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_The_Garden_of_Sinners_characters#Major_characters&quot; class=&quot;btn btn-light text-dark&quot;&gt;See Profile&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Accordion --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Accordion&lt;/h3&gt;
+      &lt;div id=&quot;accordion&quot;&gt;
+        &lt;div class=&quot;card&quot;&gt;
+          &lt;div class=&quot;card-header&quot;&gt;
+            &lt;a class=&quot;collapsed card-link text-muted&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapseOne&quot;&gt; Option one &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div id=&quot;collapseOne&quot; class=&quot;collapse show&quot; data-parent=&quot;#accordion&quot;&gt;
+            &lt;div class=&quot;card-body&quot;&gt; #1 This is option one &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card&quot;&gt;
+          &lt;div class=&quot;card-header&quot;&gt;
+            &lt;a class=&quot;collapsed card-link text-muted&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapseTwo&quot;&gt; Option two &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div id=&quot;collapseTwo&quot; class=&quot;collapse&quot; data-parent=&quot;#accordion&quot;&gt;
+            &lt;div class=&quot;card-body&quot;&gt; #2 This is option two &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card&quot;&gt;
+          &lt;div class=&quot;card-header&quot;&gt;
+            &lt;a class=&quot;collapsed card-link text-muted&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapseThree&quot;&gt; Option three &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div id=&quot;collapseThree&quot; class=&quot;collapse&quot; data-parent=&quot;#accordion&quot;&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+              #3 This is option three
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Navigator&lt;/h3&gt;
+      &lt;ul class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link active text-muted&quot; data-toggle=&quot;tab&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link text-muted&quot; data-toggle=&quot;tab&quot; href=&quot;#menu1&quot;&gt;Menu 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link text-muted&quot; data-toggle=&quot;tab&quot; href=&quot;#menu2&quot;&gt;Menu 2&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;div class=&quot;tab-content&quot;&gt;
+        &lt;div id=&quot;home&quot; class=&quot;container tab-pane active&quot;&gt;
+          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+          &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;menu1&quot; class=&quot;container tab-pane fade&quot;&gt;
+          &lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+          &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.&lt;/p&gt;
+          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;menu2&quot; class=&quot;container tab-pane fade&quot;&gt;
+          &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.&lt;/p&gt;
+          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Carousel --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h3&gt;Carousel slide&lt;/h3&gt;
+      &lt;div id=&quot;slides&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;
+        &lt;ul class=&quot;carousel-indicators&quot;&gt;
+          &lt;li data-target=&quot;#slides&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+          &lt;li data-target=&quot;#slides&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+          &lt;li data-target=&quot;#slides&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;!-- Images --&gt;
+        &lt;div class=&quot;carousel-inner&quot;&gt;
+          &lt;div class=&quot;carousel-item active&quot;&gt;
+            &lt;img src=&quot;/assets/images/post/wallpaper01.jpg&quot;&gt;
+            &lt;div class=&quot;carousel-caption&quot;&gt;
+              &lt;h4 class=&quot;text-muted&quot;&gt; Title of slide 1 &lt;/h4&gt;
+              &lt;p class=&quot;text-muted&quot;&gt;  Description of slide 1!&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;/assets/images/post/wallpaper02.jpg&quot;&gt;
+            &lt;div class=&quot;carousel-caption&quot;&gt;
+              &lt;h4 class=&quot;text-muted&quot;&gt; Title of slide 2 &lt;/h4&gt;
+              &lt;p class=&quot;text-muted&quot;&gt;  Description of slide 2!&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;/assets/images/post/wallpaper03.jpg&quot;&gt;
+            &lt;div class=&quot;carousel-caption&quot;&gt;
+              &lt;h4 class=&quot;text-muted&quot;&gt; Title of slide 3 &lt;/h4&gt;
+              &lt;p class=&quot;text-muted&quot;&gt;  Description of slide 3!&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Buttons --&gt;
+        &lt;a class=&quot;carousel-control-prev&quot; href=&quot;#slides&quot; data-slide=&quot;prev&quot;&gt;
+          &lt;span class=&quot;carousel-control-prev-icon&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;carousel-control-next&quot; href=&quot;#slides&quot; data-slide=&quot;next&quot;&gt;
+          &lt;span class=&quot;carousel-control-next-icon&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Tips --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h4&gt;Tips&lt;/h4&gt;
+      &lt;a class=&quot;text-muted&quot; href=&quot;http://suxy15.github.io/404&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;404&quot;&gt;404 Page&lt;/a&gt;
+      &lt;a class=&quot;text-muted&quot; href=&quot;http://suxy15.github.io/about&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;About&quot;&gt;About Page&lt;/a&gt;
+      &lt;br&gt;
+      &lt;a id=&quot;self01&quot; class=&quot;text-primary&quot; href=&quot;#self01&quot; title=&quot;404&quot; data-toggle=&quot;popover&quot; data-placement=&quot;top&quot; data-trigger=&quot;focus&quot; data-content=&quot;http://suxy15.github.io/404&quot;&gt;404 Page&lt;/a&gt;
+      &lt;a id=&quot;self02&quot; class=&quot;text-primary&quot; href=&quot;#self02&quot; title=&quot;about&quot; data-toggle=&quot;popover&quot; data-placement=&quot;right&quot; data-trigger=&quot;focus&quot; data-content=&quot;http://suxy15.github.io/about&quot;&gt;About Page&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    $(document).ready(function(){
+        $('[data-toggle=&quot;tooltip&quot;]').tooltip();
+        $('[data-toggle=&quot;popover&quot;]').popover(); 
+    });
+    &lt;/script&gt;
+
+    &lt;div class=&quot;container mt-3&quot;&gt;
+      &lt;h3&gt;Inline flex&lt;/h3&gt;
+      &lt;div class=&quot;d-inline-flex p-3 bg-white text-white&quot;&gt;  
+        &lt;div class=&quot;p-2 bg-info&quot;&gt;Flex item 1&lt;/div&gt;
+        &lt;div class=&quot;p-2 bg-warning&quot;&gt;Flex item 2&lt;/div&gt;
+        &lt;div class=&quot;p-2 bg-primary&quot;&gt;Flex item 3&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Bootstrap" /><summary type="html">Bootstrap</summary></entry><entry><title type="html">Color Storage</title><link href="http://localhost:4000/2018/08/09/Color-Storage.html" rel="alternate" type="text/html" title="Color Storage" /><published>2018-08-09T00:00:00+08:00</published><updated>2018-08-09T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/09/Color%20Storage</id><content type="html" xml:base="http://localhost:4000/2018/08/09/Color-Storage.html">&lt;html&gt;
 &lt;head&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css&quot;&gt;
     &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
@@ -18368,7 +18672,7 @@
         }
         function init(){
             str+=sn.length.toString()+&quot; &quot;+cnt.toString()+&quot;;\r\n&quot;;
-            for(t=0;t&lt;sz2;t++) draw(t,&quot;Black&quot;);
+            for(t=0;t&lt;sz2;t++) draw(t,&quot;White&quot;);
             sn=[sz*2+2,sz*2+1],dz=sz*2+1,fx=1,cnt=0,n=0,pause=1;
         }
         function isLose(s,p,a){
@@ -18450,113 +18754,4 @@
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/test/2017/08/08/additional-styles.html&quot;&gt;TeXt - Additional Styles&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><summary type="html">可借鉴、学习的大牛博客</summary></entry><entry><title type="html">Html 学习笔记——与 Markdown 相对应</title><link href="http://localhost:4000/2018/04/16/LearningNote.html" rel="alternate" type="text/html" title="Html 学习笔记——与 Markdown 相对应" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2018/04/16/LearningNote</id><content type="html" xml:base="http://localhost:4000/2018/04/16/LearningNote.html">&lt;h2 id=&quot;learningnote&quot;&gt;LearningNote&lt;/h2&gt;
-&lt;h3 id=&quot;scripts&quot;&gt;Scripts&lt;/h3&gt;
-&lt;h4 id=&quot;higlights&quot;&gt;Higlights&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css&quot;&amp;gt;
-&amp;lt;script src=&quot;http://yandex.st/highlightjs/8.0/highlight.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;tex&quot;&gt;Tex&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;htmlelements&quot;&gt;HtmlElements&lt;/h3&gt;
-&lt;h4 id=&quot;imagesrc&quot;&gt;ImageSrc&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; alt=&quot;&quot; height=&quot;100px&quot; width=&quot;100px&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height=&quot;100px&quot; width=&quot;100px&quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico&quot; width=&quot;100&quot; height=&quot;100&quot; /&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;link&quot;&gt;Link&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link By Html&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;a href=&quot;http://www.w3school.com.cn&quot;&amp;gt;This is a link By Html&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link By Markdown&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[This is a link By Markdown](http://www.w3school.com.cn)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;align&quot;&gt;Align&lt;/h4&gt;
-&lt;h1 align=&quot;center&quot;&gt;This is H1 for center &lt;/h1&gt;
-&lt;h2 align=&quot;center&quot;&gt;This is H2 for center &lt;/h2&gt;
-&lt;h3 align=&quot;center&quot;&gt;This is H3 for center &lt;/h3&gt;
-&lt;h4 align=&quot;center&quot;&gt;This is H4 for center &lt;/h4&gt;
-&lt;h5 align=&quot;center&quot;&gt;This is H5 for center &lt;/h5&gt;
-&lt;h6 align=&quot;center&quot;&gt;This is H6 for center &lt;/h6&gt;
-
-&lt;h4 id=&quot;background&quot;&gt;Background&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&amp;gt;
-&amp;lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;zh-cn&quot; /&amp;gt;
-&amp;lt;body bgcolor=&quot;gray&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;body style=&quot;background-color:PowderBlue;&quot;&amp;gt;
-&amp;lt;!--here is not listed for this page's using style!--&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;textstyle&quot;&gt;TextStyle&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TextColor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;font-family:verdana;color:red&quot;&gt;This text is in Verdana and red&lt;/p&gt;
-&lt;p style=&quot;font-family:times;color:green&quot;&gt;This text is in Times and green&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p style=&quot;font-family:verdana;color:red&quot;&amp;gt;This text is in Verdana and red&amp;lt;/p&amp;gt;
-&amp;lt;p style=&quot;font-family:times;color:green&quot;&amp;gt;This text is in Times and green&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TextSize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p style=&quot;font-size:30px&quot;&gt;This text is 30 pixels high&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p style=&quot;font-size:30px&quot;&amp;gt;This text is 30 pixels high&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TextBackground&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 style=&quot;background-color:red;text-align:center&quot;&gt;This is a heading&lt;/h4&gt;
-&lt;p style=&quot;background-color:green;color:Yellow&quot;&gt;This is a paragraph.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;h4 style=&quot;background-color:red;text-align:center&quot;&amp;gt;This is a heading&amp;lt;/h4&amp;gt;
-&amp;lt;p style=&quot;background-color:green;color:Yellow&quot;&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TextFormat&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;b&gt;     This text is bold&lt;/b&gt; &lt;br /&gt;
-&lt;strong&gt;This text is strong&lt;/strong&gt; &lt;br /&gt;
-&lt;big&gt;   This text is big&lt;/big&gt; &lt;br /&gt;
-&lt;em&gt;    This text is emphasized&lt;/em&gt; &lt;br /&gt;
-&lt;i&gt;     This text is italic&lt;/i&gt; &lt;br /&gt;
-&lt;small&gt; This text is small&lt;/small&gt; &lt;br /&gt;
-        This text contains &lt;sub&gt;subscript&lt;/sub&gt;&lt;br /&gt;
-        This text contains &lt;sup&gt;superscript&lt;/sup&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;b&amp;gt;     This text is bold&amp;lt;/b&amp;gt; &amp;lt;br /&amp;gt;
-&amp;lt;strong&amp;gt;This text is strong&amp;lt;/strong&amp;gt; &amp;lt;br /&amp;gt;
-&amp;lt;big&amp;gt;   This text is big&amp;lt;/big&amp;gt; &amp;lt;br /&amp;gt;
-&amp;lt;em&amp;gt;    This text is emphasized&amp;lt;/em&amp;gt; &amp;lt;br /&amp;gt;
-&amp;lt;i&amp;gt;     This text is italic&amp;lt;/i&amp;gt; &amp;lt;br /&amp;gt;
-&amp;lt;small&amp;gt; This text is small&amp;lt;/small&amp;gt; &amp;lt;br /&amp;gt;
-        This text contains &amp;lt;sub&amp;gt;subscript&amp;lt;/sub&amp;gt;&amp;lt;br /&amp;gt;
-        This text contains &amp;lt;sup&amp;gt;superscript&amp;lt;/sup&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Html" /><category term="Markdown" /><category term="Learning" /><summary type="html">Scripts and HtmlElements of Html</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><summary type="html">可借鉴、学习的大牛博客</summary></entry></feed>
