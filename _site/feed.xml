@@ -1,5 +1,419 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-09-17T19:47:46+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
-</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Bootstrap Learning</title><link href="http://localhost:4000/2018/08/30/Bootstrap-Learning.html" rel="alternate" type="text/html" title="Bootstrap Learning" /><published>2018-08-30T00:00:00+08:00</published><updated>2018-08-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/30/Bootstrap%20Learning</id><content type="html" xml:base="http://localhost:4000/2018/08/30/Bootstrap-Learning.html">&lt;html&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-10-12T21:18:12+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+08:00</published><updated>2018-10-12T00:00:00+08:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+	&lt;head&gt;
+&lt;!-- 		&lt;meta charset=&quot;utf-8&quot;&gt;
+
+		&lt;meta name=&quot;description&quot; content=&quot;A framework for easily creating beautiful presentations using HTML&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Hakim El Hattab&quot;&gt;
+
+		&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+		&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
+
+		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt; --&gt;
+
+		&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/reveal.css&quot;&gt;
+		&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/theme/black.css&quot; id=&quot;theme&quot;&gt;
+
+		&lt;!-- Theme used for syntax highlighting of code --&gt;
+		&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/lib/css/zenburn.css&quot;&gt;
+
+		&lt;!-- Printing and PDF exports --&gt;
+		&lt;script&gt;
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/assets/css/print/pdf.css' : '/assets/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		&lt;/script&gt;
+
+		&lt;!--[if lt IE 9]&gt;
+		&lt;script src=&quot;lib/js/html5shiv.js&quot;&gt;&lt;/script&gt;
+		&lt;![endif]--&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+
+		&lt;div class=&quot;reveal&quot;&gt;
+
+			&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
+			&lt;div class=&quot;slides&quot;&gt;
+				&lt;section&gt;
+					&lt;h1&gt;Reveal.js&lt;/h1&gt;
+					&lt;h3&gt;The HTML Presentation Framework&lt;/h3&gt;
+					&lt;p&gt;
+						&lt;small&gt;Created by &lt;a href=&quot;http://hakim.se&quot;&gt;Hakim El Hattab&lt;/a&gt; and &lt;a href=&quot;https://github.com/hakimel/reveal.js/graphs/contributors&quot;&gt;contributors&lt;/a&gt;&lt;/small&gt;
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Hello There&lt;/h2&gt;
+					&lt;p&gt;
+						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;!-- Example of nested vertical slides --&gt;
+				&lt;section&gt;
+					&lt;section&gt;
+						&lt;h2&gt;Vertical Slides&lt;/h2&gt;
+						&lt;p&gt;Slides can be nested inside of each other.&lt;/p&gt;
+						&lt;p&gt;Use the &lt;em&gt;Space&lt;/em&gt; key to navigate through all slides.&lt;/p&gt;
+						&lt;br&gt;
+						&lt;a href=&quot;#&quot; class=&quot;navigate-down&quot;&gt;
+							&lt;img width=&quot;178&quot; height=&quot;238&quot; data-src=&quot;https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png&quot; alt=&quot;Down arrow&quot;&gt;
+						&lt;/a&gt;
+					&lt;/section&gt;
+					
+					&lt;section&gt;
+						&lt;h2&gt;Basement Level 1&lt;/h2&gt;
+						&lt;p&gt;Nested slides are useful for adding additional detail underneath a high level horizontal slide.&lt;/p&gt;
+					&lt;/section&gt;
+					&lt;section&gt;
+						&lt;h2&gt;Basement Level 2&lt;/h2&gt;
+						&lt;p&gt;That's it, time to go back up.&lt;/p&gt;
+						&lt;br&gt;
+						&lt;a href=&quot;#/2&quot;&gt;
+							&lt;img width=&quot;178&quot; height=&quot;238&quot; data-src=&quot;https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png&quot; alt=&quot;Up arrow&quot; style=&quot;transform: rotate(180deg); -webkit-transform: rotate(180deg);&quot;&gt;
+						&lt;/a&gt;
+					&lt;/section&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Slides&lt;/h2&gt;
+					&lt;p&gt;
+						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at &lt;a href=&quot;https://slides.com&quot; target=&quot;_blank&quot;&gt;https://slides.com&lt;/a&gt;.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Point of View&lt;/h2&gt;
+					&lt;p&gt;
+						Press &lt;strong&gt;ESC&lt;/strong&gt; to enter the slide overview.
+					&lt;/p&gt;
+					&lt;p&gt;
+						Hold down alt and click on any element to zoom in on it using &lt;a href=&quot;http://lab.hakim.se/zoom-js&quot;&gt;zoom.js&lt;/a&gt;. Alt + click anywhere to zoom back out.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Touch Optimized&lt;/h2&gt;
+					&lt;p&gt;
+						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section data-markdown&gt;
+					&lt;script type=&quot;text/template&quot;&gt;
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						&lt;section data-markdown&gt;
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						&lt;/section&gt;
+						```
+					&lt;/script&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;section id=&quot;fragments&quot;&gt;
+						&lt;h2&gt;Fragments&lt;/h2&gt;
+						&lt;p&gt;Hit the next arrow...&lt;/p&gt;
+						&lt;p class=&quot;fragment&quot;&gt;... to step through ...&lt;/p&gt;
+						&lt;p&gt;&lt;span class=&quot;fragment&quot;&gt;... a&lt;/span&gt; &lt;span class=&quot;fragment&quot;&gt;fragmented&lt;/span&gt; &lt;span class=&quot;fragment&quot;&gt;slide.&lt;/span&gt;&lt;/p&gt;
+
+						&lt;aside class=&quot;notes&quot;&gt;
+							This slide has fragments which are also stepped through in the notes window.
+						&lt;/aside&gt;
+					&lt;/section&gt;
+					&lt;section&gt;
+						&lt;h2&gt;Fragment Styles&lt;/h2&gt;
+						&lt;p&gt;There's different types of fragments, like:&lt;/p&gt;
+						&lt;p class=&quot;fragment grow&quot;&gt;grow&lt;/p&gt;
+						&lt;p class=&quot;fragment shrink&quot;&gt;shrink&lt;/p&gt;
+						&lt;p class=&quot;fragment fade-out&quot;&gt;fade-out&lt;/p&gt;
+						&lt;p&gt;
+							&lt;span style=&quot;display: inline-block;&quot; class=&quot;fragment fade-right&quot;&gt;fade-right, &lt;/span&gt;
+							&lt;span style=&quot;display: inline-block;&quot; class=&quot;fragment fade-up&quot;&gt;up, &lt;/span&gt;
+							&lt;span style=&quot;display: inline-block;&quot; class=&quot;fragment fade-down&quot;&gt;down, &lt;/span&gt;
+							&lt;span style=&quot;display: inline-block;&quot; class=&quot;fragment fade-left&quot;&gt;left&lt;/span&gt;
+						&lt;/p&gt;
+						&lt;p class=&quot;fragment fade-in-then-out&quot;&gt;fade-in-then-out&lt;/p&gt;
+						&lt;p class=&quot;fragment fade-in-then-semi-out&quot;&gt;fade-in-then-semi-out&lt;/p&gt;
+						&lt;p&gt;Highlight &lt;span class=&quot;fragment highlight-red&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;fragment highlight-blue&quot;&gt;blue&lt;/span&gt; &lt;span class=&quot;fragment highlight-green&quot;&gt;green&lt;/span&gt;&lt;/p&gt;
+					&lt;/section&gt;
+				&lt;/section&gt;
+
+				&lt;section id=&quot;transitions&quot;&gt;
+					&lt;h2&gt;Transition Styles&lt;/h2&gt;
+					&lt;p&gt;
+						You can select from different transitions, like: &lt;br&gt;
+						&lt;a href=&quot;?transition=none#/transitions&quot;&gt;None&lt;/a&gt; -
+						&lt;a href=&quot;?transition=fade#/transitions&quot;&gt;Fade&lt;/a&gt; -
+						&lt;a href=&quot;?transition=slide#/transitions&quot;&gt;Slide&lt;/a&gt; -
+						&lt;a href=&quot;?transition=convex#/transitions&quot;&gt;Convex&lt;/a&gt; -
+						&lt;a href=&quot;?transition=concave#/transitions&quot;&gt;Concave&lt;/a&gt; -
+						&lt;a href=&quot;?transition=zoom#/transitions&quot;&gt;Zoom&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section id=&quot;themes&quot;&gt;
+					&lt;h2&gt;Themes&lt;/h2&gt;
+					&lt;p&gt;
+						reveal.js comes with a few themes built in: &lt;br&gt;
+						&lt;!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. --&gt;
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/black.css'); return false;&quot;&gt;Black (default)&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/white.css'); return false;&quot;&gt;White&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/league.css'); return false;&quot;&gt;League&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/sky.css'); return false;&quot;&gt;Sky&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/beige.css'); return false;&quot;&gt;Beige&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/simple.css'); return false;&quot;&gt;Simple&lt;/a&gt; &lt;br&gt;
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/serif.css'); return false;&quot;&gt;Serif&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/blood.css'); return false;&quot;&gt;Blood&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/night.css'); return false;&quot;&gt;Night&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/moon.css'); return false;&quot;&gt;Moon&lt;/a&gt; -
+						&lt;a href=&quot;#&quot; onclick=&quot;document.getElementById('theme').setAttribute('href','/assets/css/theme/solarized.css'); return false;&quot;&gt;Solarized&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;section data-background=&quot;#dddddd&quot;&gt;
+						&lt;h2&gt;Slide Backgrounds&lt;/h2&gt;
+						&lt;p&gt;
+							Set &lt;code&gt;data-background=&quot;#dddddd&quot;&lt;/code&gt; on a slide to change the background color. All CSS color formats are supported.
+						&lt;/p&gt;
+						&lt;a href=&quot;#&quot; class=&quot;navigate-down&quot;&gt;
+							&lt;img width=&quot;178&quot; height=&quot;238&quot; data-src=&quot;https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png&quot; alt=&quot;Down arrow&quot;&gt;
+						&lt;/a&gt;
+					&lt;/section&gt;
+					&lt;section data-background=&quot;https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png&quot;&gt;
+						&lt;h2&gt;Image Backgrounds&lt;/h2&gt;
+						&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&amp;lt;section data-background=&quot;image.png&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+					&lt;/section&gt;
+					&lt;section data-background=&quot;https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png&quot; data-background-repeat=&quot;repeat&quot; data-background-size=&quot;100px&quot;&gt;
+						&lt;h2&gt;Tiled Backgrounds&lt;/h2&gt;
+						&lt;pre&gt;&lt;code class=&quot;hljs&quot; style=&quot;word-wrap: break-word;&quot;&gt;&amp;lt;section data-background=&quot;image.png&quot; data-background-repeat=&quot;repeat&quot; data-background-size=&quot;100px&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+					&lt;/section&gt;
+					&lt;section data-background-video=&quot;https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm&quot; data-background-color=&quot;#000000&quot;&gt;
+						&lt;div style=&quot;background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;&quot;&gt;
+							&lt;h2&gt;Video Backgrounds&lt;/h2&gt;
+							&lt;pre&gt;&lt;code class=&quot;hljs&quot; style=&quot;word-wrap: break-word;&quot;&gt;&amp;lt;section data-background-video=&quot;video.mp4,video.webm&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+						&lt;/div&gt;
+					&lt;/section&gt;
+					&lt;section data-background=&quot;http://i.giphy.com/90F8aUepslB84.gif&quot;&gt;
+						&lt;h2&gt;... and GIFs!&lt;/h2&gt;
+					&lt;/section&gt;
+				&lt;/section&gt;
+
+				&lt;section data-transition=&quot;slide&quot; data-background=&quot;#4d7e65&quot; data-background-transition=&quot;zoom&quot;&gt;
+					&lt;h2&gt;Background Transitions&lt;/h2&gt;
+					&lt;p&gt;
+						Different background transitions are available via the backgroundTransition option. This one's called &quot;zoom&quot;.
+					&lt;/p&gt;
+					&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;Reveal.configure({ backgroundTransition: 'zoom' })&lt;/code&gt;&lt;/pre&gt;
+				&lt;/section&gt;
+
+				&lt;section data-transition=&quot;slide&quot; data-background=&quot;#b5533c&quot; data-background-transition=&quot;zoom&quot;&gt;
+					&lt;h2&gt;Background Transitions&lt;/h2&gt;
+					&lt;p&gt;
+						You can override background transitions per-slide.
+					&lt;/p&gt;
+					&lt;pre&gt;&lt;code class=&quot;hljs&quot; style=&quot;word-wrap: break-word;&quot;&gt;&amp;lt;section data-background-transition=&quot;zoom&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Pretty Code&lt;/h2&gt;
+					&lt;pre&gt;&lt;code class=&quot;hljs&quot; data-trim contenteditable&gt;
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &amp;lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					&lt;/code&gt;&lt;/pre&gt;
+					&lt;p&gt;Code syntax highlighting courtesy of &lt;a href=&quot;http://softwaremaniacs.org/soft/highlight/en/description/&quot;&gt;highlight.js&lt;/a&gt;.&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Marvelous List&lt;/h2&gt;
+					&lt;ul&gt;
+						&lt;li&gt;No order here&lt;/li&gt;
+						&lt;li&gt;Or here&lt;/li&gt;
+						&lt;li&gt;Or here&lt;/li&gt;
+						&lt;li&gt;Or here&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Fantastic Ordered List&lt;/h2&gt;
+					&lt;ol&gt;
+						&lt;li&gt;One is smaller than...&lt;/li&gt;
+						&lt;li&gt;Two is smaller than...&lt;/li&gt;
+						&lt;li&gt;Three!&lt;/li&gt;
+					&lt;/ol&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Tabular Tables&lt;/h2&gt;
+					&lt;table&gt;
+						&lt;thead&gt;
+							&lt;tr&gt;
+								&lt;th&gt;Item&lt;/th&gt;
+								&lt;th&gt;Value&lt;/th&gt;
+								&lt;th&gt;Quantity&lt;/th&gt;
+							&lt;/tr&gt;
+						&lt;/thead&gt;
+						&lt;tbody&gt;
+							&lt;tr&gt;
+								&lt;td&gt;Apples&lt;/td&gt;
+								&lt;td&gt;$1&lt;/td&gt;
+								&lt;td&gt;7&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;Lemonade&lt;/td&gt;
+								&lt;td&gt;$2&lt;/td&gt;
+								&lt;td&gt;18&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;Bread&lt;/td&gt;
+								&lt;td&gt;$3&lt;/td&gt;
+								&lt;td&gt;2&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;
+					&lt;/table&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Clever Quotes&lt;/h2&gt;
+					&lt;p&gt;
+						These guys come in two forms, inline: &lt;q cite=&quot;http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations&quot;&gt;The nice thing about standards is that there are so many to choose from&lt;/q&gt; and block:
+					&lt;/p&gt;
+					&lt;blockquote cite=&quot;http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations&quot;&gt;
+						&amp;ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&amp;rdquo;
+					&lt;/blockquote&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Intergalactic Interconnections&lt;/h2&gt;
+					&lt;p&gt;
+						You can link between slides internally,
+						&lt;a href=&quot;#/2/3&quot;&gt;like this&lt;/a&gt;.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Speaker View&lt;/h2&gt;
+					&lt;p&gt;There's a &lt;a href=&quot;https://github.com/hakimel/reveal.js#speaker-notes&quot;&gt;speaker view&lt;/a&gt;. It includes a timer, preview of the upcoming slide as well as your speaker notes.&lt;/p&gt;
+					&lt;p&gt;Press the &lt;em&gt;S&lt;/em&gt; key to try it out.&lt;/p&gt;
+
+					&lt;aside class=&quot;notes&quot;&gt;
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					&lt;/aside&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Export to PDF&lt;/h2&gt;
+					&lt;p&gt;Presentations can be &lt;a href=&quot;https://github.com/hakimel/reveal.js#pdf-export&quot;&gt;exported to PDF&lt;/a&gt;, here's an example:&lt;/p&gt;
+					&lt;iframe data-src=&quot;https://www.slideshare.net/slideshow/embed_code/42840540&quot; width=&quot;445&quot; height=&quot;355&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:3px solid #666; margin-bottom:5px; max-width: 100%;&quot; allowfullscreen&gt; &lt;/iframe&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Global State&lt;/h2&gt;
+					&lt;p&gt;
+						Set &lt;code&gt;data-state=&quot;something&quot;&lt;/code&gt; on a slide and &lt;code&gt;&quot;something&quot;&lt;/code&gt;
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section data-state=&quot;customevent&quot;&gt;
+					&lt;h2&gt;State Events&lt;/h2&gt;
+					&lt;p&gt;
+						Additionally custom events can be triggered on a per slide basis by binding to the &lt;code&gt;data-state&lt;/code&gt; name.
+					&lt;/p&gt;
+					&lt;pre&gt;&lt;code class=&quot;javascript&quot; data-trim contenteditable style=&quot;font-size: 18px;&quot;&gt;
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '&quot;customevent&quot; has fired' );
+} );
+					&lt;/code&gt;&lt;/pre&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Take a Moment&lt;/h2&gt;
+					&lt;p&gt;
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+				&lt;section&gt;
+					&lt;h2&gt;Much more&lt;/h2&gt;
+					&lt;ul&gt;
+						&lt;li&gt;Right-to-left support&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;https://github.com/hakimel/reveal.js#api&quot;&gt;Extensive JavaScript API&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;https://github.com/hakimel/reveal.js#auto-sliding&quot;&gt;Auto-progression&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;https://github.com/hakimel/reveal.js#parallax-background&quot;&gt;Parallax backgrounds&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;https://github.com/hakimel/reveal.js#keyboard-bindings&quot;&gt;Custom keyboard bindings&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/section&gt;
+
+				&lt;section style=&quot;text-align: left;&quot;&gt;
+					&lt;h1&gt;THE END&lt;/h1&gt;
+					&lt;p&gt;
+						- &lt;a href=&quot;https://slides.com&quot;&gt;Try the online editor&lt;/a&gt; &lt;br&gt;
+						- &lt;a href=&quot;https://github.com/hakimel/reveal.js&quot;&gt;Source code &amp;amp; documentation&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/section&gt;
+
+			&lt;/div&gt;
+
+		&lt;/div&gt;
+
+		&lt;script src=&quot;/assets/lib/js/head.min.js&quot;&gt;&lt;/script&gt;
+		&lt;script src=&quot;/assets/js/reveal.js&quot;&gt;&lt;/script&gt;
+
+		&lt;script&gt;
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/assets/plugin/search/search.js', async: true },
+					{ src: '/assets/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/assets/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		&lt;/script&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="CSS" /><summary type="html">JavaScript / CSS / reveal.js</summary></entry><entry><title type="html">Bootstrap Learning</title><link href="http://localhost:4000/2018/08/30/Bootstrap-Learning.html" rel="alternate" type="text/html" title="Bootstrap Learning" /><published>2018-08-30T00:00:00+08:00</published><updated>2018-08-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/30/Bootstrap%20Learning</id><content type="html" xml:base="http://localhost:4000/2018/08/30/Bootstrap-Learning.html">&lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
@@ -1262,7 +1676,7 @@
 &lt;html&gt;
 
 &lt;head&gt;
-    &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyCgssSn2VLZSwKgaCSU4285wa8ZetPO0v8&amp;callback=initMap&quot;
+    &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyDvuraiLREHCfz0leDCwMKtKcaQm8YKwIs&amp;callback=initMap&quot;
     async defer&gt;&lt;/script&gt;
     &lt;script&gt;
     function initialize() {
@@ -18744,14 +19158,4 @@
             &lt;p id=&quot;score&quot;&gt;None&lt;/p&gt;
         &lt;/div&gt;
     &lt;/body&gt;
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="Source" /><summary type="html">JavaScript / Snake AI / Longest Path / Shortest Path</summary></entry><entry><title type="html">优秀博客链接</title><link href="http://localhost:4000/2018/04/16/Nice-Blog.html" rel="alternate" type="text/html" title="优秀博客链接" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2018/04/16/Nice-Blog</id><content type="html" xml:base="http://localhost:4000/2018/04/16/Nice-Blog.html">&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://beiyuu.com/css3-animation&quot;&gt;CSS3动画详解: http://beiyuu.com/css3-animation&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/test/2017/05/05/chart.html&quot;&gt;TeXt - Chart&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/test/2017/08/08/additional-styles.html&quot;&gt;TeXt - Additional Styles&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><summary type="html">可借鉴、学习的大牛博客</summary></entry></feed>
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="Source" /><summary type="html">JavaScript / Snake AI / Longest Path / Shortest Path</summary></entry></feed>
