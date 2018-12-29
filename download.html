@@ -32,20 +32,8 @@ modify_date: 2018-08-10
         var dialog, form;
         var username = $( "#username" );
         var password = $( "#password" );
-        var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
+        var normwd = "85e4 7ac0 7ac9 d641 6168 a97e 33fa 969a";
         var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
-        
-        function checkPasswd() {
-            if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                dialog.dialog("close");
-            }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
-                flag = "root";
-                dialog.dialog("close");
-            }else{
-                window.location.href='http://suxy15.github.io';
-                dialog.dialog("close");
-            }
-        }
 
         dialog = $( "#dialog-form" ).dialog({
             dialogClass: "my-dialog",
@@ -55,7 +43,17 @@ modify_date: 2018-08-10
             modal: true,
             closeOnEscape: false,
             buttons: {
-                "Confirm": checkPasswd,
+                "Confirm": function () {
+                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
+                        dialog.dialog("close");
+                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
+                        flag = "root";
+                        dialog.dialog("close");
+                    }else{
+                        window.location.href='http://suxy15.github.io';
+                        dialog.dialog("close");
+                    }
+                },
                 Cancel: function() {
                     window.location.href='http://suxy15.github.io';
                     dialog.dialog("close");

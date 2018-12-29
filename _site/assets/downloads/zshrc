@@ -1,0 +1,79 @@
+export PATH=/usr/local/bin:$PATH:/Users/suxy/Library/Python/3.7/bin
+export ZSH="/Users/suxy/.oh-my-zsh"
+plugins=(
+  zsh-autosuggestions zsh-syntax-highlighting
+  git autojump osx brew web-search extract
+)
+ZSH_THEME="fishy"
+
+source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+COMPLETION_WAITING_DOTS="true"
+
+# for translation
+alias tcn='translate -d zh-CN'
+alias ten='translate -d en'
+
+# for python env
+alias python='/usr/local/bin/python3'
+alias python2='/usr/local/bin/python'
+alias pip='/usr/local/bin/pip3'
+alias pip2='/usr/local/bin/pip'
+
+# for convenience
+alias mtr='/usr/local/sbin/mtr'
+alias ip='ifconfig | grep inet\ '
+alias st="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias chrome="open -a \"Google Chrome\""
+alias note="jupyter notebook"
+alias bs="cd /Users/suxy/学习/9-其他/毕业设计"
+alias gpu='ssh suxy15@166.111.17.73 -p 2222'
+
+function mcd() {
+    mkdir -p "$1" && cd "$1";
+}
+
+gfor () {
+    gfortran $1 -o ${1:0:-2}
+}
+
+ext () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+ft() {
+    find . -name "$2" -exec grep -il "$1" {} \;
+}
+
+...() {
+    for i in {1..$1}
+    do
+	    cd ..;
+	done
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/suxy/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/suxy/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/suxy/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/suxy/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+. ~/Workspace/miniconda/etc/profile.d/conda.sh
+#conda activate
