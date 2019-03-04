@@ -1,7 +1,7 @@
 ---
 layout:      post
 title:       Mathematics for Computer Science
-except:      叉院大一课程 by 姚期智
+excerpt:     叉院大一课程 by 姚期智
 tags:
   - Learning
   - Mathematics
