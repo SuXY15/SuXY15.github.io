@@ -49,6 +49,10 @@
 <lastmod>2018-10-12T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html</loc>
+<lastmod>2019-03-04T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about.html</loc>
 </url>
 <url>
@@ -80,6 +84,14 @@
 </url>
 <url>
 <loc>http://localhost:4000/blog/page2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/assets/mcs/hw1/Homework1.pdf</loc>
+<lastmod>2019-03-01T12:04:10+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/assets/mcs/hw1/hw1_2015010697.pdf</loc>
+<lastmod>2019-03-04T16:16:19+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/assets/plugin/markdown/example.html</loc>
