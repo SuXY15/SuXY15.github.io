@@ -9,7 +9,10 @@ modify_date: 2019-03-04
 ---
 
 + Homework 1
-  + Question: [pdf](/assets/mcs/hw1/Homework1.pdf)
+  + Question: [pdf](/assets/mcs/hw1/HW1.pdf)
   + Personal Answer: [latex](/assets/mcs/hw1/hw1_2015010697.tex), [pdf](/assets/mcs/hw1/hw1_2015010697.pdf)
++ Homework 2
+  - Question: [pdf](/assets/mcs/hw2/HW2.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw2/hw2_2015010697.tex), [pdf](/assets/mcs/hw2/hw2_2015010697.pdf)
 + 
 

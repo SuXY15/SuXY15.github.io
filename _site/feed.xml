@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-03-04T16:30:06+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-03-08T20:54:09+08:00</updated><id>http://localhost:4000/</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
 </subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Mathematics for Computer Science</title><link href="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html" rel="alternate" type="text/html" title="Mathematics for Computer Science" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/Mathmatics%20for%20Computer%20Science</id><content type="html" xml:base="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html">&lt;ul&gt;
   &lt;li&gt;Homework 1
     &lt;ul&gt;
-      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw1/Homework1.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw1/HW1.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw1/hw1_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw1/hw1_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;Homework 2
+    &lt;ul&gt;
+      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw2/HW2.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw2/hw2_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw2/hw2_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><category term="Mathematics" /><summary type="html">Homework 1 Question: pdf Personal Answer: latex, pdf</summary></entry><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+08:00</published><updated>2018-10-12T00:00:00+08:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
+&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><category term="Mathematics" /><summary type="html">叉院大一课程 by 姚期智</summary></entry><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+08:00</published><updated>2018-10-12T00:00:00+08:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 	&lt;head&gt;
