@@ -1,5 +1,5 @@
 ---
-layout:      post
+layout:      article
 title:       Html 学习笔记——与 Markdown 相对应
 excerpt:     Scripts and HtmlElements of Html
 tags:

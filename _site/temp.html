@@ -2,16 +2,88 @@
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Temp - Xingyu Su's Github.io</title>
+
 <meta name="description" content="Xingyu Su's Personal Github.io
 ">
-<link rel="canonical" href="http://localhost:4000/temp.html"><link rel="alternate" type="application/rss+xml" title="Xingyu Su's Github.io" href="http://localhost:4000/feed.xml">
-<!-- for Safari on iOS https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/icon-180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/assets/images/logo/icon-167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/images/logo/icon-152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/images/logo/icon-120x120.png"><link rel="shortcut icon" href="/assets/images/logo/icon-120x120.png">
-<!-- for Chrome on Android https://developer.chrome.com/multidevice/android/installtohomescreen -->
-<meta name="mobile-web-app-capable" content="yes"><link rel="icon" sizes="192x192" href="/assets/images/logo/icon-192x192.png">
-<!-- for Edge on Windows 10 https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx --><meta name="msapplication-TileImage" content="/assets/images/logo/icon-144x144.png"><meta name="msapplication-square310x310logo" content="/assets/images/logo/icon-310x310.png"><meta name="msapplication-wide310x150logo" content="/assets/images/logo/icon-310x150.png"><meta name="msapplication-square150x150logo" content="/assets/images/logo/icon-150x150.png"><meta name="msapplication-square70x70logo" content="/assets/images/logo/icon-70x70.png">
-<meta name="msapplication-TileColor" content="#eeeeee">
-<link rel="stylesheet" href="/assets/css/blog.css">
-    <script>(function() {
+<link rel="canonical" href="http://localhost:4000/temp.html"><link rel="alternate" type="application/rss+xml" title="Xingyu Su's Github.io" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
   var Set = (function() {
     var add = function(item) {
       var i, data = this._data;
@@ -65,12 +137,7 @@
     };
     return Set;
   })();
-  window.isArray = function(val) {
-    return Object.prototype.toString.call(val) === '[object Array]';
-  };
-  window.isString = function(val) {
-    return typeof val === 'string';
-  };
+
   window.Lazyload = (function(doc) {
     var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
     var createNode = function(name, attrs) {
@@ -158,73 +225,41 @@
       }
     };
   })(this.document);
-
-  window.throttle = function(func, wait) {
-    var args, result, thisArg, timeoutId, lastCalled = 0;
-
-    function trailingCall() {
-      lastCalled = new Date;
-      timeoutId = null;
-      result = func.apply(thisArg, args);
-    }
-    return function() {
-      var now = new Date,
-        remaining = wait - (now - lastCalled);
-
-      args = arguments;
-      thisArg = this;
-
-      if (remaining <= 0) {
-        clearTimeout(timeoutId);
-        timeoutId = null;
-        lastCalled = now;
-        result = func.apply(thisArg, args);
-      } else if (!timeoutId) {
-        timeoutId = setTimeout(trailingCall, remaining);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
       }
-      return result;
     };
-  };
-
-  window.decodeUrl = function(str) {
-    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
-  };
-
-  window.hasEvent = function(event) {
-    return 'on'.concat(event) in window.document;
-  };
-
-  // window.pageLoad = (function () {
-  //   var loaded = false, cbs = [];
-  //   window.addEventListener('load', function () {
-  //     var i, cb; loaded = true;
-  //     if (cbs.length > 0) {
-  //       for (i = 0; i < cbs.length; i++) {
-  //         cb = cbs[i]; cb();
-  //       }
-  //     }
-  //   });
-  //   return {
-  //     then: function(cb) {
-  //       cb && (loaded ? cb() : (cbs.push(cb)));
-  //     }
-  //   };
-  // })();
-})();</script>
-  </head>
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
   <body>
-    <div class="m-page-stage js-page-stage">
-      <div class="m-page-content"><header class="m-page-header">
-  <div class="main clearfix">
-    <div class='site-logo'><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1534536213217" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1055" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M512 0c282.76736 0 512 229.23264 512 512s-229.23264 512-512 512S0 794.76736 0 512 229.23264 0 512 0z" fill="#324D5B" p-id="1056"></path><path d="M564.79744 842.55744l346.68544-650.62912a514.78528 514.78528 0 0 0-75.4688-76.31872L170.55744 548.47488l394.24 294.08256z" fill="#565D50" p-id="1057"></path><path d="M900.77184 179.03616a515.59424 515.59424 0 0 0-68.36224-66.26304L399.36 382.07488l51.02592 182.2208 202.09664 8.18176 248.28928-393.44128z" fill="#736A47" p-id="1058"></path><path d="M832.3584 112.73216L399.99488 381.44l39.89504 191.13984 431.55456-425.09312a516.10624 516.10624 0 0 0-39.08608-34.75456z" fill="#8A7440" p-id="1059"></path><path d="M194.57024 20.51072c-6.144 55.27552-36.864 86.016-92.16 92.16 55.296 6.144 86.02624 36.87424 92.16 92.16 6.144-55.28576 36.87424-86.016 92.17024-92.16-55.296-6.144-86.02624-36.88448-92.17024-92.16z m624.64 604.16c-4.78208 42.98752-28.672 66.88768-71.69024 71.68 43.01824 4.77184 66.90816 28.672 71.69024 71.68 4.78208-43.008 28.672-66.90816 71.69024-71.68-43.01824-4.79232-66.90816-28.69248-71.69024-71.68z" fill="#EFC75E" p-id="1060"></path><path d="M901.13024 368.66048C897.72032 399.37024 880.64 416.45056 849.92 419.87072c30.72 3.39968 47.80032 20.48 51.21024 51.2 3.40992-30.72 20.48-47.80032 51.2-51.2-30.72-3.42016-47.79008-20.50048-51.2-51.21024zM174.08 327.69024c-2.73408 24.56576-16.384 38.23616-40.96 40.97024 24.576 2.73408 38.22592 16.39424 40.96 40.96 2.73408-24.56576 16.384-38.22592 40.96-40.96-24.56576-2.73408-38.22592-16.40448-40.96-40.97024zM481.28 92.18048c-3.40992 30.70976-20.48 47.79008-51.2 51.2 30.72 3.40992 47.79008 20.50048 51.2 51.21024 3.40992-30.70976 20.48-47.80032 51.2-51.21024-30.70976-3.40992-47.77984-20.49024-51.2-51.2z" fill="#5B717C" p-id="1061"></path><path d="M417.77152 781.94688l124.65152 65.85344c12.88192 6.8096 27.93472-4.17792 25.46688-18.59584l-23.808-139.45856a17.68448 17.68448 0 0 1 5.05856-15.60576l100.84352-98.77504c10.42432-10.20928 4.6592-27.98592-9.728-30.08512l-139.3664-20.34688a17.53088 17.53088 0 0 1-13.2096-9.64608l-62.32064-126.89408c-6.44096-13.1072-25.04704-13.1072-31.488 0l-62.32064 126.89408c-2.56 5.21216-7.49568 8.81664-13.21984 9.64608l-139.3664 20.34688c-14.39744 2.0992-20.14208 19.87584-9.728 30.08512l100.84352 98.77504c4.13696 4.05504 6.02112 9.89184 5.04832 15.60576l-23.808 139.45856c-2.4576 14.41792 12.58496 25.40544 25.47712 18.59584l124.64128-65.85344a17.5104 17.5104 0 0 1 16.3328 0z" fill="#EFC75E" p-id="1062"></path></svg><a title="Xingyu Su's Personal Github.io
-" href="/">Xingyu Su's Github.io</a></div>
-    <nav>
-      <ul><li><a href="/">Home</a></li><li><a href="/all.html">Archive</a></li><li><a href="/about.html">About</a></li></ul>
-    </nav>
-  </div>
-</header>
-<div class="m-page-main"><div class="m-page">
-  <article class="main"><div class="main-header"><h1>Temp</h1></div>
+    <div class="root" data-is-touch="false">
+      <div class="m-page">
+  <article class="main">
+    <div class="main-header"><h1></h1></div>
     <div> <pre><code class="language-mermaid">graph TD;
     image[image&lt;/br&gt;32*208*208*3]         --&gt; conv1[convolutional&lt;/br&gt;3*3*3*16];
     conv1[convolutional&lt;/br&gt;3*3*3*16]     --&gt;|relu| pool1[max pooling&lt;/br&gt;3*3,2*2];
@@ -238,109 +273,15 @@
  </div>
   </article>
 </div>
-</div>
-      </div>
-    </div><div class="m-page-footer js-page-footer">
-  <div class="main">
-    <aside><div class="follow-me"><ul itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Xingyu Su">
-    <link itemprop="url" href="http://localhost:4000/"><li title="Contact me by Github.">
-        <a class="floating-action-round-button github" itemprop="sameAs" href="https://github.com/SuXY15" target="_blank">
-          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
-</svg>
-</div>
-        </a>
-      </li><li title="Contact me by Linkedin.">
-        <a class="floating-action-round-button linkedin" itemprop="sameAs" href="https://www.linkedin.com/in/suxy15" target="_blank">
-          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M260.096 155.648c0 27.307008-9.899008 50.516992-29.696 69.632-19.796992 19.115008-45.396992 28.672-76.8 28.672-30.036992 0-54.612992-9.556992-73.728-28.672-19.115008-19.115008-28.672-42.324992-28.672-69.632 0-28.672 9.556992-52.224 28.672-70.656 19.115008-18.432 44.372992-27.648 75.776-27.648 31.403008 0 56.32 9.216 74.752 27.648 18.432 18.432 28.331008 41.984 29.696 70.656 0 0 0 0 0 0m-202.752 808.96c0 0 0-632.832 0-632.832 0 0 196.608 0 196.608 0 0 0 0 632.832 0 632.832 0 0-196.608 0-196.608 0 0 0 0 0 0 0m313.344-430.08c0-58.708992-1.364992-126.292992-4.096-202.752 0 0 169.984 0 169.984 0 0 0 10.24 88.064 10.24 88.064 0 0 4.096 0 4.096 0 40.96-68.267008 105.812992-102.4 194.56-102.4 68.267008 0 123.220992 22.868992 164.864 68.608 41.643008 45.739008 62.464 113.664 62.464 203.776 0 0 0 374.784 0 374.784 0 0-196.608 0-196.608 0 0 0 0-350.208 0-350.208 0-91.476992-33.451008-137.216-100.352-137.216-47.787008 0-81.236992 24.576-100.352 73.728-4.096 8.192-6.144 24.576-6.144 49.152 0 0 0 364.544 0 364.544 0 0-198.656 0-198.656 0 0 0 0-430.08 0-430.08 0 0 0 0 0 0" />
-</svg></div>
-        </a>
-      </li><li title="Contact me by Email.">
-        <a class="floating-action-round-button email" itemprop="sameAs" href="mailto:suxy15tsinghua@gmail.com" target="_self">
-          <div class="icon"><?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" data-tags="gmail"><g fill="#444" transform="scale(0.03125 0.03125)"><path fill="rgb(209, 72, 54)" d="M1024 192v640c0 36.267-27.733 64-64 64h-64v-580.821l-384 275.755-384-275.755v580.821h-64c-36.309 0-64-27.733-64-64v-640c0-18.133 6.912-34.133 18.389-45.568 11.477-11.605 27.52-18.432 45.611-18.432h21.333l426.667 309.333 426.667-309.333h21.333c18.133 0 34.133 6.912 45.611 18.432 11.52 11.435 18.389 27.435 18.389 45.568z" /></g></svg></div>
-        </a>
-      </li></ul><p class="email">
-      <a title="Send me Email." href="mailto:suxy15tsinghua@gmail.com" target="_self">suxy15tsinghua@gmail.com</a>
-    </p></div>
-</aside>
-    <footer class="site-info">
-      <p>© Xingyu Su's Github.io 2018</p>
-      <p>Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
-        title="TeXt is a succinct theme for blogging." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.</p>
-    </footer>
-  </div>
-</div><script>(function () {
-  var $body = document.body;
-  function classnames(classes) {
-    var i, cur, _classes = '';
-    if (window.isString(classes)) {
-      _classes =  classes;
-    } else if (window.isArray(classes)) {
-      for (i = 0; i < classes.length; i++) {
-        cur = classes[i];
-        if (window.isString(cur)) {
-          _classes = _classes.concat(_classes ? ' ' + cur : cur);
-        }
-      }
-    } else {
-      return '';
-    }
-    return _classes;
-  }
-  function addClass(dom, classname) {
-    dom.setAttribute('class', classnames([dom.getAttribute('class'), classname]));
-  }
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
   if (window.hasEvent('touchstart')) {
-    addClass($body, 'is-touch');
+    $root.dataset.isTouch = true;
     document.addEventListener('touchstart', function(){}, false);
-  } else {
-    addClass($body, 'not-touch');
   }
-})();</script><script>
-  (function() {
-    var TEXT_VARIABLES = {
-      sources: {
-        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
-        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
-        chart: 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js',
-        gitalk: {
-          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
-          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
-        },
-        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML',
-        mermaid: 'https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js'
-      },
-      site: {
-        toc: {
-          selectors: 'h1,h2,h3'
-        }
-      }
-    };
-    window.TEXT_VARIABLES = TEXT_VARIABLES;
-  })();
-</script><script>
-  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js'], function() {
-    var $canvas = null, $this = null, _ctx = null, _text = '';
-    $('.language-chart').each(function(){
-      $this = $(this);
-      $canvas = $('<canvas></canvas>');
-      _text = $this.text();
-      $this.text('').append($canvas);
-      _ctx = $canvas.get(0).getContext('2d');
-      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
-    });
-  });
-</script><script type="text/x-mathjax-config">
-	var _config = { tex2jax: {
-		inlineMath: [['$','$'], ['\\(','\\)']]
-	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
+})();
 </script>
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script>
-  window.Lazyload.js('https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js', function() {
-    mermaid.init(undefined, '.language-mermaid');
-    mermaid.initialize({ startOnLoad: true });
-  });
-</script></body>
+  </body>
 </html>

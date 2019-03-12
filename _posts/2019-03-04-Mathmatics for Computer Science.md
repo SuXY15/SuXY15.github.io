@@ -1,5 +1,5 @@
 ---
-layout:      post
+layout:      article
 title:       Mathematics for Computer Science
 excerpt:     叉院大一课程 by 姚期智
 tags:
@@ -7,6 +7,8 @@ tags:
   - Mathematics
 modify_date: 2019-03-04
 ---
+
+<!--more-->
 
 + Homework 1
   + Question: [pdf](/assets/mcs/hw1/HW1.pdf)

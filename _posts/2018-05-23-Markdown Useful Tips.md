@@ -1,5 +1,5 @@
 ---
-layout:      post
+layout:      article
 title:       Markdown Useful Tips
 excerpt:     Markdown / <a href="http://www.chartjs.org/docs/latest/">chart</a> / <a href="https://mermaidjs.github.io/">mermaid</a>
 tags:
