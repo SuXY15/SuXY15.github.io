@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-03-12T11:46:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
-</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Mathematics for Computer Science</title><link href="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html" rel="alternate" type="text/html" title="Mathematics for Computer Science" /><published>2019-03-04T00:00:00+00:00</published><updated>2019-03-04T00:00:00+00:00</updated><id>http://localhost:4000/2019/03/04/Mathmatics%20for%20Computer%20Science</id><content type="html" xml:base="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-03-15T11:51:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+</subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Mathematics for Computer Science</title><link href="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html" rel="alternate" type="text/html" title="Mathematics for Computer Science" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/Mathmatics%20for%20Computer%20Science</id><content type="html" xml:base="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html">&lt;!--more--&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Homework 1
@@ -15,7 +15,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><category term="Mathematics" /><summary type="html">叉院大一课程 by 姚期智</summary></entry><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+00:00</published><updated>2018-10-12T00:00:00+00:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
+&lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><category term="Mathematics" /><summary type="html">叉院大一课程 by 姚期智</summary></entry><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+08:00</published><updated>2018-10-12T00:00:00+08:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 	&lt;head&gt;
@@ -429,7 +429,7 @@ Reveal.addEventListener( 'customevent', function() {
 		&lt;/script&gt;
 
 	&lt;/body&gt;
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="CSS" /><summary type="html">JavaScript / CSS / reveal.js</summary></entry><entry><title type="html">Bootstrap Learning</title><link href="http://localhost:4000/2018/08/30/Bootstrap-Learning.html" rel="alternate" type="text/html" title="Bootstrap Learning" /><published>2018-08-30T00:00:00+00:00</published><updated>2018-08-30T00:00:00+00:00</updated><id>http://localhost:4000/2018/08/30/Bootstrap%20Learning</id><content type="html" xml:base="http://localhost:4000/2018/08/30/Bootstrap-Learning.html">&lt;html&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="CSS" /><summary type="html">JavaScript / CSS / reveal.js</summary></entry><entry><title type="html">Bootstrap Learning</title><link href="http://localhost:4000/2018/08/30/Bootstrap-Learning.html" rel="alternate" type="text/html" title="Bootstrap Learning" /><published>2018-08-30T00:00:00+08:00</published><updated>2018-08-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/30/Bootstrap%20Learning</id><content type="html" xml:base="http://localhost:4000/2018/08/30/Bootstrap-Learning.html">&lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
@@ -740,7 +740,7 @@ Reveal.addEventListener( 'customevent', function() {
     &lt;/div&gt;
 
   &lt;/body&gt;
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Bootstrap" /><summary type="html">Bootstrap</summary></entry><entry><title type="html">Color Storage</title><link href="http://localhost:4000/2018/08/09/Color-Storage.html" rel="alternate" type="text/html" title="Color Storage" /><published>2018-08-09T00:00:00+00:00</published><updated>2018-08-09T00:00:00+00:00</updated><id>http://localhost:4000/2018/08/09/Color%20Storage</id><content type="html" xml:base="http://localhost:4000/2018/08/09/Color-Storage.html">&lt;html&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Bootstrap" /><summary type="html">Bootstrap</summary></entry><entry><title type="html">Color Storage</title><link href="http://localhost:4000/2018/08/09/Color-Storage.html" rel="alternate" type="text/html" title="Color Storage" /><published>2018-08-09T00:00:00+08:00</published><updated>2018-08-09T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/09/Color%20Storage</id><content type="html" xml:base="http://localhost:4000/2018/08/09/Color-Storage.html">&lt;html&gt;
 &lt;head&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css&quot;&gt;
     &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
@@ -1050,7 +1050,7 @@ Reveal.addEventListener( 'customevent', function() {
     &lt;/script&gt;
 &lt;/body&gt;
 
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><summary type="html">JavaScript / Colors</summary></entry><entry><title type="html">HighCharts Learning</title><link href="http://localhost:4000/2018/08/01/HighCharts.html" rel="alternate" type="text/html" title="HighCharts Learning" /><published>2018-08-01T00:00:00+00:00</published><updated>2018-08-01T00:00:00+00:00</updated><id>http://localhost:4000/2018/08/01/HighCharts</id><content type="html" xml:base="http://localhost:4000/2018/08/01/HighCharts.html">&lt;!DOCTYPE html&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><summary type="html">JavaScript / Colors</summary></entry><entry><title type="html">HighCharts Learning</title><link href="http://localhost:4000/2018/08/01/HighCharts.html" rel="alternate" type="text/html" title="HighCharts Learning" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/HighCharts</id><content type="html" xml:base="http://localhost:4000/2018/08/01/HighCharts.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -1695,7 +1695,7 @@ Reveal.addEventListener( 'customevent', function() {
     &lt;div id=&quot;t8_container&quot; style=&quot;width:550px;height:400px;margin:0 auto&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;
 
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><summary type="html">JavaScript / HighCharts</summary></entry><entry><title type="html">Goole Map API</title><link href="http://localhost:4000/2018/08/01/Google-Map-API.html" rel="alternate" type="text/html" title="Goole Map API" /><published>2018-08-01T00:00:00+00:00</published><updated>2018-08-01T00:00:00+00:00</updated><id>http://localhost:4000/2018/08/01/Google%20Map%20API</id><content type="html" xml:base="http://localhost:4000/2018/08/01/Google-Map-API.html">&lt;!-- &lt;!DOCTYPE html&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><summary type="html">JavaScript / HighCharts</summary></entry><entry><title type="html">Goole Map API</title><link href="http://localhost:4000/2018/08/01/Google-Map-API.html" rel="alternate" type="text/html" title="Goole Map API" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/Google%20Map%20API</id><content type="html" xml:base="http://localhost:4000/2018/08/01/Google-Map-API.html">&lt;!-- &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -1741,7 +1741,7 @@ Reveal.addEventListener( 'customevent', function() {
     &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyCgssSn2VLZSwKgaCSU4285wa8ZetPO0v8&amp;callback=initMap&quot;
     async defer&gt;&lt;/script&gt;
   &lt;/body&gt;
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="Google" /><summary type="html">JavaScript / Google Map</summary></entry><entry><title type="html">Send Msg to WeChat</title><link href="http://localhost:4000/2018/06/23/WeChatMsg.html" rel="alternate" type="text/html" title="Send Msg to WeChat" /><published>2018-06-23T00:00:00+00:00</published><updated>2018-06-23T00:00:00+00:00</updated><id>http://localhost:4000/2018/06/23/WeChatMsg</id><content type="html" xml:base="http://localhost:4000/2018/06/23/WeChatMsg.html">&lt;div&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="JavaScript" /><category term="Google" /><summary type="html">JavaScript / Google Map</summary></entry><entry><title type="html">Send Msg to WeChat</title><link href="http://localhost:4000/2018/06/23/WeChatMsg.html" rel="alternate" type="text/html" title="Send Msg to WeChat" /><published>2018-06-23T00:00:00+08:00</published><updated>2018-06-23T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/23/WeChatMsg</id><content type="html" xml:base="http://localhost:4000/2018/06/23/WeChatMsg.html">&lt;div&gt;
 WeChat / &lt;a href='http://sc.ftqq.com/3.version'&gt;Server酱&lt;/a&gt;
 &lt;/div&gt;
 &lt;!--more--&gt;
@@ -1807,7 +1807,7 @@ WeChat / &lt;a href='http://sc.ftqq.com/3.version'&gt;Server酱&lt;/a&gt;
     &lt;!--/.container--&gt;
 &lt;/body&gt;
 
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="WeChat" /><category term="Html" /><summary type="html">WeChat / Server酱</summary></entry><entry><title type="html">WeChat Friends Analyze</title><link href="http://localhost:4000/2018/06/17/WeChat-Friends-Analyze.html" rel="alternate" type="text/html" title="WeChat Friends Analyze" /><published>2018-06-17T00:00:00+00:00</published><updated>2018-06-17T00:00:00+00:00</updated><id>http://localhost:4000/2018/06/17/WeChat%20Friends%20Analyze</id><content type="html" xml:base="http://localhost:4000/2018/06/17/WeChat-Friends-Analyze.html">&lt;html&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="WeChat" /><category term="Html" /><summary type="html">WeChat / Server酱</summary></entry><entry><title type="html">WeChat Friends Analyze</title><link href="http://localhost:4000/2018/06/17/WeChat-Friends-Analyze.html" rel="alternate" type="text/html" title="WeChat Friends Analyze" /><published>2018-06-17T00:00:00+08:00</published><updated>2018-06-17T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/17/WeChat%20Friends%20Analyze</id><content type="html" xml:base="http://localhost:4000/2018/06/17/WeChat-Friends-Analyze.html">&lt;html&gt;
 
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -18304,7 +18304,7 @@ WeChat / &lt;a href='http://sc.ftqq.com/3.version'&gt;Server酱&lt;/a&gt;
     &lt;/script&gt;
 &lt;/body&gt;
 
-&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Python" /><category term="WeChat" /><category term="Source" /><summary type="html">pyecharts / WeChatAnalyzer</summary></entry><entry><title type="html">Markdown Useful Tips</title><link href="http://localhost:4000/2018/05/23/Markdown-Useful-Tips.html" rel="alternate" type="text/html" title="Markdown Useful Tips" /><published>2018-05-23T00:00:00+00:00</published><updated>2018-05-23T00:00:00+00:00</updated><id>http://localhost:4000/2018/05/23/Markdown%20Useful%20Tips</id><content type="html" xml:base="http://localhost:4000/2018/05/23/Markdown-Useful-Tips.html">&lt;blockquote&gt;
+&lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Python" /><category term="WeChat" /><category term="Source" /><summary type="html">pyecharts / WeChatAnalyzer</summary></entry><entry><title type="html">Markdown Useful Tips</title><link href="http://localhost:4000/2018/05/23/Markdown-Useful-Tips.html" rel="alternate" type="text/html" title="Markdown Useful Tips" /><published>2018-05-23T00:00:00+08:00</published><updated>2018-05-23T00:00:00+08:00</updated><id>http://localhost:4000/2018/05/23/Markdown%20Useful%20Tips</id><content type="html" xml:base="http://localhost:4000/2018/05/23/Markdown-Useful-Tips.html">&lt;blockquote&gt;
   &lt;p&gt;for self reference&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -18978,7 +18978,7 @@ WeChat / &lt;a href='http://sc.ftqq.com/3.version'&gt;Server酱&lt;/a&gt;
         Future task in critical line        :crit, 5d
         Create tests for renderer           :2d
         Add to mermaid                      :1d
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Markdown" /><category term="Source" /><summary type="html">Markdown / chart / mermaid</summary></entry><entry xml:lang="zh-Hans"><title type="html">LeetCode 420.strongPasswordChecker</title><link href="http://localhost:4000/2018/05/22/LeetCode-420.html" rel="alternate" type="text/html" title="LeetCode 420.strongPasswordChecker" /><published>2018-05-22T00:00:00+00:00</published><updated>2018-05-22T00:00:00+00:00</updated><id>http://localhost:4000/2018/05/22/LeetCode-420</id><content type="html" xml:base="http://localhost:4000/2018/05/22/LeetCode-420.html">&lt;h3 id=&quot;一问题重述&quot;&gt;一、问题重述&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Markdown" /><category term="Source" /><summary type="html">Markdown / chart / mermaid</summary></entry><entry xml:lang="zh-Hans"><title type="html">LeetCode 420.strongPasswordChecker</title><link href="http://localhost:4000/2018/05/22/LeetCode-420.html" rel="alternate" type="text/html" title="LeetCode 420.strongPasswordChecker" /><published>2018-05-22T00:00:00+08:00</published><updated>2018-05-22T00:00:00+08:00</updated><id>http://localhost:4000/2018/05/22/LeetCode-420</id><content type="html" xml:base="http://localhost:4000/2018/05/22/LeetCode-420.html">&lt;h3 id=&quot;一问题重述&quot;&gt;一、问题重述&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
