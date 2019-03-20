@@ -16,5 +16,10 @@ modify_date: 2019-03-04
 + Homework 2
   - Question: [pdf](/assets/mcs/hw2/HW2.pdf)
   - Personal Answer: [latex](/assets/mcs/hw2/hw2_2015010697.tex), [pdf](/assets/mcs/hw2/hw2_2015010697.pdf)
-+ 
++ Homework 3
+  - Question: [pdf](/assets/mcs/hw3/HW3.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw3/hw3_2015010697.tex), [pdf](/assets/mcs/hw3/hw3_2015010697.pdf)
++ Homework 4
+  - Question: [pdf](/assets/mcs/hw4/HW4.pdf)
+  - Personal Answer: 
 
