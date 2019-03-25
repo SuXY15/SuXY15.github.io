@@ -1,0 +1,302 @@
+% Modified based on Xiaoming Sun's template
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\newcommand{\Class}{Mathesmatics for Computer Science}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 4}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}}
+\date{March 25, 2019}
+\author{Xingyu Su 2015010697}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[LPV 6.10.22]
+We are given $n + 1$ numbers from the set $\{1, 2, \cdots , 2n\}$. Prove that there are two numbers among them such that one divides the other.
+
+\Answer 
+
+Divide each of the numbers $a_i$ into groups $A_k$ by $a_i=2^{p}\cdot k$ with bigest integer $p$, which is:
+\begin{equation*}
+A_k = {2^0 k + 2^1 k+2^2 k+\cdots}
+\end{equation*}
+
+Obviously every $k$ is $k\equiv 1(mod2)$, and we have a n-segmentation of $\{1, 2, \cdots, 2n \}$:
+\begin{align*}
+A_{1}&={2^0\cdot1,2^1\cdot1,2^2\cdot1,\cdots};\\
+A_{3}&={2^0\cdot3,2^1\cdot3,2^2\cdot3,\cdots};\\
+\cdots \\
+A_{2n-1}&={2^0\cdot(2n-1)};
+\end{align*}
+
+And every two numbers in each group  will have one can be divided by the other. So if we are given $n+1$ numbers, at least 2 are from one group, with pigeon hole principle known. So there are two numbers among them such that one divides the other.
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[LPV 6.10.23]
+What is the number of positive integers not larger than 210 and not divisible by 2, 3 or 7?
+
+\Answer 
+Similar to \textbf{6.9.1}, we have
+\begin{equation*}
+210-(\frac{210}{2}+\frac{210}{3}+\frac{210}{7})+(\frac{210}{2\cdot3}+\frac{210}{2\cdot7}+\frac{210}{3\cdot7})-\frac{210}{2\cdot3\cdot7} = 60
+\end{equation*}
+integers not larger than 210 and not divisible by 2, 3 or 7.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 3]
+	Let $X_1 , X_2 , \cdots , X_n$ be independent Poisson trials such that $Pr\{X_i = 1\} = p_i$ . Let $X = \sum_{1\leq i\leq n} X_i$ and $\mu = E(X)$. In class we derived one version of the Chernoff Bounds regarding the probability that $X > (1 + \sigma)\mu$. Here you are asked to prove the following bounds in a similar way:
+
+(a) For $0 <\delta < 1$,
+\begin{equation*}
+Pr\{X\leq(1-\delta)\mu\}\leq\left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^\mu.
+\end{equation*}
+
+(b) Assume that $p_i = 1/2$ for all $i$. Prove the stronger bound that
+\begin{equation*}
+Pr{|X -\frac{n}{2}| > a} \leq 2e^{\frac{-2a^2}{n}}.
+\end{equation*}
+
+(Hint: First show that $e^t + 1 \leq 2e^{t/2+t^2/8}$ for all $t > 0$.)
+
+\Answer 
+
+(a) Known $Pr(X_i=1)=p_i$ and $Pr(X\leq a) \leq e^{ta} \Pi_i E[e^{-tX_i}]$ with $t>0$.
+\begin{align*}
+Pr(X\leq(1-\delta)\mu)
+  & \leq \frac{\Pi_{i=1}^n E[e^{-tX_i}]}{e^{-t(1-\delta)\mu}}\\
+  & = \frac{\Pi_{i=1}^n{[p_ie^{-t}+(1-p_i)]}}{e^{-t(1-\delta)\mu}}
+\end{align*}
+
+\hspace{1em}
+And with know $1+x \leq e^x$, we have $p_i e^{-t} +(1-p_i) = p_i(e^{-t}-1)+1\leq e^{p^i(e^{-t}-1)}$. So
+\begin{align*}
+Pr(X\leq (1-\delta)\mu)
+  &\leq \frac{\Pi_{i=1}^n e^{p_i(e^{-t}-1)}}{e^{-t(1-\delta)\mu}} \\
+  &= \frac{e^{(e^{-t}-1)\sum_{i=1}^n p_i}}{e^{-t(1-\delta)\mu}} \\
+  &= \frac{e^{(e^{-t}-1)\mu}}{e^{-t(1-\delta)\mu}}
+\end{align*}
+
+\hspace{1em}
+Set $t=-\ln(1-\delta)$ and $t>0$ when $0<\delta<1$, then
+\begin{align*}
+Pr(X\leq(1-\delta)\mu) 
+  &\leq \frac{e^{(e^{-t}-1)\mu}}{e^{-t(1-\delta)\mu}} \\
+  &= \frac{e^{-\delta\mu}}{(1-\delta)^{(1-\delta)\mu}} \\
+  &= \left[\frac{e^-\delta}{(1-\delta)^{(1-\delta)}}\right]^\mu
+\end{align*}
+
+(b) I have no idea from $e^t-1\leq 2e^{t/2+t^2/8}$. But a different prove from \textbf{Probability and Computing: Randomized Algorithms and Probabilistic Analysis} is found as below:
+
+\hspace{1em}
+Let $Y_1, Y_2, \cdots, Y_n$ be independent random variables with $Pr(Y_i=1)=Pr(Y_i=-1)=\frac{1}{2}$ and $Y=\sum_{i=1}^n Y_i$, for any $t>0$,
+\begin{align*}
+E[e^{tY_i}] 
+  &= \frac{1}{2}e^t+\frac{1}{2}e^{-t}\\
+  &= \frac{1}{2}(1+t+\frac{t^2}{2!}+\frac{t^3}{3!}+\cdots)-\frac{1}{2}(1-t+\frac{t^2}{2!}-\frac{t^3}{3!}+\cdots) \\
+  &= \sum_{i\geq0}\frac{t^{2i}}{(2i)!} \\
+  &= \sum_{i\geq0}\frac{(t^2/2)^i}{i!}
+  &= e^{t^2/2}.
+\end{align*}
+
+\hspace{1em}
+With $t=\frac{a}{n}>0$, we get
+\begin{align*}
+Pr(Y\geq a) 
+  & \leq \frac{E[e^{tY}]}{e^{ta}} \\
+  &= \frac{\Pi_{i=1}^n E[e^{tY_i}]}{e^{ta}}\\
+  &= e^{n t^2/2-ta} \\
+  &= e^{-{a^2}/{2n}}
+\end{align*}
+
+\hspace{1em}
+So with $X_i$ have $Pr(X_i=1)=Pr(X_i=0)=\frac{1}{2}$ and $X=\sum_{i=1}^n X_i$. We get $\mu=\frac{n}{2}$ and $X=\frac{1}{2}\sum_{i=1}^n(X_i+1)=\frac{1}{2}Y+\mu$
+
+\begin{equation*}
+Pr(X\geq \mu+a)=Pr(Y\geq 2a)\leq e^{-4a^2/2n}
+\end{equation*}
+
+\hspace{1em}
+with symmetry, we finally get
+
+\begin{equation*}
+Pr(|X-\frac{n}{2}|\geq a) \leq 2e^{\frac{-2a^2}{n}}
+\end{equation*}
+
+\end{homeworkProblem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 4]
+Use the Chernoff Bounds derived in class and in the above problem to prove the following inequalities: For all $0 < \delta \leq 1$
+
+  (a) $Pr\{X \geq (1 + \delta)\mu\} \leq e^{-\mu\delta^2/3}.$
+
+  (b) $Pr\{X \leq (1 - \delta)\mu\} \leq e^{-\mu\delta^2/2}$
+
+\textbf{Remark} Note that it follows from (a) and (b) that $Pr\{|X - E(X)| > a\} \leq 2e^{-a^2/3E(X)}$ for all $0 < a \leq E(X)$.
+
+\Answer 
+
+(a) From SP3a we get a symmetry formula:
+\begin{equation*}
+Pr(X\geq(1+\delta)\mu) \leq \left[\frac{e^\delta}{(1+\delta)^{(1+\delta)}}\right]^\mu
+\end{equation*}
+
+\hspace{1em}
+To get 
+\begin{equation*}
+Pr(X \geq (1 + \delta)\mu) \leq e^{-\mu\delta^2/3}
+\end{equation*}
+
+\hspace{1em}
+We can get 
+\begin{equation*}
+\frac{e^\delta}{(1+\delta)^{(1+\delta)}}  \leq e^{-\delta^2/3}
+\end{equation*}
+
+\hspace{1em}
+first.
+
+\hspace{1em}
+The derivative of upper inequality is writen as blow:
+\begin{equation*}
+f(\delta) = \delta-(1+\delta)\ln(1+\delta)+\frac{\delta^2}{3}\leq 0
+\end{equation*}
+
+\hspace{1em}
+So 
+\begin{align*}
+f'(\delta) &= - \ln(1+\delta) +\frac{2}{3}\delta \\
+f''(\delta)&=-\frac{1}{1+\delta}+\frac{2}{3}
+\end{align*}
+
+\hspace{1em}
+So $f''(\delta)<0$ for $0<\delta<\frac{1}{2}$ and $f''(\delta)>0$ for $\frac{1}{2}<\delta\leq 1$. And $f'(0) = 0$, $f'(1)=-\ln(2)+\frac{2}{3}<0$, so $f'(\delta)<0$ for all $0<\delta\leq1$.
+
+\hspace{1em}
+With $f(0) = 0$, we are convienced now that $f(\delta)<0$ for all $0<\delta\leq1$, which equals to (a).
+
+(b) Similary to (a), we get the derivative as below:
+\begin{equation*}
+g(\delta) = -\delta-(1-\delta)\ln(1-\delta)+\frac{\delta^2}{2}\leq 0
+\end{equation*}
+
+\hspace{1em}
+And
+\begin{align*}
+g'(\delta) &=  \ln(1-\delta)+\delta\\
+g''(\delta) &=  1-\frac{1}{1-\delta}
+\end{align*}
+
+\hspace{1em}
+Obviously, $g''(\delta)<0$ for all $0<\delta\leq1$. And $g'(0)=0$, so $g'(\delta)<0$; $g(0)=0$, so $g(\delta)<0$ is got easily.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEGEMENT
+\Acknowledgement
+  
+  SP3a: Wikipedia \href{https://en.wikipedia.org/wiki/Chernoff_bound#cite_note-MitzenmacherUpfal-3}{Chernoff bound}
+  
+  SP3b: Part 4.8 and 4.9 from book \href{https://books.google.com/books?id=0bAYl6d7hvkC&pg=PR7&hl=zh-CN&source=gbs_selected_pages&cad=3#v=onepage&q=chernoff%20bound&f=false}{Probability and Computing: Randomized Algorithms and Probabilistic Analysis}
+  
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

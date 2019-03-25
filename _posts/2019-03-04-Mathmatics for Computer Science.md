@@ -21,5 +21,5 @@ modify_date: 2019-03-04
   - Personal Answer: [latex](/assets/mcs/hw3/hw3_2015010697.tex), [pdf](/assets/mcs/hw3/hw3_2015010697.pdf)
 + Homework 4
   - Question: [pdf](/assets/mcs/hw4/HW4.pdf)
-  - Personal Answer: 
+  - Personal Answer: [latex](/assets/mcs/hw4/hw4_2015010697.tex), [pdf](/assets/mcs/hw4/hw4_2015010697.pdf)
 
