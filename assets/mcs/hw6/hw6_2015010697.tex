@@ -1,0 +1,258 @@
+% Modified based on Xiaoming Sun's template
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\newcommand{\Class}{Mathematics for Computer Science}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 6}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}}
+\date{April 8, 2019}
+\author{Xingyu Su 2015010697}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 1]
+Show that for some fixed constants $c$, $c' > 0$, the randomized routing algorithm discussed in class has the following performance for Phase 2:
+
+\begin{equation*}
+Pr\{T>cn\}\leq 2^{-c'n}
+\end{equation*}
+
+\Answer 
+
+From \textbf{Homework 4: SP3a}, we have Chernoff bound as below:
+\begin{equation*}
+Pr\{X\geq\beta \mu\}\leq\left( \frac{e^{\beta-1}}{\beta^\beta}\right)^\mu
+\end{equation*}
+
+And in randomized routing algorithm, we have $E[T] \leq 2n$, so:
+\begin{equation*}
+Pr\{T>cn\} \leq \left( \frac{e^{c/2-1}}{(c/2)^{c/2}}\right)^{2n}
+  =\left(\frac{c}{2e}\right)^{-cn}e^{-2n}
+\end{equation*}
+
+So if $c\geq4e$, there is a $c'$ satisfies $Pr\{T>cn\}\leq 2^{-c'n}$.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 2]
+Solve each of the following recurrence relations:
+
+(a) $a_0 = 1,\ a_1 = 2,\ a_n=4a_{n-1}-3a_{n-2}+3n+1$ for all $n\geq 2$.
+
+(b) $a_0 = 1,\ a_n = \frac{a_{n-1}}{1+3a_{n-1}}$ for $n\geq 1$.
+
+\Answer 
+
+(a) First, try to get the recursive equation into a simpler form that $b_n=4b_{n-1}-3b{n-2}$. It's easy to assume $b_{n} = a_{n} + bn^2 + cn + d$. So:
+\begin{equation*}
+(a_n+bn^2+c_n+d) = 4(a_{n-1}+b(n-1)^2+c(n-1)+d)-3(a_{n-2}+b(n-2)^2+c(n-2)+d)
+\end{equation*}
+
+Which get:
+\begin{equation*}
+a_n = 4a_{n-1}-3a_{n-2}+4bn-8b+2c
+\end{equation*}
+
+Compare the coefficients, we get:
+\begin{align*}
+4b &= 3      & b = \frac{3}{4}\\
+-8b+2c &= 1  & c = \frac{7}{2}
+\end{align*}
+
+Assume $b_n = a_n + \frac{3}{4}n^2+\frac{7}{2}n$, and $b_0=a_0=1$, $b_1=a_1+\frac{3}{4}+\frac{7}{2}=\frac{25}{8}$. And there is $b_n = 4b_{n-1}-3b_{n-2}$. Let $b_n = z^n$, we get
+\begin{equation*}
+z^2 = 4z-3
+\end{equation*}
+The roots are: $z_1 = 1,\ z_2=3$, so $b_n = A+B3^n$. Getting with $b_0=1$, $b_1= \frac{25}{8}$, we have $A=-\frac{13}{8}$, $B=\frac{21}{8}$. So finnaly, we get $a_n$ as:
+\begin{equation*}
+a_n = \frac{21}{8}3^n-\frac{3}{4}n^2-\frac{7}{2}n-\frac{13}{8}
+\end{equation*}
+
+(b) Consider the characteristic equation:
+\begin{equation*}
+\lambda = \frac{\lambda}{1+3\lambda}
+\end{equation*}
+Get roots $\lambda_1=\lambda_2=0$. And we have $a_n$ is never zero for the reason that $a_0=1\neq 0$. So:
+\begin{equation*}
+\frac{1}{a_n} = \frac{1+3a_{n-1}}{a_{n-1}}=\frac{1}{a_{n-1}}+3
+\end{equation*}
+So obviously $\frac{1}{a_{n}}=3n+1$ so $a_n=\frac{1}{3n+1}$.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 3]
+Consider a sequence of $2n$ people in a line at a cashier. Suppose $n$ of the people pay 1 yuan each and $n$ of the people get 1 yuan each. A \textit{paying pattern} is a binary sequence $\sigma = a_1 a_2 \cdots a_{2n}$ with exactly $n$ 1’s and $n$ 0’s; the interpretation is that $a_j = 1$ if person $j$ pays 1 yuan, and $a_j = 0$ otherwise. Note that there are exactly $\binom{2n}{n}$ paying patterns. Let $b_n$ denote the number of paying patterns in which the cashier never goes in debt (i.e., at every stage at least as many people have paid in 1 yuan as were paid out 1 yuan).
+
+(a) Derive a recurrence equation for $b_n$ , and find an explicit expression for the generating function $\sum_{n\geq1}b_nx^n$. Determine a closed-form solution for $b_n$.
+
+(b) Use an alternative way (a \textit{combinatorial proof}) to establish a closed form solution $b_n = \binom{2n}{n} - \binom{2n}{n+1}$. (\textbf{Hint:} Show a one-to-one correspondence between paying patterns where at some stage the cashier goes at least 1 yuan in debt and all binary sequences of length $2n$ with exactly $n + 1$ 1’s.)
+
+\Answer 
+
+(a) Counting by hands, it's easily to get $b_1=1$, $b_2=2$, $b_3=5$.
+
+Consider the sequence $\sigma=a_1 a_2 \cdots a_{2n}$ in which the cashier never goes in debt, then $a_1 = 1$ and since there are $n$ 1's and $n$ 0's, there must be a $1\leq j \leq 2n-1$ that $[a_{j},a_{j+1}] = [1,0]$.
+
+Treat the money in and out as a \textbf{stack}. Then \textit{the first yuan} the cashier got can be paid out only at an even turn, denote as \textit{the first yuan} is the $l_{\text{th}}$ got paid out at $2l$ turn. Then there are still $l-1$ yuan paid before \textit{the first yuan} and $n-l$ yuan to be paid after \textit{the first yuan}. Thus, the sequence is divided into two unkown parts $a_2, \cdots, a_{2l-1}$ and $a_{2l+1}, a_{2l+2}, \cdots, a_{2n}$, and both of them satisfies the original rule.
+
+So the recurrence is: (set $b_0 = 1$ for comprensively understanding)
+\begin{equation*}
+b_{n+1} = \sum_{i=0}^{n} b_i b_{n-i}
+\end{equation*}
+
+The generating function is:
+\begin{align*}
+f(x) 
+  &= \sum_{i\geq0} b_n x^n = b_0 + b_1x+b_2x^2+b3x^3+\cdots \\
+f^2(x)
+  &= \left(\sum_{i\geq0} b_n x^n\right) \left(\sum_{i\geq0} b_n x^n\right) \\
+  &= b_0 b_0 + (b_0b_1+b_1b_0)x+(b_0b_2+b_1b_1+b_2b_0)x^2+\cdots \\
+  &= \sum_{n\geq 1} b_n x^{n-1}
+\end{align*}
+
+So $f(x)-xf^2(x)=b_0=1$, get the roots:
+\begin{equation*}
+f(x) = \frac{1\pm \sqrt{1-4x}}{2x}
+\end{equation*}
+
+Known that 
+\begin{equation*}
+\lim_{x\to0^+}f(x)= \lim_{x\to0^+}\frac{1\pm \sqrt{1-4x}}{2x} = b_0 = 1
+\end{equation*}
+
+We get $f(x) = \frac{1 - \sqrt{1-4x}}{2x}$, so $\sum_{n\geq 1} b_n x^n = f(x)-b_0 = \frac{1 - \sqrt{1-4x}}{2x} - 1$. With $(1+x)^\alpha=1+\sum_{n=1}^{\infty}\binom{n}{\alpha}x^n$, we have:
+\begin{align*}
+(1-4x)^{\frac{1}{2}} 
+  &= 1+\sum_{n=1}^{\infty}\binom{n}{1/2}(-4x)^n \\
+  &= 1+\sum_{n=1}^{\infty}\frac{\frac{1}{2} \cdot (\frac{1}{2}-1)\cdots(\frac{3}{2}-n)}{n!}(-4x)^n \\
+  &= 1-\sum_{n=1}^{\infty}\frac{1\cdot 3 \cdots (2n-3)}{n!}2^n x^n\\
+  &= 1-\sum_{n=1}^{\infty}\frac{1\cdot 3 \cdots (2n-3)}{n!}\frac{2\cdot 4\cdots(2n-2)}{(n-1)!} 2 x^n \\
+  &= 1-2\sum_{n=1}^{\infty}\frac{(2n-2)!}{n!(n-1)!}x^n
+\end{align*}
+
+So:
+\begin{align*}
+\frac{1 - \sqrt{1-4x}}{2x} 
+  &= \sum_{n=1}^{\infty}\frac{(2n-2)!}{n!(n-1)!}x^{n-1} \\
+  &= \sum_{n=0}^{\infty}\frac{(2n)!}{(n+1)!n!}x^{n}
+\end{align*}
+
+Finally we get: $b_n=\frac{(2n)!}{(n+1)!n!}x^{n}$.
+
+(b) Consider the sequence $\sigma=a_1 a_2 \cdots a_{2n}$ and call it wanted if $\sum_{i=1}^k (2a_i-1)\geq0$ for all $k=1,2,\cdots,2n$. Then for each unwanted sequence $\sigma$, there exists at least one $k$ that $\sum_{i=1}^k(2a_i-1) \geq 0$. So there must be a $k_0$ satisfies $\sum_{i=1}^{k_0}(2a_i-1)=-1$ and all $k=1,2,\cdots,k_0-1$ satisfies $\sum_{i=1}^k(2a_i-1)\geq 0$, especially $\sum_{i=1}^{k_0}(2a_i-1)=0$. 
+
+Obviously $k_0$ must be an odd number, denoting as $k_0=2m+1$. So there is $m$ 1's and $m$ 0's in $a_1 a_2 \cdots a_{2m}$ and $a_{2m+1}=0$. After reversing $a_1 a_2 \cdots a_{2m+1}$ of $\sigma$, we will get the sequence $\sigma'$ which has $n+1$ 1's and $n-1$ 0's.
+
+On the other hand, given a sequence $\sigma'=a'_1 a'_2 \cdots a'_{2n}$ which consists of $n+1$ 1's and $n-1$ 0's. For the reason that the number of 1's is more than 0's, there must be a $k_0=2m+1$ that $\sum_{i=1}^{k_0}(2a_i-1)=-1$ and $\sum_{i=1}^k(2a_i-1) \geq 0$ for all $k=1,2,\cdots,2m$. Reversing $a'_1 a'_2 \cdots a'_{2m+1}$ of $\sigma'$, we will get a sequence $\sigma$ satisfies our rules with $n$ 1's and $n$ 0's.
+
+Finally, we get a one-to-one correspondence between paying patterns unwanted and all binary sequences of length $2n$ with exactly $n+1$ 1's. So the number of unwanted patterns is $\binom{2n}{n+1}$. And there is $\binom{2n}{n}$ sequences in total. Thus, $b_n=\binom{2n}{n}-\binom{2n}{n+1}$.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ACKNOWLEGEMENT
+\Acknowledgement
+
+Thanks to \href{https://en.wikipedia.org/wiki/Catalan_number}{Wikipedia: Catalan number} for SP3a.
+
+Thanks to \href{https:\\botao.hu}{Botao Hu} for SP3b.
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,258 @@
+% Modified based on Xiaoming Sun's template
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\newcommand{\Class}{Mathematics for Computer Science}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 5}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}}
+\date{April 1, 2019}
+\author{Xingyu Su 2015010697}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 1]
+
+[\textit{Inference in Bayesian Networks}]
+
+Consider a probability space with three binary (i.e. 0-1 valued) random variables $B$, $F$, $G$ satisfying the following properties:
+
+(1) $B$ and $F$ are independent with $Pr\{B = 1\} = Pr\{F = 1\} = 0.9$;
+
+(2) $Pr\{G = 1\ |\ B = 1, F = 1\} = 0.8$, $Pr\{G = 1\ |\ B = 1, F = 0\} = 0.2$, $Pr\{G = 1\ |\ B = 0, F = 1\} = 0.2$, $Pr\{G = 1\ |\ B = 0, F = 0\} = 0.1$.
+
+\textbf{Remarks} The above random variables model a car system with $B$, $F$ representing the true physical states of the battery and fuel respectively (value 1 representing full, while 0 representing empty). The random variable $G$ represent a fuel gauge (i.e. a meter on the panel that the car driver can see), which gives a (somewhat unreliable) reading of the fuel state. Both $B$ and $F$ can influence (probabilistically) the result of reading the gauge $G$. Thus, the three random variables (together with the probability assignments) form a very simple Bayesian network, with a causal arrow pointing from $B$ to $G$, and an arrow pointing from $F$ to $G$.
+
+\textbf{Questions}:
+
+(a) Even without calculation, we expect the value of $Pr\{F = 0\ |\ G = 0\}$ to be greater than $Pr\{F = 0\}$. Why? Now for the calculation. What is $Pr\{G = 0\}$? What is $Pr\{F = 0\}$? What is $Pr\{G = 0\ |\ F = 0\}$? Use Bayes’ Rule to determine the value of $Pr\{F = 0\ |\ G = 0\}$.
+
+(b) Even without calculation, we expect the value of $Pr\{F = 0\ |\ G = 0, B = 0\}$ to be less than $Pr\{F = 0\ |\ G = 0\}$ (which was calculated in (a) above). Why? Determine exactly the value of $Pr\{F = 0\ |\ G = 0, B = 0\}$.
+
+(c) Give an explicit description of a probability space $(\Omega, p)$ and the realization of the random variables $B$, $F$, $G$ in that probability space.
+
+\Answer 
+
+We know that:
+\begin{align*}
+Pr\{B = 1\} = Pr\{F = 1\} = 0.9 &,\ Pr\{B = 0\} = Pr\{F = 0\} = 0.1   \\
+Pr\{G = 1\ |\ B = 1, F = 1\} = 0.8 &,\ Pr\{G = 0\ |\ B = 1, F = 1\} = 0.1 \\
+Pr\{G = 1\ |\ B = 1, F = 0\} = 0.2 &,\ Pr\{G = 0\ |\ B = 1, F = 0\} = 0.8 \\
+Pr\{G = 1\ |\ B = 0, F = 1\} = 0.2 &,\ Pr\{G = 0\ |\ B = 0, F = 1\} = 0.8 \\
+Pr\{G = 1\ |\ B = 0, F = 0\} = 0.1 &,\ Pr\{G = 0\ |\ B = 0, F = 0\} = 0.9 \\
+\end{align*}
+
+(a) Because from Bayes' Theroem, we have $Pr\{F = 0\ |\ G = 0\}$ that:
+\begin{equation*}
+Pr\{F = 0\ |\ G = 0\} = \frac{Pr\{G = 0\ |\ F = 0\}Pr\{F = 0\}}{Pr\{G = 0\}} = \frac{Pr\{G = 0\ |\ F = 0\}}{Pr\{G = 0\}}Pr\{F = 0\}
+\end{equation*}
+
+And with known that $G$ represent a fuel gauge, so $Pr\{G = 0\ |\ F = 0\}$ should be greater than $Pr\{G = 0\}$, so $Pr\{F = 0\ |\ G = 0\}$ to be greater than $Pr\{F = 0\}$.
+
+$Pr\{G = 0\}$ can be get by:
+\begin{align*}
+Pr\{G = 0\} = & Pr\{G = 0\ |\ B = 1, F = 1\}Pr\{B = 1\}Pr\{F = 1\} \\
+              &+ Pr\{G = 0\ |\ B = 1, F = 0\}Pr\{B = 1\}Pr\{F = 0\} \\
+              &+ Pr\{G = 0\ |\ B = 0, F = 1\}Pr\{B = 0\}Pr\{F = 1\} \\
+              &+ Pr\{G = 0\ |\ B = 0, F = 0\}Pr\{B = 0\}Pr\{F = 0\} \\
+            = & 0.2 \times 0.9 \times 0.9 + 0.8 \times 0.9 \times 0.1 + 0.8 \times 0.1 \times 0.9 + 0.9 \times 0.1 \times 0.1 \\
+            = & 0.315
+\end{align*}
+
+And obviously, we have:
+\begin{equation*}
+Pr\{F=0\} = 1-Pr\{F=1\} = 0.1
+\end{equation*}
+\begin{align*}
+Pr\{G = 0\ |\ F = 0\} = & Pr\{G = 0\ |\ B = 1, F = 0\}Pr\{B = 1\} + Pr\{G = 0\ |\ B = 0, F = 0\}Pr\{B = 0\}\\
+                    = & 0.8 \times 0.9 + 0.9 \times 0.1 \\
+                    = & 0.81
+\end{align*}
+
+Finally,
+\begin{align*}
+Pr\{F = 0\ |\ G = 0\} = & \frac{Pr\{G = 0\ |\ F = 0\}Pr\{F = 0\}}{Pr\{G = 0\}} \\
+                    = & \frac{0.81 \times 0.1}{0.315} \\
+                    = & 0.257
+\end{align*}
+
+(b) Because $G = 0$ has two sources: $B = 0$ and $F = 0$. So when $G = 0$, $F = 0$ has less probability when $B = 0$. To calculate $Pr\{F = 0\ |\ G = 0, B = 0\}$, first we get $Pr\{G = 0\ |\ B = 0\}$ by:
+\begin{align*}
+Pr\{G = 0\ |\ B = 0\} = & Pr\{G = 0\ |\ B = 0, F = 1\}Pr\{F = 1\} + Pr\{G = 0\ |\ B = 0, F = 0\}Pr\{F = 0\}\\
+                    = & 0.8 \times 0.9 + 0.9 \times 0.1 \\
+                    = & 0.81
+\end{align*}
+
+Then,
+\begin{align*}
+Pr\{F = 0\ |\ G = 0, B = 0\} = & \frac{Pr\{G = 0, B = 0\ |\ F = 0\}Pr\{F = 0\}}{Pr\{G = 0 , B = 0\}}\\
+                    = & \frac{Pr\{G = 0\ |\ B = 0, F = 0\}Pr\{B = 0\}Pr\{F = 0\}}{Pr\{G = 0\ |\ B = 0\}Pr\{B = 0\} } \\
+                    = & \frac{0.9\times0.1}{0.81} \\
+                    = & 0.111 < 0.257 = Pr\{F = 0\ |\ G = 0\}
+\end{align*}
+
+(c) To descripe the probability space $(\Omega, \mathcal{F}, P)$, all $\mathcal{F}$ and their probabilities should be given:
+\begin{align*}
+Pr\{B = 1\} = 0.9,\ Pr\{F = 1\} = 0.9, Pr\{G = 1\} = 0.685 \\
+Pr\{B = 0\} = 0.1,\ Pr\{F = 0\} = 0.1, Pr\{G = 0\} = 0.315
+\end{align*}
+\begin{align*}
+Pr\{B = 1, F = 1\} = 0.81, Pr\{B = 1, F = 0\} = 0.09 \\
+Pr\{B = 0, F = 1\} = 0.09, Pr\{B = 0, F = 0\} = 0.01
+\end{align*}
+\begin{align*}
+Pr\{G = 1, F = 1\} = 0.666, Pr\{G = 1, F = 0\} = 0.019 \\
+Pr\{G = 0, F = 1\} = 0.234, Pr\{G = 0, F = 0\} = 0.081
+\end{align*}
+\begin{align*}
+Pr\{G = 1, B = 1\} = 0.666, Pr\{G = 1, B = 0\} = 0.019 \\
+Pr\{G = 0, B = 1\} = 0.234, Pr\{G = 0, B = 0\} = 0.081
+\end{align*}
+\begin{align*}
+Pr\{G = 1, B = 1, F = 1\} = 0.648, Pr\{G = 1, B = 1, F = 0\} = 0.018 \\
+Pr\{G = 1, B = 0, F = 1\} = 0.018, Pr\{G = 1, B = 0, F = 0\} = 0.001 \\ 
+Pr\{G = 0, B = 1, F = 1\} = 0.162, Pr\{G = 0, B = 1, F = 0\} = 0.072 \\
+Pr\{G = 0, B = 0, F = 1\} = 0.072, Pr\{G = 0, B = 0, F = 0\} = 0.009 \\ 
+\end{align*}
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 2]
+
+[\textit{Randomized Routing}]
+
+In class, we discuss a routing algorithm on the $n-$bit hypercube, called bit fixing algorithm, for a node $i$ to send a message to a node $k$ using $d(i, k)$ edges where $d(i, k)$ is the Hamming distance between $i$ and $k$. Let $\sigma$ be a permutation so that for each node $i \in \{0, 1\}$ n in the hypercube network, a message packet $m_i$ is to be routed to node $\sigma(i)$ (starting in parallel at the same time, as described in class). For each node $j$, let $\rho_j = e_1 e_2 \cdots e_{l_j}$ be the path (i.e. the sequence of edges) followed by packet $m_j$ under the bit-fixing algorithm. Now let $i$ be any fixed node. Let $S$ be the set of $j \neq i$ such that the paths $\rho_j$ and $\rho_i$ share at least one common edge. The following theorem is important for the analysis of the randomized routing algorithm described in the last class.
+
+\textbf{Theorem A} The number of steps used in delivering packet $m_i$ is no more than $l_i + |S|$. (That is, the extra delay for packet $\nu_i$ is at most $|S|$.)
+
+Questions:
+
+(a) Prove Theorem A for the special case $|S| = 1$.
+
+(b) Prove Theorem A for the special case $|S| = 2$.
+
+(c) Prove Theorem A for any $|S|$.
+
+\Answer
+
+First, we can know for sure that, if $\rho_i$ and $\rho_j$ meet and then diverge, they will not meet agin.
+
+(a) Fix $i \in \{0,1\}^n$ and $\rho_i = (e_1,e_2, \cdots, e_{l_i})$. When $|S| = 1$, there is one node $j$ that $\rho_j$ shares part of edges for example $(e_{b_j},\cdots,e_{d_j})$ with $\rho_i$. So there will be no congestion through all edges except $(e_{b_j},\cdots,e_{d_j})$ from $i$ to $\sigma(i)$. And when congestion occurs at $(e_{b_j},\cdots,e_{d_j})$, there will be no more than 1 step to wait because only one competitive package $m_j$ from node $j$ will go through it. Thus, here we get $delay(i) \leq |S|$ for $|S| = 1$.
+
+(b) When $|S| = 2$, there is two node $j$ and $k$ that $\rho_j$ shares $(e_{b_j},\cdots,e_{d_j})$ and $\rho_k$ shares $(e_{b_k},\cdots,e_{d_k})$ with $\rho_i = (e_1,e_2, \cdots, e_{l_i})$. Obviously, there will be no congestion through all edges except the union of the two parts of edges. And if congestion occurs at meeting edges of $\rho_i$ and $\rho_j$ or $\rho_i$ and $\rho_k$, there will be at most 1 step delay from each meets. Because there will be only one package from each competitive node need to go through their meet edge. Thus, we get $delay(i) \leq |S|$ for $|S| = 2$ proved.
+
+(c) First, a quantity shows the delay at each time step is defined as below:($i$ is waiting at the head of $e_k$ when time step $t$ begins.)
+\begin{equation*}
+delay_t(i) = t-k
+\end{equation*}
+
+If $delay_t(i) = d$ and $delay_{t+1}(i) = d + 1 > 0$, let us say that one package $m_j$ from a node $j$ is ejected with at $d$.
+
+Let $T$ be the time step in which $i$ reaches its destination. Note that $delay_1(i) = 0$ and if $i$ reaches its destination in $T$ time steps, then
+\begin{equation*}
+delay_T(i) = T-l_i = \text{delay of }i.
+\end{equation*}
+We need to prove that $delay_T(i)\leq |S|$. If $delay_T(i) = D$, there must be nodes ejected at $d=1,2,\cdots,D$, meaning that $D \leq |S| = \text{all nodes can be ejected}$. Here we get $delay(i) \leq |S|$ proved for any $|S|$.
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ACKNOWLEGEMENT
+\Acknowledgement
+
+Thanks to \href{https://homes.cs.washington.edu/~jrl/teaching/cse525au16/lectures/lecture6.pdf}{Lecture 6: Randomized routing in the hypercube} for SP2b.
+
+No thanks
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

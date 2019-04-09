@@ -22,4 +22,10 @@ modify_date: 2019-03-04
 + Homework 4
   - Question: [pdf](/assets/mcs/hw4/HW4.pdf)
   - Personal Answer: [latex](/assets/mcs/hw4/hw4_2015010697.tex), [pdf](/assets/mcs/hw4/hw4_2015010697.pdf)
++ Homework 5
+  - Question: [pdf](/assets/mcs/hw5/HW5.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw5/hw5_2015010697.tex), [pdf](/assets/mcs/hw5/hw5_2015010697.pdf)
++ Homework 6
+  - Question: [pdf](/assets/mcs/hw6/HW6.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw6/hw6_2015010697.tex), [pdf](/assets/mcs/hw6/hw6_2015010697.pdf)
 
