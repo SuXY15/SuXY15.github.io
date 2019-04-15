@@ -1,0 +1,245 @@
+% Modified based on Xiaoming Sun's template
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+\usepackage{fontspec}
+\usepackage{CJKutf8}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\newcommand{\Class}{Mathematics for Computer Science}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 7}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}}
+\date{April 15, 2019}
+\author{Xingyu Su 2015010697}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 1]
+\hspace{1em}
+In the attachment to this homework set, we give a summary of the lecture delivered today. In particular, Theorem 1 states that, under some assumptions on $f(z)$, the power series coefficients $a_n$ of $f(z)$ can be expressed as a linear combination of residues of $f(z)/z_{n+1}$ at $z = z_j$. Assume that we have proved Theorem 1.
+
+\textbf{Question:} Prove Corollary 2.
+
+\Answer
+
+From 5.1 of \href{http://202.116.32.252:8080/fbhs/upload/file/20161120/20161120180759_71344.pdf}{\begin{CJK}{UTF8}{gbsn}《复变函数简明教程》\end{CJK}}, we know for $z_0 \neq \infty$  is a m order pole singularity of $f(z)$, residue of $f(z)$ at $z=z_0$ is:
+\begin{equation*}
+Res(f,z_0) = \frac{1}{(m-1)!}\lim_{z \to z_0}{\frac{d^{m-1}}{dz^{m-1}}[(z-z_0)^m f(z)]}.
+\end{equation*}
+
+So with Theorem 1, power expansion of $f$ at $z=0$, $f(z)=\sum_{n\geq0}a_nz^n$ having (Since the power expansion is from $z=0$)
+\begin{align*}
+a_n
+  &= - \sum_{i\geq1}Res(\frac{f(z)}{z^{n+1}},z_i) \\
+  &= - \sum_{i\geq1}\frac{1}{(m-1)!}\lim_{z \to z_i}{\frac{d^{m-1}}{dz^{m-1}}[(z-z_i)^m \frac{f(z)}{z^{n+1}}]} \\
+  &= - \sum_{i\geq1}\frac{1}{z_i^{n+1}}\frac{1}{(m-1)!}\lim_{z \to z_i}{\frac{d^{m-1}}{dz^{m-1}}[(z-z_i)^m f(z)]} \\
+  &= - \sum_{i\geq1}\frac{Res(f, z_i)}{z_i^{n+1}}
+\end{align*}
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 2]
+\hspace{1em}
+Let
+\begin{equation*}
+f(z) =\frac{3}{(z - 5i)^2}.
+\end{equation*}
+
+  (a) Let $n > 0$. Determine the residue of $f(z)/z^{n+1}$ at $z = 5i$.
+
+  (b) Use Theorem 1 to determine the power series expansion of $f(z) = \sum_{n\geq 0} a_n z^n$. Does this agree with the answer you would get if you apply Newton’s binomial theorem to the expression $(1 - z/5i)^{-2}$?
+
+\Answer
+
+  (a) Easy to know that $z_1=5i$ is a second order pole singularity of $f$. So $f(z)/z^{n+1}$ have a second order pole singularity at $z_1=5i$ expect $z_0=0$. With the formula mentioned above, we have:
+\begin{align*}
+Res(\frac{f(z)}{z^{n+1}},z_1)
+  &= \frac{1}{1!}\lim_{z \to 5i}{\frac{d}{dz}[(z-5i)^2 \frac{f(z)}{z^{n+1}}]} \\
+  &= 3\lim_{z \to 5i}{\frac{d}{dz}[\frac{1}{z^{n+1}}]} \\
+  &= -\frac{3}{25} \frac{(n+1)}{(5i)^{n}}
+\end{align*}
+
+  (b) With Theorem 1 and results from (a), we have:
+\begin{equation*}
+a_n = -\sum_{i\geq1} Res(\frac{f(z)}{z^{n+1}},z_i) = -Res(\frac{f(z)}{z^{n+1}},z_1) = -\frac{3}{25} \frac{n+1}{(5i)^{n}}
+\end{equation*}
+
+And Newton's binomial theorem with negative exponents have:
+\begin{equation*}
+(1+z)^{-k} = \sum_{n\geq0}(-1)^n\binom{k+n-1}{n}z^{n}
+\end{equation*}
+
+So there is:
+\begin{align*}
+(1-\frac{z}{5i})^{-2}
+  &= \sum_{n\geq0}(-1)^n\binom{n+1}{n}\left(-\frac{z}{5i}\right)^{n} \\
+  &= \sum_{n\geq0}\binom{n+1}{n}(5i)^{-n}z^n
+\end{align*}
+
+And known that:
+\begin{equation*}
+f(z) = \frac{3}{(z-5i)^2}=\frac{3}{(5i)^2}(\frac{5i-z}{5i})^{-2} = -\frac{3}{25}(1-\frac{z}{5i})^{-2}
+\end{equation*}
+
+So power series expansion coefficients $a'_n$ from Newton's binomial theorem is:
+\begin{equation*}
+a'_n = -\frac{3}{25} \binom{n+1}{n}(5i)^{-n} = -\frac{3}{25}\frac{n+1}{(5i)^n} = a_n
+\end{equation*}
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 3]
+\hspace{1em}
+Let $A(z) = \frac{1}{\lambda-e^z}$ be a function over the complex plane, where $\lambda > 1$ is a real number.
+
+(a) Where are all the singularities of $A$ on the complex plane? Are they isolated singularities? Determine the residue of $A$ at each of its isolated singularities.
+
+(b) Consider the power series expansion $A(z) = \sum_{n\geq0} a_n z^n$ in the neighborhood of $z = 0$. Find a closed-form expression $g(n)$ in variable $n$, such that $\lim_{n\to\infty} \frac{a_n}{g(n)} = 1$. You should give your reasoning rigorously.
+
+(c) Consider the following recurrence relation: $b_0 = 1$, and for $n \geq 1$,
+\begin{equation*}
+b_n = \sum_{0\leq k \leq n-1} b_k \binom{2n}{2k}.
+\end{equation*}
+Find a closed-form expression $h(n)$ in variable $n$, such that $\lim_{n\to\infty}\frac{b_n}{h(n)} = 1$.
+\Answer
+
+(a) Easy to know that when $z=\ln \lambda+2k\pi$ for $k \in \mathcal{Z}$, $\lambda-e^z=0$, so $z_k = \ln \lambda + 2 k\pi, k \in \mathcal{Z}$ are isolated singularities of $A$.
+\begin{align*}
+Res(f,\ln \lambda + 2k\pi) = Res(f,\ln \lambda) 
+  &= \lim_{z \to \ln \lambda}(z-\ln \lambda)\frac{1}{\lambda-e^z} = \lim_{z \to \ln \lambda}\frac{1}{-e^z} = -\frac{1}{\lambda}
+\end{align*}
+
+(b) Since $A(z) = \sum_{n\geq0}a_n z^n$ and all singularities $z_k$ have only one order. So $a_n$:
+\begin{align*}
+a_n 
+  &= -\sum_{k=-\infty}^{+\infty}Res(\frac{1}{(\lambda - e^z)z^{n+1}}, z_k) \\
+  &= -\sum_{k=-\infty}^{+\infty} \lim_{z\to z_k} (z-z_k)\frac{1}{\lambda-e^z}\frac{1}{z^{n+1}} \\
+  &= \frac{1}{\lambda}\sum_{k=-\infty}^{+\infty}\frac{1}{z_k^{n+1}}\\
+  &= \frac{1}{\lambda}\sum_{k=-\infty}^{+\infty}\frac{1}{(\ln\lambda+2k\pi)^{n+1}}
+\end{align*}
+
+And obviously, when $n\to\infty$, terms smaller than 1 with exponent $n+1$ decreases rapidly. So with $g(n) = \frac{1}{\lambda}\frac{1}{(\ln \lambda+2m\pi)^{n+1}}$ where:
+\begin{equation*}
+|\ln \lambda + 2m\pi| = \min_{k}\{|\ln \lambda + 2k\pi|\}
+\end{equation*}
+
+For example, when $\lambda=e, \ln\lambda=1$, $m=-1$, $g(n) = (1-2\pi)^{-(n+1)}/e$
+
+(c) With
+\begin{align*}
+b_n &= \sum_{k=0}^{n-1} b_k \binom{2n}{2k} \\
+    &= \sum_{k=0}^{n-2} b_k \binom{2n}{2k} + n(2n-1) b_{n-1} \\
+    &\leq \left[\frac{(2n-1)n}{6}+n(2n-1)\right]b_{n-1} \\
+    &= \frac{7}{6}(2n^2-n)b_{n-1}
+\end{align*}
+
+And
+\begin{align*}
+b_n &= \sum_{k=0}^{n-1} b_k \binom{2n}{2k} \\
+    &= \sum_{k=0}^{n-2} b_k \binom{2n}{2k} + n(2n-1) b_{n-1} \\
+    &\geq (2n^2-n)b_{n-1}
+\end{align*}
+So $h(n) = (2n-1)!!n!$ is a close form that has $\lim_{n\to\infty}\frac{b_n}{h(n)} = 1$
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ACKNOWLEGEMENT
+\Acknowledgement
+
+Thanks to \href{http://202.116.32.252:8080/fbhs/upload/file/20161120/20161120180759_71344.pdf}{\begin{CJK}{UTF8}{gbsn}《复变函数简明教程》\end{CJK}} for SP1
+
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

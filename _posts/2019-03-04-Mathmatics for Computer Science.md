@@ -28,4 +28,6 @@ modify_date: 2019-03-04
 + Homework 6
   - Question: [pdf](/assets/mcs/hw6/HW6.pdf)
   - Personal Answer: [latex](/assets/mcs/hw6/hw6_2015010697.tex), [pdf](/assets/mcs/hw6/hw6_2015010697.pdf)
-
++ Homework 7
+  - Question: [pdf](/assets/mcs/hw7/HW7.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw7/hw7_2015010697.tex), [pdf](/assets/mcs/hw7/hw7_2015010697.pdf)

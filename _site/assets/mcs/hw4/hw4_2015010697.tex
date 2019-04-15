@@ -145,7 +145,6 @@ Pr\{X\leq(1-\delta)\mu\}\leq\left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\righ
 \begin{equation*}
 Pr{|X -\frac{n}{2}| > a} \leq 2e^{\frac{-2a^2}{n}}.
 \end{equation*}
-
 (Hint: First show that $e^t + 1 \leq 2e^{t/2+t^2/8}$ for all $t > 0$.)
 
 \Answer 
@@ -172,7 +171,7 @@ Set $t=-\ln(1-\delta)$ and $t>0$ when $0<\delta<1$, then
 Pr(X\leq(1-\delta)\mu) 
   &\leq \frac{e^{(e^{-t}-1)\mu}}{e^{-t(1-\delta)\mu}} \\
   &= \frac{e^{-\delta\mu}}{(1-\delta)^{(1-\delta)\mu}} \\
-  &= \left[\frac{e^-\delta}{(1-\delta)^{(1-\delta)}}\right]^\mu
+  &= \left[\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right]^\mu
 \end{align*}
 
 (b) I have no idea from $e^t-1\leq 2e^{t/2+t^2/8}$. But a different prove from \textbf{Probability and Computing: Randomized Algorithms and Probabilistic Analysis} is found as below:
@@ -184,7 +183,7 @@ E[e^{tY_i}]
   &= \frac{1}{2}e^t+\frac{1}{2}e^{-t}\\
   &= \frac{1}{2}(1+t+\frac{t^2}{2!}+\frac{t^3}{3!}+\cdots)-\frac{1}{2}(1-t+\frac{t^2}{2!}-\frac{t^3}{3!}+\cdots) \\
   &= \sum_{i\geq0}\frac{t^{2i}}{(2i)!} \\
-  &= \sum_{i\geq0}\frac{(t^2/2)^i}{i!}
+  &= \sum_{i\geq0}{(t^2/2)^i}/{i!} \\
   &= e^{t^2/2}.
 \end{align*}
 

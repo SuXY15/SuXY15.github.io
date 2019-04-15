@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-03-25T18:23:45+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2019-04-16T00:12:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xingyu Su’s Github.io</title><subtitle>Xingyu Su's Personal Github.io
 </subtitle><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><entry><title type="html">Mathematics for Computer Science</title><link href="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html" rel="alternate" type="text/html" title="Mathematics for Computer Science" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/Mathmatics%20for%20Computer%20Science</id><content type="html" xml:base="http://localhost:4000/2019/03/04/Mathmatics-for-Computer-Science.html">&lt;!--more--&gt;
 
 &lt;ul&gt;
@@ -24,6 +24,24 @@
     &lt;ul&gt;
       &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw4/HW4.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw4/hw4_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw4/hw4_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Homework 5
+    &lt;ul&gt;
+      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw5/HW5.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw5/hw5_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw5/hw5_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Homework 6
+    &lt;ul&gt;
+      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw6/HW6.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw6/hw6_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw6/hw6_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Homework 7
+    &lt;ul&gt;
+      &lt;li&gt;Question: &lt;a href=&quot;/assets/mcs/hw7/HW7.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Personal Answer: &lt;a href=&quot;/assets/mcs/hw7/hw7_2015010697.tex&quot;&gt;latex&lt;/a&gt;, &lt;a href=&quot;/assets/mcs/hw7/hw7_2015010697.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Learning" /><category term="Mathematics" /><summary type="html">叉院大一课程 by 姚期智</summary></entry><entry><title type="html">Web PPT</title><link href="http://localhost:4000/2018/10/12/Web-PPT.html" rel="alternate" type="text/html" title="Web PPT" /><published>2018-10-12T00:00:00+08:00</published><updated>2018-10-12T00:00:00+08:00</updated><id>http://localhost:4000/2018/10/12/Web%20PPT</id><content type="html" xml:base="http://localhost:4000/2018/10/12/Web-PPT.html">&lt;!doctype html&gt;
@@ -753,10 +771,10 @@ Reveal.addEventListener( 'customevent', function() {
   &lt;/body&gt;
 &lt;/html&gt;</content><author><name>Xingyu Su</name><email>suxy15tsinghua@gmail.com</email></author><category term="Bootstrap" /><summary type="html">Bootstrap</summary></entry><entry><title type="html">Color Storage</title><link href="http://localhost:4000/2018/08/09/Color-Storage.html" rel="alternate" type="text/html" title="Color Storage" /><published>2018-08-09T00:00:00+08:00</published><updated>2018-08-09T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/09/Color%20Storage</id><content type="html" xml:base="http://localhost:4000/2018/08/09/Color-Storage.html">&lt;html&gt;
 &lt;head&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css&quot;&gt;
-    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;http://code.jquery.com/ui/1.10.4/jquery-ui.js&quot;&gt;&lt;/script&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://jqueryui.com/resources/demos/style.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css&quot;&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/ui/1.10.4/jquery-ui.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://jqueryui.com/resources/demos/style.css&quot;&gt;
     
     &lt;style&gt;
     #slider{
