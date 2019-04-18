@@ -5,7 +5,7 @@ excerpt:     叉院大一课程 by 姚期智
 tags:
   - Learning
   - Mathematics
-modify_date: 2019-03-04
+modify_date: 2019-04-18
 ---
 
 <!--more-->
@@ -31,3 +31,6 @@ modify_date: 2019-03-04
 + Homework 7
   - Question: [pdf](/assets/mcs/hw7/HW7.pdf)
   - Personal Answer: [latex](/assets/mcs/hw7/hw7_2015010697.tex), [pdf](/assets/mcs/hw7/hw7_2015010697.pdf)
++ Homework 8
+  - Question: [pdf](/assets/mcs/hw8/HW8.pdf)
+  - Personal Answer: [latex](/assets/mcs/hw8/hw8_2015010697.tex), [pdf](/assets/mcs/hw8/hw8_2015010697.pdf), [python](/assets/mcs/hw8/hw8.py)

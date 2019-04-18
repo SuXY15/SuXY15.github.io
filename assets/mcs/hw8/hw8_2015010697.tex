@@ -1,0 +1,272 @@
+% Modified based on Xiaoming Sun's template
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+\usepackage{fontspec}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\newcommand{\Class}{Mathematics for Computer Science}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 8}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}}
+\date{April 18, 2019}
+\author{Xingyu Su 2015010697}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% code listing color settings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolor},   
+    commentstyle=\color{codegreen},
+    keywordstyle={\color{magenta}\bfseries},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small\setstretch{1},
+    morecomment=[s][\color{Strings}]{"""}{"""},
+    morecomment=[s][\color{Strings}]{'''}{'''},
+    morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+    emph={self},
+    emphstyle={\color{self}\slshape},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\footnotesize,
+    numbersep=1em,
+    xleftmargin=1em,
+    framextopmargin=2em,
+    framexbottommargin=2em,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=l,
+    tabsize=4,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 1]
+In class we discussed the \textit{Mr. P and Mr. S problem}, in which a conversation with 4 rounds of communications takes place. Let $2 \leq m < 98 n \leq 99$. Of the $\binom{98}{2}= 4753$ pairs of $(m, n)$ in the range, let $a_j$ be the number of pairs leading to this conversation (exactly as stated in class) stopping (and unable to continue) after exactly $j$ rounds for $j = 0, 1, 2, 3, 4$, respectively. You should get $a_4 = 1$.
+
+\textbf{\textit{Mr. P and Mr. S problem:}}
+\textit{Two numbers $m$ and $n$ are chosen such that $2 \leq m \leq n \leq 99$. Mr. S is told their sum and Mr. P is told their product. The following dialogue ensues:}
+
+\textit{Mr. P: I don't know the numbers.}
+
+\textit{Mr. S: I knew you didn't know. I don't know either.}
+
+\textit{Mr. P: Now I know the numbers.}
+
+\textit{Mr. S: Now I know them too.}
+
+\textbf{Question}: Write a computer program and determine the values of $a_0, a_1, a_2, a_3, a_4$. You should give a concise explanation of the principles of your design.
+
+\Answer 
+
+It's not difficult to analyze this problem. Step by step we can get all $a_j$. 
+
+(1) To get $a_0$, we need to know exactly when will \textit{Mr. P don't know the numbers}. That means, the product given to him is not unique of products in all pertubations. Define the whole produts array as $muls$. Count them one by one, we will know the times each $mul$ shows up. Then select all situations that $mul$ more than one time, we get $a_0$ situations left.
+
+(2) To get $a_1$, we need to know when \textit{Mr. S knew Mr. P didn't know}. Define the whole sums array as $sums$. All situations that $mul$ shows exactly one time will make \textit{Mr. P know the numbers}. So \textit{Mr. S} knows that the $sum$ given to him will not lead to situation like that. Which means, his $sum$ does not belong to the $sums$ that corresponding $muls$ are unique. Here we get $a_1$.
+
+(3) To get $a_2$, we need to know when \textit{Mr. S still don't know the numbers}. First we should reduce the scope of results in to $a_1$. Then similar to (1), counting all $sums$ and the ones not unique are which the numbers could belong to. $a_2$ is the number of these situations.
+
+(4) $a_3$ is the number of situations that \textit{Mr. P know the results} under all situations represented by $a_2$. So the product \textit{Mr. P} got is unique in $a_2$ situations. Counting this, we get $a_3$ now.
+
+(5) \textit{Mr. S now knows the results} lead to similar counting process in (4). Counting all $sums$ in $a_3$ and find all unique ones. We finally get $a_4$.
+
+The program is clear now. I choose $python$ as programming language since it's easy to do counting and selection. To get counting part seperated, I used \textit{collections.Counter} function and mapping to write a \textit{IndexFilter} that can get all index that corresponding values in $fvals$ satisifying $condition$ of counting $cvals$.
+
+The code I wrote is as below:
+
+\
+
+\
+
+\lstset{style=python}
+\lstinputlisting[language=Python]{hw8.py}
+
+The results of $a_j$ are:
+\begin{equation*}
+a_0 = 3021,\ a_1 = 145,\ a_2 =145,\ a_3 = 86,\ a_4 = 1.
+\end{equation*}
+and the numbers are:
+\begin{equation*}
+m = 4, n = 13, m+n = 17, m\times n=52.
+\end{equation*}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=0.5\linewidth]{figures/sp1}
+%   \caption{Program outputs.}
+%   \label{fig:sp1}
+% \end{figure}
+
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}[Special Problem 2]
+Let $\mathcal{C}$ be the unit circle on the complex plane, traversed counter-clockwise. Let $n$ be any integer (positive, negative and zero), and $A_n = \oint_\mathcal{C} z^n$. $\mathcal{C}$ Determine the value of $A_n$. You should give a justification of your answer.
+
+\Answer 
+
+To solve the integral along with unit circle on the complex plane, define the unit circle as $\gamma (\theta) = e^{i\theta}$. So:
+\begin{align*}
+A_n = \oint_\mathcal{C} z^n 
+  &= \int_0^{2\pi} e^{in\theta}de^{i\theta} \\
+  &= \int_0^{2\pi} ie^{(n+1)\theta}d\theta \\
+  &= i\int_0^{2\pi} \cos[(n+1)\theta]d\theta-\int_0^{2\pi}\sin[(n+1)\theta]d\theta
+\end{align*}
+
+Easy to know that when $n+1 \neq 0$, $\int_0^{2\pi} \cos[(n+1)\theta]d\theta = \int_0^{2\pi}\sin[(n+1)\theta]d\theta = 0$. So $A_n = 0$, for $n\neq -1$. When $n=-1$, we have:
+\begin{align*}
+A_n = \int_0^{2\pi} i d\theta = 2\pi i \\
+\end{align*}
+
+So, the results are:
+\begin{equation*}
+A_n = \left\{
+  \begin{array}{ll}
+    2\pi i, & n=-1; \\
+    0, & else.
+  \end{array}
+\right.
+\end{equation*}
+
+For justification, consider the \href{https://en.wikipedia.org/wiki/Cauchy%27s_integral_theorem}{Cauchy integral theorem} that:
+
+\hspace{2em}
+When $f$ is a holomorphic function, and let $\mathcal{C}$ be a rectifiable path whose start point is equal to its end point. Then
+\begin{equation*}
+\oint_\mathcal{C} f(z) dz = 0.
+\end{equation*}
+
+For all $n \geq 0$, $f(z) = z^n$ is obvious holomorphic, so $A_n = 0$ for $n=0,1,2,\cdots$. The method used before for solving $n=-1$ is totally calculus and is unnecessary to be discussed here. For the cases that $n<-1$. We know the \href{https://en.wikipedia.org/wiki/Residue_theorem}{Residue theorem} that:
+\begin{equation*}
+\oint_{\mathcal{C}} f(z) dz = 2\pi i\sum_{k=1}^n Res(f,z_k)
+\end{equation*}
+where $\mathcal{C}$ is a positively oriented simple closed curve and $z_k$ are poles. And the residue:
+\begin{equation*}
+Res(f, z_k) = \lim_{z\to z_k}\frac{1}{(k - 1)!}\frac{d^{k-1}}{dz^{k-1}}(z - c)^k f(z)
+\end{equation*}
+
+So for $f(z)=z^{-n}, n>1$, we have an $n$ order pole $z=0$.
+\begin{equation*}
+A_n = \oint_\mathcal{C} f(z) dz = 2\pi i \lim_{z\to 0}\frac{1}{(n-1)!}\frac{d^{n-1}}{dz^{n-1}}z^n z^{-n} = 0.
+\end{equation*}
+
+In summary, the results still are:
+\begin{equation*}
+A_n = \left\{
+  \begin{array}{ll}
+    2\pi i, & n=-1; \\
+    0, & else.
+  \end{array}
+\right.
+\end{equation*}
+\end{homeworkProblem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ACKNOWLEGEMENT
+\Acknowledgement
+
+Thanks to \href{https://en.wikipedia.org/wiki/Cauchy%27s_integral_theorem}{Cauchy integral theorem} and \href{https://en.wikipedia.org/wiki/Residue_theorem}{Residue theorem} for SP2.
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
