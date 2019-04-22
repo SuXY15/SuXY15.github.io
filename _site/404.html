@@ -10,7 +10,7 @@
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
 <meta name="theme-color" content="#ffffff">
-<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/css/fontawesome/font-awesome.min.css" ><!-- start custom head snippets -->
 
 <!-- end custom head snippets --><script>(function() {
   window.isArray = function(val) {
@@ -231,17 +231,17 @@
     var TEXT_VARIABLES = {
       version: '2.2.4',
       sources: {
-        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
-        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
-        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
-        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        font_awesome: '/assets/css/fontawesome/font-awesome.min.css',
+        jquery: '/assets/js/jquery-3.3.1.min.js',
+        leancloud_js_sdk: '/assets/js/av-min.js',
+        chart: '/assets/js/Chart.bundle.min.js',
         gitalk: {
-          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
-          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+          js: '/assets/js/gitalk.min.js',
+          css: '/assets/css/gitalk.min.css'
         },
         valine: 'https://unpkg.com/valine/dist/Valine.min.js',
         mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
-        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+        mermaid: '/assets/js/mermaid.min.js'
       },
       site: {
         toc: {
@@ -956,7 +956,7 @@ window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
 
 })();*/
 </script><script>
-  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+  window.Lazyload.js(['/assets/js/jquery-3.3.1.min.js', '/assets/js/Chart.bundle.min.js'], function() {
     var $canvas = null, $this = null, _ctx = null, _text = '';
     $('.language-chart').each(function(){
       $this = $(this);
@@ -973,7 +973,7 @@ window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
 	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
 </script>
 <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script>
-  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+  window.Lazyload.js('/assets/js/mermaid.min.js', function() {
     mermaid.initialize({
       startOnLoad: true
     });
