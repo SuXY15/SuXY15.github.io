@@ -41,7 +41,7 @@ default:
 
 sources:
   bootcdn:
-    font_awesome: '/assets/css/fontawesome/font-awesome.min.css'
+    font_awesome: '/assets/plugin/fontawesome/css/all.css'
     jquery: '/assets/js/jquery-3.3.1.min.js'
     leancloud_js_sdk: '/assets/js/av-min.js'
     chart: '/assets/js/Chart.bundle.min.js'
@@ -52,7 +52,7 @@ sources:
     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: '/assets/js/mermaid.min.js'
   unpkg:
-    font_awesome: '/assets/css/fontawesome/font-awesome.min.css'
+    font_awesome: '/assets/plugin/fontawesome/css/all.css'
     jquery: '/assets/js/jquery-3.3.1.min.js'
     leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js'
     chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js'
