@@ -122,8 +122,8 @@ comments:
   provider: false # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
-  disqus:
-    shortname: suxy.info # the Disqus shortname for the site
+  # disqus:
+  #   shortname:  # the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
