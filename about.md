@@ -6,7 +6,7 @@ titles:
   zh-Hans: 关于
   zh-Hant: 關於
 key: page-about
-modify_date: 2018-08-10
+modify_date: 2020-10-06
 ---
 
 Welcome to my Personal Site! :earth_asia:
@@ -14,24 +14,21 @@ Welcome to my Personal Site! :earth_asia:
 欢迎来到我的个人站点！
 
 
-I am Xingyu Su, a junior student at Department of Energy and Power Engineering, Tsinghua University, you can know more about me by [click here](/resume.html) to see my resume.
+I am Xingyu Su, a PhD student at Department of Energy and Power Engineering, Tsinghua University. You can know more about me by [click here](/resume) to see my resume.
 
-我是苏星宇，清华大学能源与动力工程系大四在读，喜欢捣鼓些有趣的东西，可以[点击此处](/resume_zh.html)看我的中文简历。
+我是苏星宇，清华大学能源与动力工程系博士在读，喜欢捣鼓些有趣的东西，可以[点击此处](/resume_zh)查看我的中文简历。
+
 
 Some other entries of this SITE:
 
-+ [download](/download): a transfer station of files(password required)
-+ [record](/record): some records of slices of life
 + [share](/share): a share station for some interesting things
 + [temp](/temp): temp is temp
 + [404](/404): JS terminal demo
 
 本站的一些其他入口：
 
-- [download](/download): 个人文件中转站(需要密码)
-- [record](/record): 用于个人记录
 - [share](/share): 分享有趣的东西
 - [temp](/temp): 临时的选择
 - [404](/404): 基于JS的命令行
 
-<p align="center"><font color="gray">Last Updated on 27/Jun/2018.</font></p>
+<p align="center"><font color="gray">Last Updated on 06/Oct/2020.</font></p>

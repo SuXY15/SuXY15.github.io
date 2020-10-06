@@ -25,15 +25,13 @@ modify_date: 2018-08-10
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type = "text/ecmascript" src="assets/js/md5.js"></script>
     <script type = "text/ecmascript" src="/assets/js/md5.js"></script>
     <script type = "text/javaScript">
     $( function() {
         var dialog, form;
         var username = $( "#username" );
         var password = $( "#password" );
-        var normwd = "85e4 7ac0 7ac9 d641 6168 a97e 33fa 969a";
-        var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
+        var md5pass = "85e4 7ac0 7ac9 d641 6168 a97e 33fa 969a";
 
         dialog = $( "#dialog-form" ).dialog({
             dialogClass: "my-dialog",
@@ -43,11 +41,8 @@ modify_date: 2018-08-10
             modal: true,
             closeOnEscape: false,
             buttons: {
-                "Confirm": function () {
-                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                        dialog.dialog("close");
-                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
-                        flag = "root";
+                Confirm: function () {
+                    if ((username.val() == "share") && (hex_md5(password.val()) == md5pass.replace(/\s+/g,""))){
                         dialog.dialog("close");
                     }else{
                         window.location.href='http://suxy15.github.io';
@@ -62,7 +57,6 @@ modify_date: 2018-08-10
         });
         form = dialog.find( "form" ).on( "submit", function( event ) {
             event.preventDefault();
-            checkPasswd();
         });
     });
     </script>
@@ -83,9 +77,8 @@ modify_date: 2018-08-10
     </div>
     
     <div class="page-content">
-        <a href="/assets/downloads/pre.pptx">弹性力学展示20181229</a>
-        <a href="/assets/downloads/Lorenz.ogv.480p.webm">Lorenz demo</a>
-        
+        Not Used Now
+        <!-- <a href="/assets/downloads/pre.pptx">弹性力学展示20181229</a> -->
     </div>
 </body>
 </html>

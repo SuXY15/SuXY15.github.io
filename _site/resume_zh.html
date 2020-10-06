@@ -264,7 +264,7 @@
 <html>
 
 <head>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="苏星宇">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -280,6 +280,10 @@
     .ulist {
         margin-left: 40px;
     }
+    table {
+      margin-left: 0px;
+      table-layout: fixed;
+    }
     </style>
 </head>
 
@@ -290,16 +294,16 @@
         </p>
         <p style="text-align: right;"><a class="header" href="https://github.com/SuXY15">Github</a></p>
         <p>
-            <!-- container: Welcom -->
+            <!-- container: Welcome -->
         </p>
         <div class="container">
-            <div class="content" align="middle">
-                <table border="0" width="600" align="middle">
+            <div class="content">
+                <table border="0" overflow="hidden">
                     <tbody>
                         <tr>
-                            <td width="300"><img src="https://raw.githubusercontent.com/SuXY15/MyPic/master/CV/Xingyu_Su.JPG" alt="Photo" width="273" height="397" /></td>
+                            <td ><img src="/assets/images/resume/Xingyu_Su.JPG" alt="Photo" width="273" height="397" /></td>
                             <td align="middle">
-                                <table border="0" width="300">
+                                <table border="0">
                                     <tbody>
                                         <tr>
                                             <td colspan="2" height="58">
@@ -312,7 +316,7 @@
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><a href="suxy15@mails.tsinghua.edu.cn">suxy15@mails.tsinghua.edu.cn</a></td>
+                                            <td><a href="suxy15@mails.tsinghua.edu.cn">su-xy19@mails.tsinghua.edu.cn</a></td>
                                         </tr>
                                         <tr>
                                             <td>手机:</td>
@@ -325,34 +329,59 @@
                     </tbody>
                 </table>
                 <p>&nbsp;</p>
+
                 <div class="Education" align="left">
                     <h3 style="line-height: 0;">教育经历</h3>
                     <div class="bigdiv">
                         <ul>
-                            <li class="llist">2015-至今 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
+                            <li class="llist">2015-2019 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
                                 <ul>
                                     <li class="ulist">本科：能源与动力工程专业</li>
                                     <li class="ulist">辅修：计算机技术与应用专业</li>
+                                </ul>
+                            </li>
+                            <li class="llist">2019-至今 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
+                                <ul>
+                                    <li class="ulist">博士：燃烧科学与技术专业</li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Research" align="left">
                     <h3 style="line-height: 0;">研究经历</h3>
                     <div class="bigdiv">
                         <ul>
-                            <li class="llist"><strong>2017/09-至今 Ia超新星的碳氧球形内传火焰的数值模拟</strong>
+                            <li class="llist"><strong>2020/03-至今 基于神经网络的机理参数优化</strong>
                                 <ul>
-                                    <li class="ulist">导师: <a href="http://www.tsinghua.edu.cn/publish/te/2230/2015/20150715140933652639355/20150715140933652639355_.html">高扬 </a></li>
-                                    <li class="ulist">理论推导；Fortran数值模拟</li>
+                                    <li class="ulist">导师: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">任祝寅 </a></li>
+                                    <li class="ulist">NeuralODE；反应机理；参数优化</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2019/10-2020/03 湍流火焰中不确定性量化的连续降维方法</strong>
+                                <ul>
+                                    <li class="ulist">导师: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">任祝寅 </a></li>
+                                    <li class="ulist">活性子空间；不确定性分析；辅助工作</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2018/11-2020/05 机理简化过程中的不确定性传递</strong>
+                                <ul>
+                                    <li class="ulist">导师: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">任祝寅 </a></li>
+                                    <li class="ulist">反应机理；不确定性分析；活性子空间</li>
                                 </ul>
                             </li>
                             <li class="llist"><strong>2018/07-2018/08 基于图像处理的液滴识别与分选</strong>
                                 <ul>
                                     <li class="ulist">导师: <a href="https://acoustofluidics.pratt.duke.edu/people/tony-jun-huang">Tony Jun Huang </a></li>
-                                    <li class="ulist">实时图像处理；实验</li>
+                                    <li class="ulist">实时图像处理；实验； iOS 编程</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2017/09-2018/07 Ia超新星的碳氧球形内传火焰的数值模拟</strong>
+                                <ul>
+                                    <li class="ulist">导师: <a href="http://www.tsinghua.edu.cn/publish/te/2230/2015/20150715140933652639355/20150715140933652639355_.html">高扬 </a></li>
+                                    <li class="ulist">理论推导；Fortran数值模拟</li>
                                 </ul>
                             </li>
                             <li class="llist"><strong>2017/11-2018/01 多场作用下颗粒迁移和沉积的数值模拟</strong>
@@ -371,6 +400,7 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Work" align="left">
                     <div>
                         <h3 style="line-height: 0;">工作经历</h3>
@@ -382,12 +412,13 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Skills" align="left">
                     <div>
                         <h3 style="line-height: 0;">掌握技能</h3>
                         <div class="bigdiv">
                             <ul>
-                                <li class="llist">编程: C / C++ / Python / Fortran / Java / Html</li>
+                                <li class="llist">编程: C / C++ / Python / Fortran / Html</li>
                                 <li class="llist">软件: Matlab / Comsol / Solidworks / AutoCAD</li>
                                 <li class="llist">硬件: Arduino / STM / Raspberry PI </li>
                             </ul>
@@ -395,6 +426,7 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Honor" align="left">
                     <h3 style="line-height: 0;">荣誉奖项</h3>
                     <div class="bigdiv">
@@ -406,9 +438,23 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
-                <div class="Last_Update" align="middle">
-                    <p><span style="color: #808080;" ; align="center" ;>最后更新于 2018 年 8 月 19 日</span></p>
+
+                <div class="Honor" align="left">
+                    <h3 style="line-height: 0;">发表文章</h3>
+                    <div class="bigdiv">
+                        <ul>
+                            <li class="llist">N. Wang, Q. Xie, X. Su, Z. Ren. Quantification of modeling uncertainties in turbulent flames through successive dimension reduction[J]. Combustion and Flame, 2020, 222:476-489 </li>
+                            <li class="llist">P. Zhang, C. Chen, X. Su, J. Mai, & T.J. Huang. Acoustic streaming vortices enable contactless, digital control of droplets[J]. Science Advances, 2020, 6(24):eaba0606 </li>
+                        </ul>
+                    </div>
                 </div>
+                <p>&nbsp;</p>
+
+                <div class="Last_Update" align="middle">
+                    <p><span style="color: #808080;" ; align="center" ;>最后更新于 2020 年 10 月 6 日</span></p>
+                </div>
+
+                
             </div>
         </div>
     </div>

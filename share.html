@@ -28,8 +28,7 @@ key:     page-share
         var dialog;
         var username = $( "#username" );
         var password = $( "#password" );
-        var normwd = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
-        var rootwd = "831f d36d 8519 5386 b30f 0240 2718 b576";
+        var md5pass = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
         dialog = $( "#dialog-form" ).dialog({
             dialogClass: "my-dialog",
             autoOpen: false,
@@ -38,10 +37,7 @@ key:     page-share
             modal: true,
             buttons: {
                 Confirm: function() {
-                    if ((username.val() == "share") && (hex_md5(password.val()) == normwd.replace(/\s+/g,""))){
-                        dialog.dialog("close");
-                    }else if ((username.val() == "root") && (hex_md5(password.val()) == rootwd.replace(/\s+/g,""))){
-                        flag = "root";
+                    if ((username.val() == "share") && (hex_md5(password.val()) == md5pass.replace(/\s+/g,""))){
                         dialog.dialog("close");
                     }else{
                         window.location.href='http://suxy15.github.io';
