@@ -264,7 +264,7 @@
 <html>
 
 <head>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="苏星宇">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -281,42 +281,64 @@
         margin-left: 40px;
     }
     table {
-      margin-left: 0px;
+      /*margin-left: 0px;*/
       table-layout: fixed;
     }
+    div .container {
+        width: 100%;
+    }
+    @media screen  and (max-device-width: 480px) {
+      div .container {
+        width: 100%;
+      }
+      img {
+        width: 90%;
+      }
+    }
+    
     </style>
 </head>
 
 <body>
     <div class="page-content">
-        <p>
-            <!-- link: style -->
-        </p>
-        <p style="text-align: right;"><a class="header" href="https://github.com/SuXY15">Github</a></p>
-        <p>
-            <!-- container: Welcome -->
-        </p>
+        <p> <!-- link: style -->  </p>
+
+        <table border="0" width=100%>
+            <tbody>
+                <tr>
+                    <td style="text-align:left;" width=50%>
+                        <a class="header" href="/">Home</a>
+                    </td>
+                    <td style="text-align:right" width=50%>
+                        <a class="header"  href="https://github.com/SuXY15">Github</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p> <!-- container: Welcome --> </p>
+
         <div class="container">
             <div class="content">
                 <table border="0" overflow="hidden">
                     <tbody>
                         <tr>
-                            <td ><img src="/assets/images/resume/Xingyu_Su.JPG" alt="Photo" width="273" height="397" /></td>
+                            <td ><img src="/assets/images/resume/Xingyu_Su.JPG" alt="Photo"/></td>
                             <td align="middle">
                                 <table border="0">
                                     <tbody>
                                         <tr>
-                                            <td colspan="2" height="58">
+                                            <td colspan="2">
                                                 <h2>苏星宇</h2>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>邮件:</td>
-                                            <td><a href="suxy15tsinghua@gmail.com">suxy15tsinghua@gmail.com</a></td>
+                                            <td><a href="mailto:suxy15tsinghua@gmail.com">suxy15tsinghua@gmail.com</a></td>
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><a href="suxy15@mails.tsinghua.edu.cn">su-xy19@mails.tsinghua.edu.cn</a></td>
+                                            <td><a href="mailto:su-xy19@mails.tsinghua.edu.cn">su-xy19@mails.tsinghua.edu.cn</a></td>
                                         </tr>
                                         <tr>
                                             <td>手机:</td>
@@ -334,15 +356,15 @@
                     <h3 style="line-height: 0;">教育经历</h3>
                     <div class="bigdiv">
                         <ul>
+                            <li class="llist">2019-至今 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
+                                <ul>
+                                    <li class="ulist">博士：燃烧科学与技术专业</li>
+                                </ul>
+                            </li>
                             <li class="llist">2015-2019 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
                                 <ul>
                                     <li class="ulist">本科：能源与动力工程专业</li>
                                     <li class="ulist">辅修：计算机技术与应用专业</li>
-                                </ul>
-                            </li>
-                            <li class="llist">2019-至今 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">清华大学</a>，中国北京
-                                <ul>
-                                    <li class="ulist">博士：燃烧科学与技术专业</li>
                                 </ul>
                             </li>
                         </ul>
