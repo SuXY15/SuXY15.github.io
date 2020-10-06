@@ -33,10 +33,10 @@ modify_date: 2018-04-21
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico){:height="100px" width="100px"}
 ```
 
-<img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" width="100" height="100" /> 
+<img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.bmp" width="100" height="100" /> 
 
 ```
-<img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.ico" width="100" height="100" /> 
+<img align="center" src="https://raw.githubusercontent.com/SuXY15/MyPic/master/sss.bmp" width="100" height="100" /> 
 ```
 
 #### Link

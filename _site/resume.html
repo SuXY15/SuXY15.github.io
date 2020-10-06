@@ -264,7 +264,7 @@
 <html>
 
 <head>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="Xingyu Su">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -280,39 +280,63 @@
     .ulist {
         margin-left: 40px;
     }
+    table {
+      table-layout: fixed;
+    }
+    div .container {
+        width: 100%;
+    }
+    @media screen  and (max-device-width: 480px) {
+      div .container {
+        width: 100%;
+      }
+      img {
+        width: 99%;
+      }
+    }
     </style>
 </head>
 
 <body>
     <div class="page-content">
-        <p>
-            <!-- link: style -->
-        </p>
-        <p style="text-align: right;"><a class="header" href="https://github.com/SuXY15">Github</a></p>
-        <p>
-            <!-- container: Welcom -->
-        </p>
+        <p> <!-- link: style -->  </p>
+
+        <table border="0" width=100%>
+            <tbody>
+                <tr>
+                    <td style="text-align:left;" width=50%>
+                        <a class="header" href="/">Home</a>
+                    </td>
+                    <td style="text-align:right" width=50%>
+                        <a class="header"  href="https://github.com/SuXY15">Github</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p> <!-- container: Welcome --> </p>
+
         <div class="container">
-            <div class="content" align="middle">
-                <table border="0" width="600" align="middle">
+            <div class="content">
+                <table border="0" overflow="hidden">
                     <tbody>
                         <tr>
-                            <td width="300"><img src="https://raw.githubusercontent.com/SuXY15/MyPic/master/CV/Xingyu_Su.JPG" alt="Photo" width="273" height="397" /></td>
+                            <td ><img src="/assets/images/resume/Xingyu_Su.JPG" alt="Photo"/></td>
                             <td align="middle">
-                                <table border="0" width="300">
+                                <table border="0">
                                     <tbody>
                                         <tr>
-                                            <td colspan="2" height="58">
+                                            <td colspan="2">
                                                 <h2>Xingyu Su</h2>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Email:</td>
-                                            <td><a href="suxy15tsinghua@gmail.com">suxy15tsinghua@gmail.com</a></td>
+                                            <td><a href="mailto:suxy15tsinghua@gmail.com">suxy15tsinghua@gmail.com</a></td>
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><a href="suxy15@mails.tsinghua.edu.cn">suxy15@mails.tsinghua.edu.cn</a></td>
+                                            <td><a href="mailto:su-xy19@mails.tsinghua.edu.cn">su-xy19@mails.tsinghua.edu.cn</a></td>
                                         </tr>
                                         <tr>
                                             <td>Phone:</td>
@@ -329,11 +353,17 @@
                     </tbody>
                 </table>
                 <p>&nbsp;</p>
+
                 <div class="Education" align="left">
                     <h3 style="line-height: 0;">Education</h3>
                     <div class="bigdiv">
                         <ul>
-                            <li class="llist">2015-present <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">Tsinghua University</a>, Beijing, P. R. China
+                            <li class="llist">2019-present <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">Tsinghua University</a>, Beijing, P. R. China
+                                <ul>
+                                    <li class="ulist">PhD in Department of Energy and Power Engineering</li>
+                                </ul>
+                            </li>
+                            <li class="llist">2015-2019 <a href="http://www.tsinghua.edu.cn/publish/newthuen/index.html">Tsinghua University</a>, Beijing, P. R. China
                                 <ul>
                                     <li class="ulist">Undergraduate in Department of Energy and Power Engineering</li>
                                     <li class="ulist">Minor in Computer Technology and Application</li>
@@ -343,20 +373,39 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Research" align="left">
                     <h3 style="line-height: 0;">Research Experience</h3>
                     <div class="bigdiv">
                         <ul>
-                            <li class="llist"><strong>2017/09-present CFD simulation of spherical inward propagating Carbon-Oxygen flame (IPF) of type Ia supernova</strong>
+                            <li class="llist"><strong>2020/03-present Kinetic parameter optimization via neural networks </strong>
                                 <ul>
-                                    <li class="ulist">Advisor: <a href="http://www.tsinghua.edu.cn/publish/teen/2472/2016/20160429193334896914447/20160429193334896914447_.html">Dr. Yang Gao </a></li>
-                                    <li class="ulist">Theory derivation; Direct Numerical Simulation by Fortran</li>
+                                    <li class="ulist">Advisor: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">Prof. Zhuyin Ren </a></li>
+                                    <li class="ulist">NeuralODE; Reaction mechanism; Parameter optimization</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2019/10-2020/03 Quantification of modeling uncertainties in turbulent flames through successive dimension reduction</strong>
+                                <ul>
+                                    <li class="ulist">Advisor: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">Prof. Zhuyin Ren </a></li>
+                                    <li class="ulist">Active subspace; Uncertainty propagation; Turbulent combustion</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2018/11-2020/05 Uncertainty analysis in mechanism reduction via active subspace and transition state analyses</strong>
+                                <ul>
+                                    <li class="ulist">Advisor: <a href="http://www.ae.tsinghua.edu.cn/publish/hfy/12331/2019/20190902135051836730081/20190902135051836730081_.html">Prof. Zhuyin Ren </a></li>
+                                    <li class="ulist">Mechanism reduction; Uncertainty quantification; Active subspace; Transition state</li>
                                 </ul>
                             </li>
                             <li class="llist"><strong>2018/07-2018/08 Image based sorter</strong>
                                 <ul>
                                     <li class="ulist">Advisor: <a href="https://acoustofluidics.pratt.duke.edu/people/tony-jun-huang">Prof. Tony Jun Huang </a></li>
-                                    <li class="ulist">Real-time image Processing; Experiment</li>
+                                    <li class="ulist">Real-time image processing; Experiment</li>
+                                </ul>
+                            </li>
+                            <li class="llist"><strong>2017/09-2018/07 CFD simulation of spherical inward propagating Carbon-Oxygen flame (IPF) of type Ia supernova</strong>
+                                <ul>
+                                    <li class="ulist">Advisor: <a href="http://www.tsinghua.edu.cn/publish/teen/2472/2016/20160429193334896914447/20160429193334896914447_.html">Dr. Yang Gao </a></li>
+                                    <li class="ulist">Theory derivation; Direct Numerical Simulation by Fortran</li>
                                 </ul>
                             </li>
                             <li class="llist"><strong>2017/11-2018/01 CFD simulation of electrostatic precipitators (ESP)</strong>
@@ -375,6 +424,7 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Work" align="left">
                     <div>
                         <h3 style="line-height: 0;">Work Experience</h3>
@@ -386,12 +436,13 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Skills" align="left">
                     <div>
                         <h3 style="line-height: 0;">Abilities and Skills</h3>
                         <div class="bigdiv">
                             <ul>
-                                <li class="llist">Program: C / C++ / Python / Fortran / Java / Html</li>
+                                <li class="llist">Program: C / C++ / Python / Fortran / Html</li>
                                 <li class="llist">Software: Matlab / Comsol / Solidworks / AutoCAD</li>
                                 <li class="llist">Hardware: Arduino / STM32 / Raspberry PI</li>
                             </ul>
@@ -399,6 +450,7 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
                 <div class="Honor" align="left">
                     <h3 style="line-height: 0;">Honors and Awards</h3>
                     <div class="bigdiv">
@@ -410,8 +462,20 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
+
+                <div class="Publications" align="left">
+                    <h3 style="line-height: 0;">Publications</h3>
+                    <div class="bigdiv">
+                        <ul>
+                            <li class="llist">N. Wang, Q. Xie, X. Su, Z. Ren. Quantification of modeling uncertainties in turbulent flames through successive dimension reduction[J]. Combustion and Flame, 2020, 222:476-489 </li>
+                            <li class="llist">P. Zhang, C. Chen, X. Su, J. Mai, & T.J. Huang. Acoustic streaming vortices enable contactless, digital control of droplets[J]. Science Advances, 2020, 6(24):eaba0606 </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+
                 <div class="Last_Update" align="middle">
-                    <p><span style="color: #808080;" ; align="center" ;>Last Updated on Aug/19/2018</span></p>
+                    <p><span style="color: #808080;" ; align="center" ;>Last Updated on Oct/6/2020</span></p>
                 </div>
             </div>
         </div>

@@ -277,22 +277,23 @@
     <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="/assets/js/terminal/jquery-latest.js"></script>
     <script src="/assets/js/terminal/jquery.terminal.js"></script>
     <script src="/assets/js/terminal/keyboard.js"></script>
     <script src="/assets/js/terminal/wcwidth.js"></script>
     <link href="/assets/css/terminal/jquery.terminal.css" rel="stylesheet"/>
     <style type="text/css">
-    .terminal, .cmd {
-        --size: 1.2;
-        background: white;
-        color: #111;
-    }
-    .terminal .inverted, .cmd .inverted, .cmd .cursor.blink {
-        background-color: #0f0;
-        color: white;
-    }
-</style>
+        .terminal, .cmd {
+            --size: 1.2;
+            background: white;
+            color: #111;
+        }
+        .terminal .inverted, .cmd .inverted, .cmd .cursor.blink {
+            background-color: #0f0;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -323,9 +324,9 @@
                    "     help  --  echo this help message.                  \n"
 
     var WIND_STR = [
-        ["all",   "window.location.href='http://suxy15.github.io/all';"  ],
-        ["home",  "window.location.href='http://suxy15.github.io/index';"],
-        ["about", "window.location.href='http://suxy15.github.io/about';"],]
+        ["all",   "window.location.href='/all';"  ],
+        ["home",  "window.location.href='/index';"],
+        ["about", "window.location.href='/about';"],]
     
     var FUNC_STR = [
         ["ls",    "I'm sorry but there is no `ls` command ( :"],
