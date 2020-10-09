@@ -5,6 +5,7 @@ excerpt:     Markdown / <a href="http://www.chartjs.org/docs/latest/">chart</a> 
 tags:
   - Markdown
   - Source
+mermaid: true
 modify_date: 2018-05-23
 ---
 
