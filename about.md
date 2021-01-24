@@ -13,10 +13,9 @@ Welcome to my Personal Site! :earth_asia:
 
 欢迎来到我的个人站点！
 
+I am Xingyu Su, a PhD student at Department of Energy and Power Engineering, Tsinghua University. You can know more about me by [click here](/assets/resume/resume.pdf) to see my resume.
 
-I am Xingyu Su, a PhD student at Department of Energy and Power Engineering, Tsinghua University. You can know more about me by [click here](/resume) to see my resume.
-
-我是苏星宇，清华大学能源与动力工程系博士在读，喜欢捣鼓些有趣的东西，可以[点击此处](/resume_zh)查看我的中文简历。
+我是苏星宇，清华大学能源与动力工程系博士在读，喜欢捣鼓些有趣的东西，可以[点击此处](/assets/resume/resume_zh.pdf)查看我的中文简历。
 
 
 Some other entries of this SITE:

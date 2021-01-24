@@ -1,7 +1,10 @@
 ---
-layout: article
-title: Record for Summer Research
-key: page-record
+layout:  article
+title:   Daily Life Record for Summer Research Intern
+excerpt: itinetary / cost / recipes
+tags:
+  - Daily
+modify_date: 2021-01-24
 ---
 
 
@@ -30,7 +33,7 @@ key: page-record
 | 2018-07-02               | :tomato:, :potato:, :carrot:, :chicken:, Bacon, Vinegar, Oil **@Kroger** $38.12/2 | $19.06  |
 | 2018-07-04               | 🚕 (15.61+20.82)/3 :cinema: @**South Point** $28.02/3         | $21.48  |
 | 2018-07-05               | :milk_glass:, :egg:, :mushroom:, :banana: , 🍊, Pork, Lunchmeat, Orange Juice **@Kroger** $33.80/2 | $16.90  |
-| 2018-07-07              | Wax Paper **@Walmart** 1.59/2; Sauce, Shrimp, Meatballs, Kung Pao Chicken **@Trader Joe's** 16.99/2; :bread: **@Super$\cdot$Target** 13.24/2 | $15.91 |
+| 2018-07-07              | Wax Paper **@Walmart** \$1.59/2; Sauce, Shrimp, Meatballs, Kung Pao Chicken **@Trader Joe's** \$16.99/2; :bread: **@Super$\cdot$Target** \$13.24/2 | $15.91 |
 | 2018-07-07              | :eggplant: , :tomato:, 🍄, :hot_pepper: , :meat_on_bone: , Preserved Eggs, Laver Soup, Sauce, ,Rice Ball, Dumplins, **@LiMing's Global Market** $44.04/2 | $22.02 |
 | 2018-07-07              | Ketchup, Garlic, Ginger **@Whole Foods** $8.49/2 | $4.245 |
 | 2018-07-09 | :eggplant:, :potato:, :peach:, :egg:, :bacon: , :milk_glass:, Onion, Orange Juice **@Kroger** $27.96/2 | $13.98 |
@@ -43,7 +46,7 @@ key: page-record
 | 2018-07-24 | :carrot:, :hot_pepper:, :rice:, Cooking Wine, Seasame Oil, Green Onion **@LiMing's Global Mart** $22.44/2 | $11.22 |
 | 2018-07-31    | :hot_pepper:, :potato:, :peanuts:, :eggplant:, :egg:, Tofu, Garlic, Radish, Vegetable, Pork, Steak, Spareribs, Meat special, Soymilk, Rice ball, Dumplings, Soy bean paste, Lo mein, Pie, Okra **@Li Ming's Global Mart** $58.02/2 | $29.01 |
 | 2018-07-31    | :shrimp:, :plate_with_cutlery:, :milk_glass:, :strawberry:, :kiwi_fruit:, Chicken, Sauce, Plums, Orange Juice, Nuts **@Super $\cdot$ Target**  $52.38/2 | $26.19 |
-| 2018-08-04  | Sparkling Water __@Sam's Club__ 8.04/2:egg:, :cucumber:, Steak, Kimchi, Apricot , Clam, Scallion __@H Mart__ $37.04/2 | $22.54 |
+| 2018-08-04  | Sparkling Water __@Sam's Club__ \$8.04/2:egg:, :cucumber:, Steak, Kimchi, Apricot , Clam, Scallion __@H Mart__ $37.04/2 | $22.54 |
 | 2018-08-08 | :potable_water:, :bread:, :tomato:, :hot_pepper:, :milk_glass:, :apple:, :carrot:, :eggplant:, :potato:, :rice:, Orange Juice, Green Oion, Lays Chips,   **@Harris Teeter**, $40.44/2 | $20.22 |
 | 2018-08-10 | :rice:, Hot Chicken Ramen, Spicy Tofu, Hot Pot Mate, Green Oion, Wife's Noodle, Mixed Meat Fish Balls, Spicy Rice, Lamb, Beef, Green Bean, Garlic, Soya beverage, Lychee **@LiMing's Global Mart** $87.54/2 | $43.77 |
 | 2018-08-17 | :egg:, :grapes:, :spaghetti:, :tomato:, :potato:, Coca, Blackberry, Green Oion, Parssiey, Tissue, GoLean, Broccoli, Pork, Orange Juice, Pork, Wing, Canola Oil, Onion Ring **@Harris Teeter** $89.33/2 | $44.665 |
@@ -64,3 +67,4 @@ key: page-record
 **水果专栏** ：炸香蕉、烤菠萝
 
 **主食专栏** ：菠萝饭、皮蛋瘦肉粥、饼皮汤、土豆焖饭、茄丁面、臊子面、鲜虾粥、牛肉面、火锅
+
