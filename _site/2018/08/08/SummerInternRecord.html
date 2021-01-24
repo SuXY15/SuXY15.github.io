@@ -1,0 +1,1313 @@
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Daily Life Record for Summer Research Intern - Xingyu Su's Github.io</title>
+
+<meta name="description" content="itinetary / cost / recipes">
+<link rel="canonical" href="http://localhost:4000/2018/08/08/SummerInternRecord.html"><link rel="alternate" type="application/rss+xml" title="Xingyu Su's Github.io" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/plugin/fontawesome/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: '/assets/plugin/fontawesome/css/all.css',
+        jquery: '/assets/js/jquery-3.3.1.min.js',
+        leancloud_js_sdk: '/assets/js/av-min.js',
+        chart: '/assets/js/Chart.bundle.min.js',
+        gitalk: {
+          js: '/assets/js/gitalk.min.js',
+          css: '/assets/css/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: '/assets/js/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root">
+<div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner">
+<div class="page__header d-print-none">
+<header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand">
+<?xml version="1.0" standalone="no"?><svg t="1534536213217" class="icon" style="" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1055" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M512 0c282.76736 0 512 229.23264 512 512s-229.23264 512-512 512S0 794.76736 0 512 229.23264 0 512 0z" fill="#324D5B" p-id="1056"></path><path d="M564.79744 842.55744l346.68544-650.62912a514.78528 514.78528 0 0 0-75.4688-76.31872L170.55744 548.47488l394.24 294.08256z" fill="#565D50" p-id="1057"></path><path d="M900.77184 179.03616a515.59424 515.59424 0 0 0-68.36224-66.26304L399.36 382.07488l51.02592 182.2208 202.09664 8.18176 248.28928-393.44128z" fill="#736A47" p-id="1058"></path><path d="M832.3584 112.73216L399.99488 381.44l39.89504 191.13984 431.55456-425.09312a516.10624 516.10624 0 0 0-39.08608-34.75456z" fill="#8A7440" p-id="1059"></path><path d="M194.57024 20.51072c-6.144 55.27552-36.864 86.016-92.16 92.16 55.296 6.144 86.02624 36.87424 92.16 92.16 6.144-55.28576 36.87424-86.016 92.17024-92.16-55.296-6.144-86.02624-36.88448-92.17024-92.16z m624.64 604.16c-4.78208 42.98752-28.672 66.88768-71.69024 71.68 43.01824 4.77184 66.90816 28.672 71.69024 71.68 4.78208-43.008 28.672-66.90816 71.69024-71.68-43.01824-4.79232-66.90816-28.69248-71.69024-71.68z" fill="#EFC75E" p-id="1060"></path><path d="M901.13024 368.66048C897.72032 399.37024 880.64 416.45056 849.92 419.87072c30.72 3.39968 47.80032 20.48 51.21024 51.2 3.40992-30.72 20.48-47.80032 51.2-51.2-30.72-3.42016-47.79008-20.50048-51.2-51.21024zM174.08 327.69024c-2.73408 24.56576-16.384 38.23616-40.96 40.97024 24.576 2.73408 38.22592 16.39424 40.96 40.96 2.73408-24.56576 16.384-38.22592 40.96-40.96-24.56576-2.73408-38.22592-16.40448-40.96-40.97024zM481.28 92.18048c-3.40992 30.70976-20.48 47.79008-51.2 51.2 30.72 3.40992 47.79008 20.50048 51.2 51.21024 3.40992-30.70976 20.48-47.80032 51.2-51.21024-30.70976-3.40992-47.77984-20.49024-51.2-51.2z" fill="#5B717C" p-id="1061"></path><path d="M417.77152 781.94688l124.65152 65.85344c12.88192 6.8096 27.93472-4.17792 25.46688-18.59584l-23.808-139.45856a17.68448 17.68448 0 0 1 5.05856-15.60576l100.84352-98.77504c10.42432-10.20928 4.6592-27.98592-9.728-30.08512l-139.3664-20.34688a17.53088 17.53088 0 0 1-13.2096-9.64608l-62.32064-126.89408c-6.44096-13.1072-25.04704-13.1072-31.488 0l-62.32064 126.89408c-2.56 5.21216-7.49568 8.81664-13.21984 9.64608l-139.3664 20.34688c-14.39744 2.0992-20.14208 19.87584-9.728 30.08512l100.84352 98.77504c4.13696 4.05504 6.02112 9.89184 5.04832 15.60576l-23.808 139.45856c-2.4576 14.41792 12.58496 25.40544 25.47712 18.59584l124.64128-65.85344a17.5104 17.5104 0 0 1 16.3328 0z" fill="#EFC75E" p-id="1062"></path></svg><a title="Xingyu Su's Personal Github.io
+" href="/">Xingyu Su's Github.io</a>
+</div>
+<button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button>
+</div>
+<nav class="navigation">
+        <ul>
+<li class="navigation__item"><a href="/archive.html">Archive</a></li>
+<li class="navigation__item"><a href="/about.html">About</a></li>
+<li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
+</ul>
+      </nav>
+</div>
+  </header>
+</div>
+<div class="page__content"><div class="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
+
+              <div class="col-main cell cell--auto">
+<!-- start custom main top snippet -->
+
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header">
+<header><h1>Daily Life Record for Summer Research Intern</h1></header><span class="split-space"> </span>
+          <a class="edit-on-github" title="Edit on Github" href="https://github.com/SuXY15/SuXY15.github.io/tree/master/_posts/2018-08-08-SummerInternRecord.md">
+            <i class="far fa-edit"></i></a>
+</div>
+<meta itemprop="headline" content="Daily Life Record for Summer Research Intern">
+<div class="article__info clearfix">
+<ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm" href="/archive.html?tag=Daily">Daily</a>
+            </li></ul>
+<ul class="right-col menu"><li>
+<i class="far fa-calendar-alt"></i> <span>Aug 08, 2018</span>
+            </li></ul>
+</div>
+<meta itemprop="author" content="Xingyu Su">
+<meta itemprop="datePublished" content="2018-08-08T00:00:00+08:00">
+    <meta itemprop="keywords" content="Daily">
+<div class="js-article-content">
+<div class="layout--article">
+<!-- start custom article top snippet -->
+
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody">
+<!--more-->
+
+<h3 id="itinetary">ITINETARY</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Time</th>
+      <th style="text-align: left">Place</th>
+      <th style="text-align: left">Things</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Jun 29th 18:25 (UTC+8:00) -&gt; Jun 29th 19:50 (UTC-4:00) <strong>13h25min</strong>
+</td>
+      <td style="text-align: left">
+<img class="emoji" title=":airplane:" alt=":airplane:" src="https://github.githubassets.com/images/icons/emoji/unicode/2708.png" height="20" width="20"> Beijing (PEK) T3 -&gt;  Washington D.C. (IAD) <img class="emoji" title=":flight_arrival:" alt=":flight_arrival:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ec.png" height="20" width="20">
+</td>
+      <td style="text-align: left">Flight UA808, Plane: 788</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Jun 29th 22:19 (UTC-4:00) -&gt; Jun 29th 23:30 (UTC-4:00) <strong>1h11min</strong>
+</td>
+      <td style="text-align: left">
+<img class="emoji" title=":airplane:" alt=":airplane:" src="https://github.githubassets.com/images/icons/emoji/unicode/2708.png" height="20" width="20"> Washington D.C. (IAD) -&gt;  Durham (RDU) T2 <img class="emoji" title=":flight_arrival:" alt=":flight_arrival:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ec.png" height="20" width="20">
+</td>
+      <td style="text-align: left">Flight UA6147, Plane: CR7</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Jun 29th 23:30 (UTC-4:00) -&gt; Aug 31st 10:10 (UTC-4:00) <strong>62d10h40min</strong>
+</td>
+      <td style="text-align: left">
+<img class="emoji" title=":house:" alt=":house:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png" height="20" width="20"> Apartment No. 807 , at 600 South Lasalle Street in Durham, NC 27705</td>
+      <td style="text-align: left">Lab &amp; Exp</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Aug 31st 10:10 (UTC-4:00) -&gt; Aug 31th 11:09 (UTC-4:00) <strong>59min</strong>
+</td>
+      <td style="text-align: left">✈️  Durham (RDU) T2 -&gt; Washington D.C. (IAD) <img class="emoji" title=":flight_departure:" alt=":flight_departure:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6eb.png" height="20" width="20">
+</td>
+      <td style="text-align: left">Flight UA2254, Plane: 319</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Aug 31st 12:50 (UTC-4:00) -&gt; Sep 1st 14:40 (UTC+8:00) <strong>13h50min</strong>
+</td>
+      <td style="text-align: left">✈️ Washington D.C. (IAD) -&gt; Beijing (PEK) T3 <img class="emoji" title=":flight_departure:" alt=":flight_departure:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6eb.png" height="20" width="20">
+</td>
+      <td style="text-align: left">Flight UA807, Plane: 788</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="cost">COST</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Time</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">2018-06-29 -&gt; 2018-09-01</td>
+      <td style="text-align: left">
+<img class="emoji" title=":airplane:" alt=":airplane:" src="https://github.githubassets.com/images/icons/emoji/unicode/2708.png" height="20" width="20"> <img class="emoji" title=":tickets:" alt=":tickets:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f39f.png" height="20" width="20"> Airplane Tickets</td>
+      <td style="text-align: left">¥5363</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-06-29</td>
+      <td style="text-align: left">🚕 Taxi ¥129/2 + 🍿KFC ¥78.5/2</td>
+      <td style="text-align: left">¥103.75</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-06-29 -&gt; 2018-08-31</td>
+      <td style="text-align: left">
+<img class="emoji" title=":house:" alt=":house:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png" height="20" width="20"> <img class="emoji" title=":potable_water:" alt=":potable_water:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b0.png" height="20" width="20"> <img class="emoji" title=":sleeping_bed:" alt=":sleeping_bed:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cc.png" height="20" width="20"> Apartment $710*2/2</td>
+      <td style="text-align: left">$710</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-06-29 -&gt; 2018-08-31</td>
+      <td style="text-align: left">
+<img class="emoji" title=":signal_strength:" alt=":signal_strength:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f6.png" height="20" width="20"> <img class="emoji" title=":electric_plug:" alt=":electric_plug:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50c.png" height="20" width="20"> Network $43*2/2, Electricity <strong>(to confirm)</strong>
+</td>
+      <td style="text-align: left">$43</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-06-30</td>
+      <td style="text-align: left">
+<img class="emoji" title=":pizza:" alt=":pizza:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f355.png" height="20" width="20"> <img class="emoji" title=":green_salad:" alt=":green_salad:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f957.png" height="20" width="20"> <img class="emoji" title=":tropical_drink:" alt=":tropical_drink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f379.png" height="20" width="20">  Lunch <strong>@NOSH</strong> $22.96/2</td>
+      <td style="text-align: left">$11.48</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-01</td>
+      <td style="text-align: left">
+<img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20"> <img class="emoji" title=":bread:" alt=":bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png" height="20" width="20"> <img class="emoji" title=":baguette_bread:" alt=":baguette_bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f956.png" height="20" width="20"> Trash Bag, Chip, Dr.Peper, Bread, Chicken, Milk, Shampoo <strong>@Kroger</strong> $32.48/2</td>
+      <td style="text-align: left">$16.24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-01</td>
+      <td style="text-align: left">🍉  🍞 Pillow, Blanket, Cups, Plate &amp; Bowls <strong>@Super$\cdot$Target</strong> $78.44/2</td>
+      <td style="text-align: left">$39.22</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-01</td>
+      <td style="text-align: left">Pot, Knife, Spoon, Dumpling, Chili, Leek buns, Rice, Noodle <strong>@LiMing’s Global Market</strong> $70.21/2</td>
+      <td style="text-align: left">$35.11</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-02</td>
+      <td style="text-align: left">
+<img class="emoji" title=":tomato:" alt=":tomato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png" height="20" width="20">, <img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, <img class="emoji" title=":carrot:" alt=":carrot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f955.png" height="20" width="20">, <img class="emoji" title=":chicken:" alt=":chicken:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f414.png" height="20" width="20">, Bacon, Vinegar, Oil <strong>@Kroger</strong> $38.12/2</td>
+      <td style="text-align: left">$19.06</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-04</td>
+      <td style="text-align: left">🚕 (15.61+20.82)/3 <img class="emoji" title=":cinema:" alt=":cinema:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a6.png" height="20" width="20"> @<strong>South Point</strong> $28.02/3</td>
+      <td style="text-align: left">$21.48</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-05</td>
+      <td style="text-align: left">
+<img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, <img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">, <img class="emoji" title=":mushroom:" alt=":mushroom:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f344.png" height="20" width="20">, <img class="emoji" title=":banana:" alt=":banana:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34c.png" height="20" width="20"> , 🍊, Pork, Lunchmeat, Orange Juice <strong>@Kroger</strong> $33.80/2</td>
+      <td style="text-align: left">$16.90</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-07</td>
+      <td style="text-align: left">Wax Paper <strong>@Walmart</strong> $1.59/2; Sauce, Shrimp, Meatballs, Kung Pao Chicken <strong>@Trader Joe’s</strong> $16.99/2; <img class="emoji" title=":bread:" alt=":bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png" height="20" width="20"> <strong>@Super$\cdot$Target</strong> $13.24/2</td>
+      <td style="text-align: left">$15.91</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-07</td>
+      <td style="text-align: left">
+<img class="emoji" title=":eggplant:" alt=":eggplant:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png" height="20" width="20"> , <img class="emoji" title=":tomato:" alt=":tomato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png" height="20" width="20">, 🍄, <img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20"> , <img class="emoji" title=":meat_on_bone:" alt=":meat_on_bone:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f356.png" height="20" width="20"> , Preserved Eggs, Laver Soup, Sauce, ,Rice Ball, Dumplins, <strong>@LiMing’s Global Market</strong> $44.04/2</td>
+      <td style="text-align: left">$22.02</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-07</td>
+      <td style="text-align: left">Ketchup, Garlic, Ginger <strong>@Whole Foods</strong> $8.49/2</td>
+      <td style="text-align: left">$4.245</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-09</td>
+      <td style="text-align: left">
+<img class="emoji" title=":eggplant:" alt=":eggplant:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png" height="20" width="20">, <img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, <img class="emoji" title=":peach:" alt=":peach:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f351.png" height="20" width="20">, <img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">, <img class="emoji" title=":bacon:" alt=":bacon:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f953.png" height="20" width="20"> , <img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, Onion, Orange Juice <strong>@Kroger</strong> $27.96/2</td>
+      <td style="text-align: left">$13.98</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-11</td>
+      <td style="text-align: left">
+<img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, <img class="emoji" title=":bread:" alt=":bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png" height="20" width="20">, Starch, Sugar, Flat pie <strong>@Whole Foods</strong> $21.55/2</td>
+      <td style="text-align: left">$10.775</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-13</td>
+      <td style="text-align: left">
+<img class="emoji" title=":chicken:" alt=":chicken:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f414.png" height="20" width="20">, <img class="emoji" title=":ice_cream:" alt=":ice_cream:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f368.png" height="20" width="20">, <img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, BBQ, Orange Juice <strong>@Whole Foods</strong> $14.57/2</td>
+      <td style="text-align: left">$7.285</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-14</td>
+      <td style="text-align: left">Salt &amp; Pepper, Grocery Tinfoil <strong>@Kroger</strong> $2.93/2</td>
+      <td style="text-align: left">$1.465</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-15</td>
+      <td style="text-align: left">
+<img class="emoji" title=":pineapple:" alt=":pineapple:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34d.png" height="20" width="20">, <img class="emoji" title=":kiwi_fruit:" alt=":kiwi_fruit:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95d.png" height="20" width="20">, Olive oil, Nut, Grill tray, Lipton Tea <strong>@Sam’s Club</strong> 、$76.65/2 <br><img class="emoji" title=":bread:" alt=":bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png" height="20" width="20">, Towel <strong>@Super $\cdot$ Target</strong> $16.99/2<br><img class="emoji" title=":mushroom:" alt=":mushroom:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f344.png" height="20" width="20"> ,<img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20"> , <img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20">, Spareribs, Lotus roots, Black fungus, Sesame Rice, Tofu <strong>@LiMing’s Global Mart</strong> $30.91/2</td>
+      <td style="text-align: left">$62.275</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-20</td>
+      <td style="text-align: left">
+<img class="emoji" title=":eggplant:" alt=":eggplant:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png" height="20" width="20">, <img class="emoji" title=":tomato:" alt=":tomato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png" height="20" width="20">, <img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20">, Soy, Sausage <strong>@Harris Teeter</strong> $12.93/2<br><img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, <img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, <img class="emoji" title=":shrimp:" alt=":shrimp:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f990.png" height="20" width="20">, Orange Juice, Scallion <strong>@Whole Foods</strong> $26.00/2</td>
+      <td style="text-align: left">$19.465</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-23</td>
+      <td style="text-align: left">Oreo, Turner, Lunch Box, Steak Pot, Toothpaste <strong>@Dollar General</strong>  $19.99/2<br><img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, <img class="emoji" title=":droplet:" alt=":droplet:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a7.png" height="20" width="20">, <img class="emoji" title=":bacon:" alt=":bacon:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f953.png" height="20" width="20">, Pork, Sauce, Onions <strong>@Kroger</strong> $26.71/2</td>
+      <td style="text-align: left">$23.35</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-24</td>
+      <td style="text-align: left">
+<img class="emoji" title=":carrot:" alt=":carrot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f955.png" height="20" width="20">, <img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20">, <img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, Cooking Wine, Seasame Oil, Green Onion <strong>@LiMing’s Global Mart</strong> $22.44/2</td>
+      <td style="text-align: left">$11.22</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-31</td>
+      <td style="text-align: left">
+<img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20">, <img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, <img class="emoji" title=":peanuts:" alt=":peanuts:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95c.png" height="20" width="20">, <img class="emoji" title=":eggplant:" alt=":eggplant:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png" height="20" width="20">, <img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">, Tofu, Garlic, Radish, Vegetable, Pork, Steak, Spareribs, Meat special, Soymilk, Rice ball, Dumplings, Soy bean paste, Lo mein, Pie, Okra <strong>@Li Ming’s Global Mart</strong> $58.02/2</td>
+      <td style="text-align: left">$29.01</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-07-31</td>
+      <td style="text-align: left">
+<img class="emoji" title=":shrimp:" alt=":shrimp:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f990.png" height="20" width="20">, <img class="emoji" title=":plate_with_cutlery:" alt=":plate_with_cutlery:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37d.png" height="20" width="20">, <img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, <img class="emoji" title=":strawberry:" alt=":strawberry:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f353.png" height="20" width="20">, <img class="emoji" title=":kiwi_fruit:" alt=":kiwi_fruit:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95d.png" height="20" width="20">, Chicken, Sauce, Plums, Orange Juice, Nuts <strong>@Super $\cdot$ Target</strong>  $52.38/2</td>
+      <td style="text-align: left">$26.19</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-04</td>
+      <td style="text-align: left">Sparkling Water <strong>@Sam’s Club</strong> $8.04/2<img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">, <img class="emoji" title=":cucumber:" alt=":cucumber:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f952.png" height="20" width="20">, Steak, Kimchi, Apricot , Clam, Scallion <strong>@H Mart</strong> $37.04/2</td>
+      <td style="text-align: left">$22.54</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-08</td>
+      <td style="text-align: left">
+<img class="emoji" title=":potable_water:" alt=":potable_water:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b0.png" height="20" width="20">, <img class="emoji" title=":bread:" alt=":bread:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png" height="20" width="20">, <img class="emoji" title=":tomato:" alt=":tomato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png" height="20" width="20">, <img class="emoji" title=":hot_pepper:" alt=":hot_pepper:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png" height="20" width="20">, <img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, <img class="emoji" title=":apple:" alt=":apple:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png" height="20" width="20">, <img class="emoji" title=":carrot:" alt=":carrot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f955.png" height="20" width="20">, <img class="emoji" title=":eggplant:" alt=":eggplant:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png" height="20" width="20">, <img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, <img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, Orange Juice, Green Oion, Lays Chips,   <strong>@Harris Teeter</strong>, $40.44/2</td>
+      <td style="text-align: left">$20.22</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-10</td>
+      <td style="text-align: left">
+<img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, Hot Chicken Ramen, Spicy Tofu, Hot Pot Mate, Green Oion, Wife’s Noodle, Mixed Meat Fish Balls, Spicy Rice, Lamb, Beef, Green Bean, Garlic, Soya beverage, Lychee <strong>@LiMing’s Global Mart</strong> $87.54/2</td>
+      <td style="text-align: left">$43.77</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-17</td>
+      <td style="text-align: left">
+<img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">, <img class="emoji" title=":grapes:" alt=":grapes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f347.png" height="20" width="20">, <img class="emoji" title=":spaghetti:" alt=":spaghetti:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35d.png" height="20" width="20">, <img class="emoji" title=":tomato:" alt=":tomato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png" height="20" width="20">, <img class="emoji" title=":potato:" alt=":potato:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png" height="20" width="20">, Coca, Blackberry, Green Oion, Parssiey, Tissue, GoLean, Broccoli, Pork, Orange Juice, Pork, Wing, Canola Oil, Onion Ring <strong>@Harris Teeter</strong> $89.33/2</td>
+      <td style="text-align: left">$44.665</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-21</td>
+      <td style="text-align: left">
+<img class="emoji" title=":rice:" alt=":rice:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png" height="20" width="20">, <img class="emoji" title=":egg:" alt=":egg:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png" height="20" width="20">,<img class="emoji" title=":milk_glass:" alt=":milk_glass:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png" height="20" width="20">, <img class="emoji" title=":ramen:" alt=":ramen:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20">, Spicy Rice Noodles, Quail Eggs, Stew, Bean paste, Lamb, Beef, Mixed Fish Balls, Dumplings,  <strong>@LiMing’s Global Mart</strong> $63.39/2</td>
+      <td style="text-align: left">$31.695</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-25</td>
+      <td style="text-align: left">
+<img class="emoji" title=":pizza:" alt=":pizza:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f355.png" height="20" width="20"> <strong>@Domino</strong> $24.87/2</td>
+      <td style="text-align: left">$12.435</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-27</td>
+      <td style="text-align: left">
+<img class="emoji" title=":ice_cream:" alt=":ice_cream:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f368.png" height="20" width="20">, <img class="emoji" title=":kiwi_fruit:" alt=":kiwi_fruit:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95d.png" height="20" width="20">, Soy Milk, Orange Juice, Rice Ball, Pork Wonton, Potstickers, Green Onion, Red Onion, Canola Oil <strong>@LiMing’s Global Mart</strong> $54.49/2</td>
+      <td style="text-align: left">$27.295</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2018-08-29</td>
+      <td style="text-align: left">Gift <strong>@Duke University Store</strong> $35.37/2</td>
+      <td style="text-align: left">$17.685</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Total Count</td>
+      <td style="text-align: left">¥5466.75 + $1326.185</td>
+      <td style="text-align: left">$616.185 Flow</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="菜谱">菜谱</h3>
+
+<p><strong>素菜汇总</strong>：西红柿炒蛋、地三鲜、鸡蛋羹、炒菜花、麻婆豆腐、 <strong>辣炒藕片</strong> 、 <strong>蒜蓉青菜</strong> 、青菜豆腐、红烧茄子、干煸豆角、炒空心菜</p>
+
+<p><strong>肉食汇总</strong> ：香菇炒肉、木耳炒肉、洋葱炒肉、 <strong>辣椒炒肉</strong> 、肉末茄子、红烧排骨、红烧鸡翅、 <strong>葱爆虾仁</strong> 、烤鸡翅、榨菜炒肉、宫保鸡丁、丝瓜炒虾仁、辣炒花蛤、辣子鸡丁、葱爆牛肉、油焖大虾、肉沫豆角、红烧肉、麻辣香锅</p>
+
+<p><strong>土豆专栏</strong> ：炒土豆丝、炒土豆片、 <strong>土豆丝卷饼</strong> 、土豆炖排骨、干锅土豆片、土豆炖牛肉</p>
+
+<p><strong>水果专栏</strong> ：炸香蕉、烤菠萝</p>
+
+<p><strong>主食专栏</strong> ：菠萝饭、皮蛋瘦肉粥、饼皮汤、土豆焖饭、茄丁面、臊子面、鲜虾粥、牛肉面、火锅</p>
+
+</div>
+<div class="d-print-none">
+<footer class="article__footer"><span>Last updated
+      <time itemprop="dateModified" datetime="2021-01-24T00:00:00+08:00">Jan 24, 2021</time>
+    </span><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet --></footer><div class="article__section-navigator clearfix">
+<div class="previous">
+<span>PREVIOUS</span><a href="/2018/08/01/HighCharts.html">HighCharts Learning</a>
+</div>
+<div class="next">
+<span>NEXT</span><a href="/2018/08/09/ColorStorage.html">Color Storage</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
+</div>
+<section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div>
+<div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main">
+<div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingyu Su">
+<meta itemprop="url" content="/">
+<meta itemprop="description" content="Wondering to be a geek.">
+<div class="footer__author-links">
+<div class="author-links">
+  <ul class="menu menu--nowrap menu--inline">
+<li title="Send me an Email.">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:suxy15tsinghua@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+</li>
+<li title="Follow me on Facebook.">
+        <a class="button button--circle facebook-button" itemprop="sameAs" href="https://www.facebook.com/SuXY15" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M767.428571 6.857143l0 150.857143-89.714286 0q-49.142857 0-66.285714 20.571429t-17.142857 61.714286l0 108 167.428571 0-22.285714 169.142857-145.142857 0 0 433.714286-174.857143 0 0-433.714286-145.714286 0 0-169.142857 145.714286 0 0-124.571429q0-106.285714 59.428571-164.857143t158.285714-58.571429q84 0 130.285714 6.857143z"></path>
+</svg></div>
+        </a>
+      </li>
+<li title="Follow me on Telegram.">
+        <a class="button button--circle telegram-button" itemprop="sameAs" href="https://t.me/SeeSoulSing" target="_blank">
+          <div class="icon">
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24px" height="24px">
+    <path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M 20.302734 2.984375 C 20.013769 2.996945 19.748583 3.080055 19.515625 3.171875 C 19.300407 3.256634 18.52754 3.5814726 17.296875 4.0976562 C 16.06621 4.61384 14.435476 5.2982348 12.697266 6.0292969 C 9.2208449 7.4914211 5.314238 9.1361259 3.3125 9.9785156 C 3.243759 10.007156 2.9645852 10.092621 2.65625 10.328125 C 2.3471996 10.564176 2.0039062 11.076462 2.0039062 11.636719 C 2.0039062 12.088671 2.2295201 12.548966 2.5019531 12.8125 C 2.7743861 13.076034 3.0504903 13.199244 3.28125 13.291016 C 3.9563403 13.559857 6.0424892 14.392968 6.9492188 14.755859 C 7.2668647 15.707799 8.0129251 17.950071 8.1875 18.501953 L 8.1855469 18.501953 C 8.3275588 18.951162 8.4659791 19.243913 8.6582031 19.488281 C 8.7543151 19.610465 8.8690398 19.721184 9.0097656 19.808594 C 9.0637596 19.842134 9.1235454 19.868148 9.1835938 19.892578 C 9.191962 19.896131 9.2005867 19.897012 9.2089844 19.900391 L 9.1855469 19.894531 C 9.2029579 19.901531 9.2185841 19.911859 9.2363281 19.917969 C 9.2652427 19.927926 9.2852873 19.927599 9.3242188 19.935547 C 9.4612233 19.977694 9.5979794 20.005859 9.7246094 20.005859 C 10.26822 20.005859 10.601562 19.710938 10.601562 19.710938 L 10.623047 19.695312 L 12.970703 17.708984 L 15.845703 20.367188 C 15.897113 20.439837 16.308174 20.998047 17.261719 20.998047 C 17.829844 20.998047 18.280978 20.718791 18.568359 20.423828 C 18.855741 20.128866 19.034757 19.82706 19.115234 19.417969 L 19.115234 19.414062 L 19.115234 19.412109 C 19.171124 19.121728 21.931641 5.265625 21.931641 5.265625 L 21.925781 5.2890625 C 22.01148 4.9067181 22.036735 4.5369631 21.935547 4.1601562 C 21.834358 3.7833495 21.561271 3.4156252 21.232422 3.2226562 C 20.903572 3.0296874 20.591699 2.9718046 20.302734 2.984375 z M 19.908203 5.1738281 C 19.799749 5.7182284 17.343164 18.059965 17.183594 18.878906 L 14.328125 16.240234 C 13.59209 15.559749 12.44438 15.535812 11.679688 16.181641 L 10.222656 17.414062 L 11 14.375 C 11 14.375 16.362547 8.9468594 16.685547 8.6308594 C 16.945547 8.3778594 17 8.2891719 17 8.2011719 C 17 8.0841719 16.939781 8 16.800781 8 C 16.675781 8 16.506016 8.1197812 16.416016 8.1757812 C 15.267511 8.8918132 10.350132 11.694224 7.96875 13.048828 C 7.8792978 12.995267 7.7913128 12.939666 7.6933594 12.900391 C 6.9119785 12.587666 5.4101276 11.985551 4.53125 11.634766 C 6.6055146 10.76177 10.161156 9.2658083 13.472656 7.8730469 C 15.210571 7.142109 16.840822 6.4570977 18.070312 5.9414062 C 19.108158 5.5060977 19.649538 5.2807035 19.908203 5.1738281 z M 17.152344 19.023438 C 17.152344 19.023438 17.154297 19.023438 17.154297 19.023438 C 17.154234 19.023761 17.152444 19.03095 17.152344 19.03125 C 17.154024 19.022709 17.151187 19.029588 17.152344 19.023438 z" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
+</svg>
+</div>
+        </a>
+      </li>
+<li title="Follow me on Linkedin.">
+        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/suxy15" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M260.096 155.648c0 27.307008-9.899008 50.516992-29.696 69.632-19.796992 19.115008-45.396992 28.672-76.8 28.672-30.036992 0-54.612992-9.556992-73.728-28.672-19.115008-19.115008-28.672-42.324992-28.672-69.632 0-28.672 9.556992-52.224 28.672-70.656 19.115008-18.432 44.372992-27.648 75.776-27.648 31.403008 0 56.32 9.216 74.752 27.648 18.432 18.432 28.331008 41.984 29.696 70.656 0 0 0 0 0 0m-202.752 808.96c0 0 0-632.832 0-632.832 0 0 196.608 0 196.608 0 0 0 0 632.832 0 632.832 0 0-196.608 0-196.608 0 0 0 0 0 0 0m313.344-430.08c0-58.708992-1.364992-126.292992-4.096-202.752 0 0 169.984 0 169.984 0 0 0 10.24 88.064 10.24 88.064 0 0 4.096 0 4.096 0 40.96-68.267008 105.812992-102.4 194.56-102.4 68.267008 0 123.220992 22.868992 164.864 68.608 41.643008 45.739008 62.464 113.664 62.464 203.776 0 0 0 374.784 0 374.784 0 0-196.608 0-196.608 0 0 0 0-350.208 0-350.208 0-91.476992-33.451008-137.216-100.352-137.216-47.787008 0-81.236992 24.576-100.352 73.728-4.096 8.192-6.144 24.576-6.144 49.152 0 0 0 364.544 0 364.544 0 0-198.656 0-198.656 0 0 0 0-430.08 0-430.08 0 0 0 0 0 0"></path>
+</svg></div>
+        </a>
+      </li>
+<li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/SuXY15" target="_blank">
+          <div class="icon">
+<svg fill="#000000" width="24px" height="24px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z"></path>
+</svg>
+</div>
+        </a>
+      </li>
+</ul>
+</div>
+</div>
+    </div>
+<div class="site-info mt-2">
+      <div>© Xingyu Su's Github.io 2019,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+    </div>
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal">
+<script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">Search</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text">
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        Cancel</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA ? initData(window.TEXT_SEARCH_DATA) : {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  function initData(data) {
+    var _data = [], i, j, key, keys, cur;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i], _data[key] = [];
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        cur.title = window.decodeUrl(cur.title);
+        cur.url = window.decodeUrl(cur.url);
+        _data[key].push(cur);
+      }
+    }
+    return _data;
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div>
+</div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><script>
+  window.Lazyload.js(['/assets/js/jquery-3.3.1.min.js', '/assets/js/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script><script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>

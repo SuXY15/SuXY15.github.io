@@ -289,79 +289,67 @@
             display: none;
         }
     </style>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type = "text/ecmascript" src="assets/js/md5.js"></script>
-    <script type = "text/ecmascript" src="/assets/js/md5.js"></script>
-    <script type = "text/javaScript">
-    $( function() {
-        var dialog;
-        var username = $( "#username" );
-        var password = $( "#password" );
-        var md5pass = "5106 1fa2 9878 b973 6758 7d3a 4f5a a7d5";
-        dialog = $( "#dialog-form" ).dialog({
-            dialogClass: "my-dialog",
-            autoOpen: false,
-            height: 350,
-            width: 350,
-            modal: true,
-            buttons: {
-                Confirm: function() {
-                    if ((username.val() == "share") && (hex_md5(password.val()) == md5pass.replace(/\s+/g,""))){
-                        dialog.dialog("close");
-                    }else{
-                        window.location.href='http://suxy15.github.io';
-                        dialog.dialog("close");
-                    }
-                },
-                Cancel: function() {
-                    window.location.href='http://suxy15.github.io';
-                    dialog.dialog("close");
-                }
-            },
-            close: function(){
-
-            }
-        });
-    });
-    </script>
 </head>
 
 <body>
-    <div id="dialog-form" title="Password required">
-        <p class="validateTips">Username and Password are required.</p>
-        <form>
-            <fieldset>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" value="share" class="text ui-widget-content ui-corner-all">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
-                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-            </fieldset>
-        </form>
-    </div>
-    
     <div class="page-content">
     <ul>
-        <li> 
-            <p>A script for windows user to get computer's Log on&off information.</p>
-            <a href="/assets/share/LogInfo.ps1">LogInfo.ps1</a>
-        </li>
-        
-        <li>
-            <p>数值算法教程网页（附 Python 代码）</p>
-            <a href="http://folk.ntnu.no/leifh/teaching/tkt4140/._main000.html">Numerical Methods for Engineers</a>
-        </li>
-        
-        <li>
-            <p>Windows 使用 Html 修改桌面（可动态、可交互）</p>
-            <a href="https://github.com/NoisyWinds/Wallpaper">Github: Wallpaper</a>
-        </li>
+        <li><strong>Interesting things from myself:</strong></li>
+        <ul>
+            <li> 
+                <p>A script for windows user to get computer's Log on&off information.</p>
+                <a href="/assets/share/LogInfo.ps1">LogInfo.ps1</a>
+            </li>
+            
+            <li> 
+                <p>A snake AI wrote in JavaScript with 84 lines code.</p>
+                <a href="/2018/04/16/SnakeAI.html">Snake AI Blog</a>
+            </li>
+        </ul>
 
-        <li>
-            <p>多平台桌面共享键盘鼠标</p>
-            <a href="https://github.com/debauchee/barrier">Github: barrier</a>
-        </li>
+        <br>
+        <li><strong>Interesting things from others:</strong></li>
+        <ul>
+            <li>
+                <p>数值算法教程网页（附 Python 代码）</p>
+                <a href="http://folk.ntnu.no/leifh/teaching/tkt4140/._main000.html">Numerical Methods for Engineers</a>
+            </li>
+            
+            <li>
+                <p>Windows 使用 Html 修改桌面（可动态、可交互）</p>
+                <a href="https://github.com/NoisyWinds/Wallpaper">Github: NoisyWinds/Wallpaper</a>
+            </li>
+
+            <li>
+                <p>多平台桌面共享键盘鼠标</p>
+                <a href="https://github.com/debauchee/barrier">Github: debauchee/barrier</a>
+            </li>
+
+            <li>
+                <p>A beautiful formatting library for python</p>
+                <a href="https://github.com/willmcgugan/rich">Github: willmcgugan/rich</a>
+            </li>
+            
+            <li>
+                <p>The best prompt I think</p>
+                <a href="https://github.com/romkatv/powerlevel10k">Github: romkatv/powerlevel10k</a>
+            </li>
+
+            <li>
+                <p>Get weather infomation in terminal</p>
+                <a href="https://github.com/chubin/wttr.in">Github: chubin/wttr.in</a>
+            </li>
+
+            <li>
+                <p>Fast searching solution for terminal users</p>
+                <a href="https://github.com/chubin/cheat.sh">Github: chubin/cheat.sh</a>
+            </li>
+            
+            <li>
+                <p>A light-weigted workspace manager for Windows user</p>
+                <a href="https://github.com/henkman/virgo">Github: henkman/virgo</a>
+            </li>
+        </ul>
     </ul>
     </div>
     

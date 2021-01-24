@@ -1,12 +1,13 @@
 ---
-layout:  article
-title:   Daily Life Record for Summer Research Intern
-excerpt: itinetary / cost / recipes
+layout:      article
+title:       Daily Life Record for Summer Research Intern
+excerpt:     itinetary / cost / recipes
 tags:
   - Daily
 modify_date: 2021-01-24
 ---
 
+<!--more-->
 
 ### ITINETARY
 
