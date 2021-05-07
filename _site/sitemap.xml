@@ -96,6 +96,10 @@
 <lastmod>2021-01-24T19:49:13+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/assets/downloads/papers/N.Wang_2021_AAAS.pdf</loc>
+<lastmod>2021-05-07T20:35:12+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/assets/downloads/papers/X.Su_2021_CNF.pdf</loc>
 <lastmod>2021-01-24T19:49:36+08:00</lastmod>
 </url>
@@ -189,10 +193,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/assets/resume/resume.pdf</loc>
-<lastmod>2021-01-24T20:34:02+08:00</lastmod>
+<lastmod>2021-05-07T21:01:57+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/assets/resume/resume_zh.pdf</loc>
-<lastmod>2021-01-24T20:34:09+08:00</lastmod>
+<lastmod>2021-05-07T21:06:00+08:00</lastmod>
 </url>
 </urlset>
