@@ -28,4 +28,4 @@ Some other entries of this SITE:
 - [share](/share): 分享有趣的东西
 - [404](/404): 基于JS的命令行
 
-<p align="center"><font color="gray">Last Updated on 06/Oct/2020.</font></p>
+<p align="center"><font color="gray">Last Updated on 22/Feb/2023.</font></p>
