@@ -1,125 +1,233 @@
 ---
 layout: none
-titles: Ego USB Capture APK
+title: Ego USB Capture APK
 ---
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>Ego USB Capture — Android APK</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Download Ego USB Capture (oto_app) Android APK v0.4.9">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css" id="theme">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.min.css">
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ?
-                        'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.min.css' :
-                        'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.min.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-    <style type="text/css">
-        .reveal section img {
-            margin: 0px 0px;
-            background: rgba(255, 255, 255, 0.12);
-            border: none;
-            box-shadow: none;
-        }
-        .reveal section h2 {
-            text-transform: none
-        }
-        .reveal section h3 {
-            text-transform: none
-        }
-        .reveal section ul {
-            display: inline-block;
-            font-size: 0.8em;
-            line-height: 1.2em;
-            vertical-align: top;
-        }
-        .reveal section .leftp {
-            font-size: 0.9em;
-            line-height: 1.2em;
-            text-align: left;
-            vertical-align: bottom;
-        }
-        .reveal section .meta {
-            font-size: 0.7em;
-            color: #555;
-            line-height: 1.4em;
-        }
-        .reveal a.download-btn {
-            display: inline-block;
-            margin: 0.4em 0.3em;
-            padding: 0.45em 0.9em;
-            border: 2px solid #222;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #222;
-            font-size: 0.7em;
-        }
-        .reveal a.download-btn:hover {
-            background: #222;
-            color: #fff;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ego USB Capture — Android 下载</title>
+  <meta name="description" content="Ego USB Capture (oto_app) Android APK 版本下载">
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1a1d21;
+      --muted: #5c6570;
+      --border: #e3e7ec;
+      --accent: #1f6feb;
+      --accent-soft: #eaf2ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .meta {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--accent-soft);
+      border: 1px solid #d5e4ff;
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+    .meta code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 1.2rem;
+    }
+    .version {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+    .version.latest {
+      border-color: #b7d0ff;
+      box-shadow: 0 1px 0 rgba(31, 111, 235, 0.08);
+    }
+    .version-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 12px;
+      margin-bottom: 8px;
+    }
+    .version-head h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .version-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .version ul {
+      margin: 8px 0 14px;
+      padding-left: 1.2em;
+    }
+    .version li { margin: 4px 0; }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    a.btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    a.btn.secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid #b7d0ff;
+    }
+    a.btn:hover { filter: brightness(0.96); }
+    .notes {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .notes ol { margin: 8px 0 0; padding-left: 1.2em; }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent); }
+  </style>
 </head>
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h1>Ego USB Capture</h1>
-                <h3>oto_app Android APK</h3>
-                <p class="meta">
-                    Version <strong>0.4.9</strong><br>
-                    Package: <code>com.ego.usbrawpoc</code>
-                </p>
-                <p>
-                    <small>Created by <a href="https://SuXY15.github.io">Xingyu Su</a>, Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/hakimel/reveal.js/">reveal.js</a></small>
-                </p>
-                <p>
-                    <small>Page: <a href="https://SuXY15.github.io/EgoUsbCapture">https://SuXY15.github.io/EgoUsbCapture</a></small>
-                </p>
-            </section>
+  <div class="wrap">
+    <header>
+      <h1>Ego USB Capture</h1>
+      <p>Lattice 双 UVC 采集 App（oto_app）Android 安装包下载页。</p>
+      <div class="meta">
+        包名：<code>com.ego.usbrawpoc</code><br>
+        平台：Android 6.0+（API 23+）· 侧载安装（非应用商店）
+      </div>
+    </header>
 
-            <section>
-                <h2>Download</h2>
-                <p class="leftp">Choose a build to install on your Android device:</p>
-                <p>
-                    <a class="download-btn" href="/assets/downloads/ego-usb-capture/EgoUsbCapture-0.4.9.apk">EgoUsbCapture-0.4.9.apk</a>
-                    <a class="download-btn" href="/assets/downloads/ego-usb-capture/EgoUsbCapture-latest.apk">EgoUsbCapture-latest.apk</a>
-                </p>
-                <p class="meta">
-                    Direct paths (github.io):<br>
-                    <a href="/assets/downloads/ego-usb-capture/EgoUsbCapture-0.4.9.apk">/assets/downloads/ego-usb-capture/EgoUsbCapture-0.4.9.apk</a><br>
-                    <a href="/assets/downloads/ego-usb-capture/EgoUsbCapture-latest.apk">/assets/downloads/ego-usb-capture/EgoUsbCapture-latest.apk</a>
-                </p>
-            </section>
+    <h2>版本列表</h2>
 
-            <section>
-                <h2>Install notes</h2>
-                <ul>
-                    <li>This is a sideloaded APK (not from Google Play).</li>
-                    <li>On Android, allow installing from unknown sources / this browser / Files.</li>
-                    <li>Open the downloaded APK and confirm installation.</li>
-                    <li>If update fails, uninstall the old build first, then install again.</li>
-                    <li>Grant USB / camera related permissions when the app requests them.</li>
-                </ul>
-                <p class="meta">安装说明：请允许「未知来源」或浏览器/文件管理器安装应用，然后打开 APK 完成安装。</p>
-            </section>
-        </div>
+    <article class="version latest">
+      <div class="version-head">
+        <h3>0.4.9</h3>
+        <span class="badge">当前</span>
+        <span class="version-date">2026-08-15 · EgoUsbCapture-0.4.9.apk</span>
+      </div>
+      <ul>
+        <li>接入 oto_capture UVC v1.0 双目眼动：从 cam0 帧解析 eye_left / eye_right（400×400 MIPI RAW10）</li>
+        <li>Live 页 Eye L / Eye R 实时灰度预览；有信号时写入 MCAP（<code>/ego/eye/…/encoded</code>）</li>
+        <li>传感器条 Eye 状态与帧计数；会话 meta 记录 has_eye / eye_count</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/EgoUsbCapture-0.4.9.apk">下载 0.4.9</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/EgoUsbCapture-latest.apk">下载 latest（同 0.4.9）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>0.4.8</h3>
+        <span class="version-date">含于后续包 · 无独立 APK 归档</span>
+      </div>
+      <ul>
+        <li>回放双麦联合降噪（STFT + 相干增益），默认开启，可按 NR On/Off 切换</li>
+      </ul>
+      <p style="margin:0;color:var(--muted);font-size:0.9rem;">请下载上方当前版本。</p>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>0.4.7</h3>
+        <span class="version-date">含于后续包 · 无独立 APK 归档</span>
+      </div>
+      <ul>
+        <li>Data 页展开后支持 Replay / Delete；删除前确认对话框</li>
+      </ul>
+      <p style="margin:0;color:var(--muted);font-size:0.9rem;">请下载上方当前版本。</p>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>0.4.6</h3>
+        <span class="version-date">含于后续包 · 无独立 APK 归档</span>
+      </div>
+      <ul>
+        <li>修复回放进度条时长被异常时间戳撑到数千分钟的问题</li>
+        <li>录制侧拒绝离谱时间跳变；回放用连续时间簇计算时长</li>
+      </ul>
+      <p style="margin:0;color:var(--muted);font-size:0.9rem;">请下载上方当前版本。</p>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>0.4.5 及更早</h3>
+        <span class="version-date">含于后续包 · 无独立 APK 归档</span>
+      </div>
+      <ul>
+        <li>0.4.5：波形改为 MIC L/R + IMU Acc + IMU Gyro（XYZ 叠画），界面更紧凑</li>
+        <li>0.4.4：MIC R 显示与 PCM 入 MCAP；回放播声音；拖动 seek 更顺；六轴 IMU 进波形</li>
+        <li>更早：双 RGB 预览/录制、Data 会话列表与回放、相机 1072×1280 显示校正等</li>
+      </ul>
+      <p style="margin:0;color:var(--muted);font-size:0.9rem;">请下载上方当前版本。</p>
+    </article>
+
+    <h2>安装说明</h2>
+    <div class="notes">
+      <ol>
+        <li>用手机浏览器打开本页，点「下载」获取 APK。</li>
+        <li>允许「未知来源」或浏览器/文件管理器安装应用。</li>
+        <li>打开 APK 完成安装。若更新失败，可先卸载旧包再装。</li>
+        <li>首次使用请授予 USB 相关权限，并连接 Lattice 采集设备。</li>
+      </ol>
     </div>
-    <script>
-        Reveal.initialize({
-            history: true,
-            transition: 'slide'
-        });
-    </script>
+
+    <footer>
+      维护：<a href="https://suxy15.github.io/">Xingyu Su</a>
+      · 仓库：<a href="https://github.com/SuXY15/SuXY15.github.io">SuXY15.github.io</a>
+      · 本页：<a href="https://suxy15.github.io/EgoUsbCapture.html">EgoUsbCapture.html</a>
+    </footer>
+  </div>
 </body>
 </html>
