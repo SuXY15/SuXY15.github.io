@@ -20,11 +20,13 @@ I am Xingyu Su, a PhD student at Department of Energy and Power Engineering, Tsi
 
 Some other entries of this SITE:
 
++ [EgoUsbCapture](/EgoUsbCapture): Android APK download (Ego USB Capture / oto_app)
 + [share](/share): a share station for some interesting things
 + [404](/404): JS terminal demo
 
 本站的一些其他入口：
 
+- [EgoUsbCapture](/EgoUsbCapture): Ego USB Capture（oto_app）Android APK 下载
 - [share](/share): 分享有趣的东西
 - [404](/404): 基于JS的命令行
 
