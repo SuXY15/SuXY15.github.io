@@ -1,14 +1,14 @@
 ---
 layout: none
-title: Ego USB Capture APK
+title: OTO_test Android APK
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ego USB Capture — Android 下载</title>
-  <meta name="description" content="Ego USB Capture (oto_app) Android APK 版本下载">
+  <title>OTO_test — Android 下载</title>
+  <meta name="description" content="OTO_test / Ego USB Capture Android APK 版本下载">
   <style>
     :root {
       --bg: #f6f7f9;
@@ -139,10 +139,10 @@ title: Ego USB Capture APK
 <body>
   <div class="wrap">
     <header>
-      <h1>Ego USB Capture</h1>
-      <p>Lattice 双 UVC 采集 App（oto_app）Android 安装包下载页。</p>
+      <h1>OTO_test</h1>
+      <p>支持双目 RGB、眼动、IMU 与 MIC 的 Lattice USB 采集 App。</p>
       <div class="meta">
-        包名：<code>com.ego.usbrawpoc</code><br>
+        当前包名：<code>com.ego.usbrawpoc.ototest</code>（可与旧版并存）<br>
         平台：Android 6.0+（API 23+）· 侧载安装（非应用商店）
       </div>
     </header>
@@ -151,8 +151,26 @@ title: Ego USB Capture APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>0.4.11</h3>
+        <h3>OTO_test 0.5.5</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-08-20 · OTO_test-0.5.5.apk</span>
+      </div>
+      <ul>
+        <li>新增双目眼动数据解析、原始到达帧率统计，以及不阻塞采集的约 30 Hz 实时预览</li>
+        <li>EP81 与 EP82 使用独立 USB 连接和读取线程；异步请求失效时自动切换同步 Bulk IN</li>
+        <li>检测到 USB 3.x 后保持 U0 工作态，降低链路省电切换引起的数据中断风险</li>
+        <li>修复 EP 恢复时后台线程闪退，以及 RGB 预览重复布局导致的界面卡住</li>
+        <li>独立包名与应用名，可和原 OTO / Ego USB Capture 同时安装</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.5.apk">下载 OTO_test 0.5.5</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.5）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>0.4.11</h3>
         <span class="version-date">2026-08-17 · EgoUsbCapture-0.4.11.apk</span>
       </div>
       <ul>
