@@ -151,20 +151,35 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.5</h3>
+        <h3>OTO_test 0.5.16</h3>
         <span class="badge">当前</span>
-        <span class="version-date">2026-08-20 · OTO_test-0.5.5.apk</span>
+        <span class="version-date">2026-08-27 · OTO_test-0.5.16.apk</span>
       </div>
       <ul>
-        <li>新增双目眼动数据解析、原始到达帧率统计，以及不阻塞采集的约 30 Hz 实时预览</li>
-        <li>EP81 与 EP82 使用独立 USB 连接和读取线程；异步请求失效时自动切换同步 Bulk IN</li>
-        <li>检测到 USB 3.x 后保持 U0 工作态，降低链路省电切换引起的数据中断风险</li>
-        <li>修复 EP 恢复时后台线程闪退，以及 RGB 预览重复布局导致的界面卡住</li>
+        <li>支持双目 RGB、眼动、IMU 与 MIC 原始到达率统计，眼动预览限制为约 30 Hz</li>
+        <li>眼动 RAW10 按每帧最大值自适应映射到 8-bit，再以双路 1 Mbps 硬件 H.264 写入 MCAP</li>
+        <li>每帧保存 <code>raw10_max</code>，用于从解码灰度近似恢复原始 10-bit 动态范围</li>
+        <li>支持 200×200 无眼动设备及 392×592 眼动设备的动态 UVC 协商与 USB3 收流</li>
+        <li>录制期间使用前台服务与 CPU 唤醒锁，支持锁屏后台采集</li>
         <li>独立包名与应用名，可和原 OTO / Ego USB Capture 同时安装</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.5.apk">下载 OTO_test 0.5.5</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.5）</a>
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.16.apk">下载 OTO_test 0.5.16</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.16）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.5</h3>
+        <span class="version-date">2026-08-20 · OTO_test-0.5.5.apk</span>
+      </div>
+      <ul>
+        <li>新增双目眼动解析、原始到达帧率统计与约 30 Hz 实时预览</li>
+        <li>USB3 U0 保持、端点恢复与 RGB 预览布局稳定性修复</li>
+      </ul>
+      <div class="links">
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.5.apk">下载 OTO_test 0.5.5</a>
       </div>
     </article>
 
