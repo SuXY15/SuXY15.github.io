@@ -151,9 +151,9 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.16</h3>
+        <h3>OTO_test 0.5.17</h3>
         <span class="badge">当前</span>
-        <span class="version-date">2026-08-27 · OTO_test-0.5.16.apk</span>
+        <span class="version-date">2026-08-28 · OTO_test-0.5.17.apk</span>
       </div>
       <ul>
         <li>支持双目 RGB、眼动、IMU 与 MIC 原始到达率统计，眼动预览限制为约 30 Hz</li>
@@ -161,11 +161,26 @@ title: OTO_test Android APK
         <li>每帧保存 <code>raw10_max</code>，用于从解码灰度近似恢复原始 10-bit 动态范围</li>
         <li>支持 200×200 无眼动设备及 392×592 眼动设备的动态 UVC 协商与 USB3 收流</li>
         <li>录制期间使用前台服务与 CPU 唤醒锁，支持锁屏后台采集</li>
+        <li>Data 页支持将完整 session 打包为 ZIP，并通过飞书等应用分享</li>
         <li>独立包名与应用名，可和原 OTO / Ego USB Capture 同时安装</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.16.apk">下载 OTO_test 0.5.16</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.16）</a>
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.17.apk">下载 OTO_test 0.5.17</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.17）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.16</h3>
+        <span class="version-date">2026-08-27 · OTO_test-0.5.16.apk</span>
+      </div>
+      <ul>
+        <li>眼动 RAW10 按逐帧最大值缩放至 8-bit，并使用双路 1 Mbps H.264 保存</li>
+        <li>支持动态 UVC 协商、USB3 收流与锁屏后台采集</li>
+      </ul>
+      <div class="links">
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.16.apk">下载 OTO_test 0.5.16</a>
       </div>
     </article>
 
