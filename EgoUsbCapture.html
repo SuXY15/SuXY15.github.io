@@ -151,21 +151,33 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.19</h3>
+        <h3>OTO_test 0.5.34</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-03 · OTO_test-0.5.34.apk</span>
+      </div>
+      <ul>
+        <li>修正 RGB、眼动与 IMU 的 MCAP 时间语义：保留传感器原始设备时间，不再写入手机本地墙钟</li>
+        <li>RGB OST 采用 u64 LE µs；眼动采用 UVC 头 u64 LE µs；IMU 保留原始 u64 BE µs 计数</li>
+        <li>IMU 同时保存按相机设备时钟展开的连续时间轴，覆盖约 100 秒原始计数回绕，供回放与融合使用</li>
+        <li>增加 u64 微秒到 protobuf int64 纳秒的溢出保护，并在回放索引中保留 RGB / 眼动原始时间</li>
+        <li>移除未成熟的手机端 Environment VIO，避免其影响采集、解码与界面稳定性</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.34.apk">下载 OTO_test 0.5.34</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.34）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.19</h3>
         <span class="version-date">2026-09-02 · OTO_test-0.5.19.apk</span>
       </div>
       <ul>
-        <li>眼动显示改用 P99.9 鲁棒白点，忽略 LED 在巩膜形成的极亮反光点</li>
-        <li>左右眼独立进行时域曝光平滑，限制逐帧亮度跳变，Live 与回放显示更稳定</li>
-        <li>眼动直方图复用、编码器原地写入缓冲区，避免高帧率下的大量临时内存分配</li>
-        <li>眼动编码与录制存储队列增加存活检测和超时保护，避免编码器或存储异常造成无限卡死</li>
-        <li>存储失败时尽量保留已写入的 MCAP 与诊断元数据，提升异常会话的可恢复性</li>
-        <li>包含双 RGB、双眼动、IMU、双 MIC 采集，Data 回放、拖动、暂停、删除和 Session 分享</li>
+        <li>眼动显示、回放稳定性与高帧率编码存储优化版</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.19.apk">下载 OTO_test 0.5.19</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.19）</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.19.apk">下载 OTO_test 0.5.19</a>
       </div>
     </article>
 
