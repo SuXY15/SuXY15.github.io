@@ -151,19 +151,32 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.36</h3>
+        <h3>OTO_test 0.5.38</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-09 · OTO_test-0.5.38.apk</span>
+      </div>
+      <ul>
+        <li>按 <code>oto_capture</code> 修复 mode17 Lidar：只接受 <code>frame_cnt=1…12</code>，并使用硬件相位映射 1→底部、2→顶部</li>
+        <li>修正 FeatureFrameCount 的桥接字节序与 mode17 ToF0 解码，不再错误按 0…11 或重排 12-byte 特征字</li>
+        <li>Live 与 Replay 优先显示米制距离及已标定的鱼眼投影几何；MCAP 仍保存原始 u14 ToF0</li>
+        <li>完整保留 RGB、眼动、IMU、音频、Lidar 的有效 u64 设备时间；不再按帧率归一化或推断 2<sup>32</sup> µs 回绕</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.38.apk">下载 OTO_test 0.5.38</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.38）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.36</h3>
         <span class="version-date">2026-09-09 · OTO_test-0.5.36.apk</span>
       </div>
       <ul>
-        <li>修复眼动 / IMU / Lidar 所在 EP 0x81 偶发完全无数据的问题</li>
-        <li>两个 UVC 接口现在均在开始读取前完成 PROBE / COMMIT，避免新固件只启动 EP 0x82 后使 EP 0x81 永久静默</li>
-        <li>若 EP 0x81 协商失败，界面会明确报告眼动、IMU 与 Lidar 不可用，而不再静默以 RGB-only 模式继续</li>
-        <li>保留 0.5.35 的完整 u64 原始时间录制与跨 2<sup>32</sup> 回归保护</li>
+        <li>两个 UVC 接口在读取前完成协商，修复 EP 0x81 偶发完全无数据。</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.36.apk">下载 OTO_test 0.5.36</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.36）</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.36.apk">下载 OTO_test 0.5.36</a>
       </div>
     </article>
 
