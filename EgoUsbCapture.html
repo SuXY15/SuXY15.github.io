@@ -151,8 +151,25 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.38</h3>
+        <h3>OTO_test 0.6.0</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-09 · OTO_test-0.6.0.apk</span>
+      </div>
+      <ul>
+        <li>修复 Haydn Lidar 标定参数包在手机端被提前关闭的问题；已内置并启用 Ver5 / <code>offline_400mm_20260716</code> 的 DNL、环境光、pile-up 与 FPPN 参数。</li>
+        <li>完整解析 mode17 的双回波 12-byte 原始字段：两回波共用噪声估计、按校正后的峰值选取最终距离；<code>frame_cnt=1…12</code> 仍严格对应空间第 0…11 行。</li>
+        <li>兼容 USB 桥接协商后的 FeatureFrameCount 字节序变化，避免有效 Lidar 条带被整组丢弃；标定资源异常时保留可见的原始距离降级显示。</li>
+        <li>Eye L / Eye R 的实时预览与 Replay 均改为逆时针旋转 90°。</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.0.apk">下载 OTO_test 0.6.0</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.0）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.38</h3>
         <span class="version-date">2026-09-09 · OTO_test-0.5.38.apk</span>
       </div>
       <ul>
@@ -163,7 +180,6 @@ title: OTO_test Android APK
       </ul>
       <div class="links">
         <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.38.apk">下载 OTO_test 0.5.38</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.38）</a>
       </div>
     </article>
 
