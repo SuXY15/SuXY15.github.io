@@ -151,20 +151,32 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.35</h3>
+        <h3>OTO_test 0.5.36</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-09 · OTO_test-0.5.36.apk</span>
+      </div>
+      <ul>
+        <li>修复眼动 / IMU / Lidar 所在 EP 0x81 偶发完全无数据的问题</li>
+        <li>两个 UVC 接口现在均在开始读取前完成 PROBE / COMMIT，避免新固件只启动 EP 0x82 后使 EP 0x81 永久静默</li>
+        <li>若 EP 0x81 协商失败，界面会明确报告眼动、IMU 与 Lidar 不可用，而不再静默以 RGB-only 模式继续</li>
+        <li>保留 0.5.35 的完整 u64 原始时间录制与跨 2<sup>32</sup> 回归保护</li>
+      </ul>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.36.apk">下载 OTO_test 0.5.36</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.36）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.35</h3>
         <span class="version-date">2026-09-09 · OTO_test-0.5.35.apk</span>
       </div>
       <ul>
-        <li>修复长录制的 IMU 时间轴：取消错误的 100 秒回绕推断，不再将完整 u64 设备时钟误判为 32 位计数</li>
-        <li>严格按协议保留原始时间：RGB OST 为 u64 LE µs，眼动 UVC 头为 u64 LE µs，IMU 包为 u64 BE µs</li>
-        <li>MCAP 同时保存原始 sensor time 与用于回放的连续时间；仅在无效、重复或严重乱序时按 400 Hz 兜底</li>
-        <li>新增跨 2<sup>32</sup> 微秒的解析与录制回归测试，并防止 u64 微秒转换 protobuf int64 纳秒时溢出</li>
-        <li>移除未成熟的手机端 Environment VIO，避免其影响采集、解码与界面稳定性</li>
+        <li>修复完整 u64 设备时间被错误当作 32 位计数而产生的 IMU 长录制时间轴问题。</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.35.apk">下载 OTO_test 0.5.35</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.35）</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.35.apk">下载 OTO_test 0.5.35</a>
       </div>
     </article>
 
