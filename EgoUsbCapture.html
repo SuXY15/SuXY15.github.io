@@ -151,20 +151,33 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.5.34</h3>
+        <h3>OTO_test 0.5.35</h3>
         <span class="badge">当前</span>
-        <span class="version-date">2026-09-03 · OTO_test-0.5.34.apk</span>
+        <span class="version-date">2026-09-09 · OTO_test-0.5.35.apk</span>
       </div>
       <ul>
-        <li>修正 RGB、眼动与 IMU 的 MCAP 时间语义：保留传感器原始设备时间，不再写入手机本地墙钟</li>
-        <li>RGB OST 采用 u64 LE µs；眼动采用 UVC 头 u64 LE µs；IMU 保留原始 u64 BE µs 计数</li>
-        <li>IMU 同时保存按相机设备时钟展开的连续时间轴，覆盖约 100 秒原始计数回绕，供回放与融合使用</li>
-        <li>增加 u64 微秒到 protobuf int64 纳秒的溢出保护，并在回放索引中保留 RGB / 眼动原始时间</li>
+        <li>修复长录制的 IMU 时间轴：取消错误的 100 秒回绕推断，不再将完整 u64 设备时钟误判为 32 位计数</li>
+        <li>严格按协议保留原始时间：RGB OST 为 u64 LE µs，眼动 UVC 头为 u64 LE µs，IMU 包为 u64 BE µs</li>
+        <li>MCAP 同时保存原始 sensor time 与用于回放的连续时间；仅在无效、重复或严重乱序时按 400 Hz 兜底</li>
+        <li>新增跨 2<sup>32</sup> 微秒的解析与录制回归测试，并防止 u64 微秒转换 protobuf int64 纳秒时溢出</li>
         <li>移除未成熟的手机端 Environment VIO，避免其影响采集、解码与界面稳定性</li>
       </ul>
       <div class="links">
-        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.34.apk">下载 OTO_test 0.5.34</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.34）</a>
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.35.apk">下载 OTO_test 0.5.35</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.35）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.5.34</h3>
+        <span class="version-date">2026-09-03 · OTO_test-0.5.34.apk</span>
+      </div>
+      <ul>
+        <li>初步引入 RGB、眼动与 IMU 的原始设备时间保存机制。</li>
+      </ul>
+      <div class="links">
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.34.apk">下载 OTO_test 0.5.34</a>
       </div>
     </article>
 
