@@ -140,9 +140,9 @@ title: OTO_test Android APK
   <div class="wrap">
     <header>
       <h1>OTO_test</h1>
-      <p>支持双目 RGB、眼动、IMU 与 MIC 的 Lattice USB 采集 App。</p>
+      <p>支持双目 RGB、眼动、Lidar、IMU 与 MIC 的 Lattice USB 采集 App。</p>
       <div class="meta">
-        当前包名：<code>com.ego.usbrawpoc.ototest</code>（可与旧版并存）<br>
+        当前包名：<code>com.ego.usbrawpoc.ototest</code>（可与 Debug 测试包并存）<br>
         平台：Android 6.0+（API 23+）· 侧载安装（非应用商店）
       </div>
     </header>
@@ -151,8 +151,28 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.6.0</h3>
+        <h3>OTO_test 0.6.5</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-14 · OTO_test-0.6.5.apk</span>
+      </div>
+      <ul>
+        <li>采用不带 Debug 后缀的 Release 安装包，应用名称为 OTO_test，版本为 0.6.5。</li>
+        <li>Lidar 参考 SDK 适配双回波噪点、近距膨胀和短拖点滤除，保护连续弱信号与第二回波；不强制平滑或填洞。修正标定单位与峰值归一化，仍明确标注参考标定。</li>
+        <li>点云默认旋转 180°，可勾选 Raw Peak0 查看原始峰值；距离色度默认 3 m，并在 1–10 m 范围内自适应调整。</li>
+        <li>减少眼动编码准备的逐像素计算与写入，保留白点映射和原始录制功能；修复 USB 端点参数与诊断统计问题。</li>
+        <li>预览只保留最新待显示帧，三维视角和数据未改变时复用绘制；释放退出预览后的缓冲，减少 Raw Peak 临时分配。无人查看时暂缓点云预览计算，完整原始录制不受影响。</li>
+        <li>65 项单元测试及 Release 发布检查通过；0.6.5 的持续采集温升和新增渲染缓存检查仍待真机验证。</li>
+      </ul>
+      <p><strong>升级说明：</strong>本版使用新的发布签名，无法直接覆盖旧签名的 Release 版本。请先在旧应用中导出并确认录制数据备份，再卸载旧 Release 后安装；卸载可能删除应用内数据。已安装的 Debug 测试包可保留并行使用，数据不会自动迁移。</p>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.5.apk">下载 OTO_test 0.6.5</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.5）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.6.0</h3>
         <span class="version-date">2026-09-09 · OTO_test-0.6.0.apk</span>
       </div>
       <ul>
@@ -163,7 +183,6 @@ title: OTO_test Android APK
       </ul>
       <div class="links">
         <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.0.apk">下载 OTO_test 0.6.0</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.0）</a>
       </div>
     </article>
 
@@ -251,7 +270,6 @@ title: OTO_test Android APK
       </ul>
       <div class="links">
         <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.5.17.apk">下载 OTO_test 0.5.17</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.5.17）</a>
       </div>
     </article>
 
@@ -367,7 +385,7 @@ title: OTO_test Android APK
       <ol>
         <li>用手机浏览器打开本页，点「下载」获取 APK。</li>
         <li>允许「未知来源」或浏览器/文件管理器安装应用。</li>
-        <li>打开 APK 完成安装。若更新失败，可先卸载旧包再装。</li>
+        <li>打开 APK 完成安装。若提示签名冲突，请先阅读上方升级说明并备份录制数据，勿直接卸载。</li>
         <li>首次使用请授予 USB 相关权限，并连接 Lattice 采集设备。</li>
       </ol>
     </div>
