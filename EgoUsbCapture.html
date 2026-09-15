@@ -151,8 +151,27 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.6.5</h3>
+        <h3>OTO_test 0.6.6</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-09-15 · OTO_test-0.6.6.apk</span>
+      </div>
+      <ul>
+        <li>正式 Release 安装包，应用名称为 OTO_test，版本为 0.6.6。</li>
+        <li>修复回放因过滤异常时间戳对应的 H.264 帧而破坏参考关系、导致 RGB 花屏的问题；保留完整压缩帧及解码顺序。</li>
+        <li>回放优先使用原始设备数据时间，保留跨流偏移与真实时间间隔；孤立异常时间仅调整播放调度并显示提示，不改写录制文件。</li>
+        <li>提高原始数据写盘优先级，降低预览与导出任务优先级，保留 RGB 原始字节和设备帧序号；增加录制排空、编码结束及输入丢包的完整性告警。</li>
+        <li>改进 H.264 关键帧识别及解码重启时的参数恢复。Debug/Release 各 72 项测试通过；同版测试包已获用户真机回放正常反馈。</li>
+      </ul>
+      <p><strong>升级说明：</strong>与本站 0.6.5 正式版签名一致，可直接覆盖升级。旧签名版本（如 0.6.0）无法直接覆盖，请先导出并确认录制数据备份，勿直接卸载。测试包可保留并行使用，数据不会自动迁移。</p>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.6.apk">下载 OTO_test 0.6.6</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.6）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.6.5</h3>
         <span class="version-date">2026-09-14 · OTO_test-0.6.5.apk</span>
       </div>
       <ul>
@@ -166,7 +185,6 @@ title: OTO_test Android APK
       <p><strong>升级说明：</strong>本版使用新的发布签名，无法直接覆盖旧签名的 Release 版本。请先在旧应用中导出并确认录制数据备份，再卸载旧 Release 后安装；卸载可能删除应用内数据。已安装的 Debug 测试包可保留并行使用，数据不会自动迁移。</p>
       <div class="links">
         <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.5.apk">下载 OTO_test 0.6.5</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.5）</a>
       </div>
     </article>
 
