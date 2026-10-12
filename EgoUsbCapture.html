@@ -151,8 +151,30 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
-        <h3>OTO_test 0.6.6</h3>
+        <h3>OTO_test 0.6.13</h3>
         <span class="badge">当前</span>
+        <span class="version-date">2026-10-12 · OTO_test-0.6.13.apk</span>
+      </div>
+      <ul>
+        <li>正式 Release 安装包，无 Debug 后缀；新增实时双目视觉与 IMU 融合定位、密集轨迹和定位记录管理。</li>
+        <li>修复把图像延迟误报为视觉退化的问题，分别显示实际视觉更新率、有效特征数和视觉时间差；真正失去视觉约束时仍明确提示。</li>
+        <li>初始化期间的视觉观测按时间顺序参与融合，修复迟到视觉结果导致当前姿态时间倒退；逐视觉帧保留最近一小时轨迹，回环修正不清空历史。</li>
+        <li>减少双目匹配和姿态输出的冗余计算，保留全部输入图像帧、IMU 样本、原有几何筛选及眼动 Gamma 修正。</li>
+        <li>改进页面切换、录制排空、回放索引与存储操作，限制预览及定位队列内存占用，原始录制优先。</li>
+        <li>127 项单元测试通过；手机原速回灌 10 组录制、29973 对图像全部完成，稳定段实际视觉更新约 30 Hz；额外 120 ms 图像延迟测试通过。</li>
+      </ul>
+      <p><strong>适用范围：</strong>Android 6.0+，实时 SLAM 需要 ARM64 手机，目前固定使用 OTO-011 标定。上述结果为手机录制回灌，不代表任意场景、温度下均保持 30 Hz，也不构成定位精度保证。</p>
+      <p><strong>升级说明：</strong>与本站 0.6.5/0.6.6 正式版签名一致，可覆盖升级。旧签名版本请先导出并确认录制备份，勿直接卸载。</p>
+      <p style="overflow-wrap:anywhere"><strong>SHA-256：</strong><code>51322067b7014a82f15f65336e2281277caea8dd13cb09eb380395bd1fd5dd75</code></p>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.13.apk">下载 OTO_test 0.6.13</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.13）</a>
+      </div>
+    </article>
+
+    <article class="version">
+      <div class="version-head">
+        <h3>OTO_test 0.6.6</h3>
         <span class="version-date">2026-09-15 · OTO_test-0.6.6.apk</span>
       </div>
       <ul>
@@ -165,7 +187,6 @@ title: OTO_test Android APK
       <p><strong>升级说明：</strong>与本站 0.6.5 正式版签名一致，可直接覆盖升级。旧签名版本（如 0.6.0）无法直接覆盖，请先导出并确认录制数据备份，勿直接卸载。测试包可保留并行使用，数据不会自动迁移。</p>
       <div class="links">
         <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.6.apk">下载 OTO_test 0.6.6</a>
-        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-latest.apk">下载 latest（同 0.6.6）</a>
       </div>
     </article>
 
