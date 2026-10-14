@@ -142,8 +142,8 @@ title: OTO_test Android APK
       <h1>OTO_test</h1>
       <p>支持双目 RGB、眼动、Lidar、IMU 与 MIC 的 Lattice USB 采集 App。</p>
       <div class="meta">
-        当前包名：<code>com.ego.usbrawpoc.ototest</code>（可与 Debug 测试包并存）<br>
-        平台：Android 6.0+（API 23+）· 侧载安装（非应用商店）
+        当前测试渠道：<code>com.ego.usbrawpoc.ototest.localdebug</code>（与旧正式渠道并存）<br>
+        当前测试版：Android 7.0+（API 24+）· ARM64 · 侧载安装
       </div>
     </header>
 
@@ -151,8 +151,29 @@ title: OTO_test Android APK
 
     <article class="version latest">
       <div class="version-head">
+        <h3>OTO 0.6.25 测试版</h3><span class="badge">当前测试渠道</span>
+        <span class="version-date">2026-10-14 · versionCode 138</span>
+      </div>
+      <ul>
+        <li>SLAM 与双手识别共享解码，3D 窗口显示世界坐标骨架，RGB 叠加柔和蓝/红手部检测线。</li>
+        <li>参考电脑端实现：普通骨长异常修正后显示；模板限速 2 mm/s，输出骨长每步最多变化 0.25 mm。</li>
+        <li>加入全局双目匹配、运动预测与手型连续性，连续三次独立证据才纠正身份状态。</li>
+        <li>发布用户手机实测“基本可用”的原始 APK；Debug/Release 各 179 项单元测试通过，90 帧骨长/坐标及 7 类身份场景对照电脑端通过。</li>
+      </ul>
+      <p><strong>安装：</strong>与本轮手机测试版包名及签名一致，可覆盖升级、保留该应用数据。采用本地测试签名，非应用商店正式发行包。与 0.6.13 正式包并存，数据不自动迁移，无需卸载旧包。</p>
+      <p><strong>适用范围：</strong>Android 7.0+ ARM64、固定 OTO-011 标定。30+15 Hz 为联合运行目标，尚无本版完整联合性能验收；骨长约束不等于消除所有姿态抖动。</p>
+      <p style="overflow-wrap:anywhere"><strong>SHA-256：</strong><code>2db0d47976b351892fbe798f1a9c401373910ac1111320331dd09beaa4225ac8</code></p>
+      <div class="links">
+        <a class="btn" href="/assets/downloads/ego-usb-capture/OTO_test-0.6.25-localtest.apk">下载 0.6.25 测试版</a>
+        <a class="btn secondary" href="/assets/downloads/ego-usb-capture/OTO_test-localtest-latest.apk">测试渠道 latest</a>
+      </div>
+    </article>
+
+
+    <article class="version">
+      <div class="version-head">
         <h3>OTO_test 0.6.13</h3>
-        <span class="badge">当前</span>
+        <span class="badge">旧正式渠道</span>
         <span class="version-date">2026-10-12 · OTO_test-0.6.13.apk</span>
       </div>
       <ul>
